@@ -1,4 +1,6 @@
-import { Character, CharacterFull } from "../models/character.ts";
+import { Image } from "../models/base.ts";
+import { MangaRole } from "../models/character.ts";
+import { AnimeRole, Character, CharacterFull, Voice } from "../models/character.ts";
 import { BaseManager, BaseSearchParameters } from "./baseManager.ts";
 
 export interface CharacterSearchParameters extends BaseSearchParameters {
@@ -8,36 +10,59 @@ export interface CharacterSearchParameters extends BaseSearchParameters {
 export class CharacterManager extends BaseManager {
 	public readonly endpoint: string = "characters";
 
-	public async getCharacters(params?: CharacterSearchParameters): Promise<Character[]> {
-		try {
-			const req = await this.client.requestManager.request(this._buildAPIRequestQuery(undefined, params));
-			const json = await req.json();
-			if (json.status < 200 || json.status >= 300) {
-				throw new Error(`Error fetching characters: ${json.status} - ${json.message}`);
-			}
-			return json.data as Character[];
-		} catch (e) {
-			console.error(`Error fetching characters:`, e);
-			throw e;
-		}
+	/* getCharacters: Get a Character array from the Jikan API
+	 *
+	 * This method may throw an error if status is not between 200 and 300
+	 */
+	public getCharacters(params?: CharacterSearchParameters): Promise<Character[]> {
+		return this._fetchData<Character[]>(this._buildAPIRequestQuery(undefined, params));
 	}
 
-	public async getCharacter(characterId: number, params?: CharacterSearchParameters): Promise<CharacterFull> {
-		try {
-			const req = await this.client.requestManager.request(this._buildAPIRequestQuery(`${characterId}`, params, "full"));
-			const json = await req.json();
-			if (json.status < 200 || json.status >= 300) {
-				throw new Error(`Error fetching character with ID ${characterId}: ${json.status} - ${json.message}`);
-			}
-			return json.data as CharacterFull;
-		} catch (e) {
-			console.error(`Error fetching character with ID ${characterId}:`, e);
-			throw e;
-		}
+	/** getCharacter: Get a Character from the Jikan API by its ID
+	 *
+	 * This method may throw an error if status is not between 200 and 300
+	 */
+	public getCharacter(characterId: number): Promise<Character> {
+		return this._fetchData<Character>(this._buildAPIRequestQuery(characterId.toString()));
 	}
-	// TODO: Refactor getCharacterAnime and getCharacterManga to unify some code
-	// TODO: Implement getCharacterAnime
-	// TODO: Implement getCharacterManga
-	// TODO: Implement getCharacterVoiceActors
-	// TODO: Implement getCharacterPictures
+
+	/** getCharacter: Get a CharacterFull from the Jikan API by its ID
+	 *
+	 * This method may throw an error if status is not between 200 and 300
+	 */
+	public getCharacterFull(characterId: number): Promise<CharacterFull> {
+		return this._fetchData<CharacterFull>(this._buildAPIRequestQuery(characterId.toString(), undefined, "full"));
+	}
+
+	/** getCharacterAnime: Get a Character's Anime from the Jikan API by its ID
+	 *
+	 * This method may throw an error if status is not between 200 and 300
+	 */
+	public getCharacterAnime(characterId: number): Promise<AnimeRole[]> {
+		return this._fetchData<AnimeRole[]>(this._buildAPIRequestQuery(characterId.toString(), undefined, "anime"));
+	}
+
+	/** getCharacterManga: Get a Character's Manga from the Jikan API by its ID
+	 *
+	 * This method may throw an error if status is not between 200 and 300
+	 */
+	public getCharacterManga(characterId: number): Promise<MangaRole[]> {
+		return this._fetchData<MangaRole[]>(this._buildAPIRequestQuery(characterId.toString(), undefined, "manga"));
+	}
+
+	/** getCharacterVoiceActors: Get a Character's Voice Actors from the Jikan API by its ID
+	 *
+	 * This method may throw an error if status is not between 200 and 300
+	 */
+	public getCharacterVoiceActors(characterId: number): Promise<Voice[]> {
+		return this._fetchData<Voice[]>(this._buildAPIRequestQuery(characterId.toString(), undefined, "voices"));
+	}
+
+	/** getCharacterPictures: Get a Character's Pictures from the Jikan API by its ID
+	 *
+	 * This method may throw an error if status is not between 200 and 300
+	 */
+	public getCharacterPictures(characterId: number): Promise<Image[]> {
+		return this._fetchData<Image[]>(this._buildAPIRequestQuery(characterId.toString(), undefined, "pictures"));
+	}
 }

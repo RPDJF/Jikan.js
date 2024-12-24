@@ -37,4 +37,18 @@ export abstract class BaseManager {
 			params: params,
 		}
 	}
+
+	protected async _fetchData<T>(query: APIRequestQuery): Promise<T> {
+		try {
+			const req = await this.client.requestManager.request(query);
+			const json = await req.json();
+			if (json.status < 200 || json.status >= 300) {
+				throw new Error(`Error fetching data: ${json.status} - ${json.message}`);
+			}
+			return json.data as T;
+		} catch (e) {
+			console.error(`Error fetching data:`, e);
+			throw e;
+		}
+	}
 }
