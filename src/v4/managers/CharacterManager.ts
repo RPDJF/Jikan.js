@@ -1,10 +1,16 @@
-import { Image } from "../models/base.ts";
+import { Image, VoiceActors } from "../models/base.ts";
 import { MangaRole } from "../models/character.ts";
-import { AnimeRole, Character, CharacterFull, Voice } from "../models/character.ts";
+import { AnimeRole, Character, CharacterFull } from "../models/character.ts";
 import { BaseManager, BaseSearchParameters } from "./BaseManager.ts";
 
+export enum CharacterOrder {
+	mal_id = "mal_id",
+	Name = "name",
+	Favorites = "favorites",
+}
+
 export interface CharacterSearchParameters extends BaseSearchParameters {
-	order_by?: "mal_id" | "name" | "favorites";
+	order_by?: CharacterOrder | string;
 }
 
 export class CharacterManager extends BaseManager {
@@ -54,8 +60,8 @@ export class CharacterManager extends BaseManager {
 	 *
 	 * This method may throw an error if status is not between 200 and 300
 	 */
-	public getCharacterVoiceActors(characterId: number): Promise<Voice[]> {
-		return this._fetchData<Voice[]>(this._buildAPIRequestQuery(characterId.toString(), undefined, "voices"));
+	public getCharacterVoiceActors(characterId: number): Promise<VoiceActors[]> {
+		return this._fetchData<VoiceActors[]>(this._buildAPIRequestQuery(characterId.toString(), undefined, "voices"));
 	}
 
 	/** getCharacterPictures: Get a Character's Pictures from the Jikan API by its ID

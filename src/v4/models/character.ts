@@ -1,4 +1,4 @@
-import { BaseModel, Person, Ressource } from "./base.ts";
+import { BaseModel, Ressource, VoiceActors } from "./base.ts";
 
 export interface AnimeRole {
 	role: string;
@@ -10,13 +10,11 @@ export interface MangaRole {
 	manga: Ressource;
 }
 
-export interface Voice {
-	language: string;
-	person: Person;
+export interface CharacterMinimal extends BaseModel {
+	name: string;
 }
 
-export interface Character extends BaseModel {
-	name: string;
+export interface Character extends CharacterMinimal {
 	name_kanji?: string;
 	nicknames: string[];
 	favorites: number;
@@ -26,5 +24,5 @@ export interface Character extends BaseModel {
 export interface CharacterFull extends Character {
 	anime: AnimeRole[];
 	manga: MangaRole[];
-	voices: Voice[];
+	voices: VoiceActors[];
 }

@@ -1,6 +1,6 @@
 import { CharacterManager, CharacterSearchParameters } from "../managers/CharacterManager.ts";
-import { Image } from "../models/base.ts";
-import { AnimeRole, Character, MangaRole, Voice } from "../models/character.ts";
+import { Image, VoiceActors } from "../models/base.ts";
+import { AnimeRole, Character, MangaRole } from "../models/character.ts";
 import { CacheManager, CacheOptions } from "./CacheManager.ts";
 import { RequestManager } from "./RequestManager.ts";
 
@@ -110,7 +110,7 @@ export class JikanClient {
 	/**
 	 * getCharacterVoiceActors: Get a Character's Voice Actors from the Jikan API by its ID
 	 */
-	public getCharacterVoiceActors(characterId: number): Promise<Voice[]> { return this.characterManager.getCharacterVoiceActors(characterId); }
+	public getCharacterVoiceActors(characterId: number): Promise<VoiceActors[]> { return this.characterManager.getCharacterVoiceActors(characterId); }
 	/**
 	 * getCharacterPictures: Get a Character's Pictures from the Jikan API by its ID
 	 */

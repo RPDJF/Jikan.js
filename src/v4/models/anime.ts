@@ -1,4 +1,5 @@
-import { BaseModel, MalEntries } from "./base.ts";
+import { BaseModel, MalEntries, VoiceActors } from "./base.ts";
+import { CharacterMinimal } from "./character.ts";
 
 export interface Title {
     type: string;
@@ -63,28 +64,34 @@ export enum Rating {
     RX = "Rx - Hentai"
 }
 
+export interface CharacterRole {
+	character: CharacterMinimal;
+	role: string;
+	voice_actors: VoiceActors[];
+}
+
 export interface Anime extends BaseModel {
     trailer: Trailer;
     approved: boolean;
     titles: Title[];
-    type: Type | null;
-    source: string | null;
-    episodes: number | null;
-    status: string | null;
+    type?: Type;
+    source?: string;
+    episodes?: number;
+    status?: string;
     airing: boolean;
     aired: daterange;
-    duration: string | null;
-    rating: Rating | null;
-    score: number | null;
-    scored_by: number | null;
-    rank: number | null;
-    popularity: number | null;
-    members: number | null;
-    favorites: number | null;
+    duration?: string;
+    rating?: Rating;
+    score?: number;
+    scored_by?: number;
+    rank?: number;
+    popularity?: number;
+    members?: number;
+    favorites?: number;
     synopsis: string;
-    background: string | null;
-    season: Season | null;
-    year: number | null;
+    background?: string;
+    season?: Season;
+    year?: number;
     broadcast: Broadcast;
     producers: MalEntries[];
     licensors: MalEntries[];
@@ -93,6 +100,9 @@ export interface Anime extends BaseModel {
     explicit_genres: MalEntries[];
     themes: MalEntries[];
     demographics: MalEntries[];
+}
+
+export interface AnimeFull extends Anime {
     relations: Relation[];
     theme: Theme;
     external: External[];

@@ -1,15 +1,16 @@
 import { APIRequestQuery } from "../core/apiModels.ts";
 import { JikanClient } from "../core/JikanClient.ts";
 
-export enum BaseOrderBy {
-	mal_id = "mal_id",
+export enum BaseSort {
+	asc = "asc",
+	desc = "desc",
 }
 
 export interface BaseSearchParameters {
 	page?: number;
 	limit?: number;
 	q?: string;
-	sort?: "asc" | "desc";
+	sort?: BaseSort | string;
 	letter?: string;
 };
 

@@ -83,7 +83,7 @@ Jikan.js will provide you with the following features in his first release:
             <tbody>
               <tr>
                 <td>Anime</td>
-                <td>❌ Not Started</td>
+                <td>🔄 In Progress</td>
               </tr>
               <tr>
                 <td>Characters</td>

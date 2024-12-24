@@ -30,3 +30,13 @@ export interface Ressource extends BaseModel {
 export interface Person extends BaseModel {
 	name: string;
 }
+
+export interface VoiceActors {
+	language: string;
+	person: Person;
+}
+
+export interface Staff {
+	person: Person;
+	positions: string[];
+}
