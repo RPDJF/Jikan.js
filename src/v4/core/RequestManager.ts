@@ -99,32 +99,48 @@ export class RequestManager extends RequestQueue {
 			const requestPromise: APIRequestPromise = {
 				query: requestQuery,
 				resolve: resolve,
-			}
+			};
+	
 			try {
 				this.enqueue(requestPromise);
+				this.processQueue();
 			} catch (e) {
-				if (e instanceof Error && e.cause === "QueueFull") {
-					console.error("RequestManager: Queue is full, request dropped", requestQuery);
-					resolve(new Response(
-						JSON.stringify({
-							message: e.message,
-							errorCode: e.cause,
-							status: 503,
-							retryAfter: this.client.options.rateLimit / 1000,
-						}), {
-						status: 503,
-						statusText: "Service Unavailable",
-						headers: new Headers({
-							"Content-Type": "application/json",
-							"Retry-After": (this.client.options.rateLimit / 1000).toString(),
-						}),
-					}));
-				}
-				else {
+				if (e instanceof Error) {
+					if (e.cause === "QueueFull") {
+						console.error("RequestManager: Queue is full, request dropped", requestQuery);
+						resolve(this._createErrorResponse(e.message, e.cause, 503, "Service Unavailable", this.client.options.rateLimit / 1000));
+					} else {
+						console.error("RequestManager: Unknown error", e);
+						resolve(this._createErrorResponse(e.message, e.cause ? String(e.cause) : "UnknownError", 500, "Internal Server Error"));
+					}
+				} else {
 					console.error("RequestManager: Unknown error", e);
+					resolve(this._createErrorResponse("Unknown error", "UnknownError", 500, "Internal Server Error"));
 				}
 			}
-			this.processQueue();
 		});
+	}
+	
+	private _createErrorResponse(message: string, errorCode: string, status: number, statusText: string, retryAfter?: number): Response {
+		const headers = new Headers({
+			"Content-Type": "application/json",
+		});
+		if (retryAfter) {
+			headers.append("Retry-After", retryAfter.toString());
+		}
+	
+		return new Response(
+			JSON.stringify({
+				message: message,
+				errorCode: errorCode,
+				status: status,
+				retryAfter: retryAfter,
+			}),
+			{
+				status: status,
+				statusText: statusText,
+				headers: headers,
+			}
+		);
 	}
 }
