@@ -1,9 +1,9 @@
 export interface Image {
-	jpg: {
+	jpg?: {
 		image_url?: string;
 		small_image_url?: string;
 	},
-	webp: {
+	webp?: {
 		image_url?: string;
 		small_image_url?: string;
 	}
