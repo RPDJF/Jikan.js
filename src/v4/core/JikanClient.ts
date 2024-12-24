@@ -1,4 +1,4 @@
-import { CharacterManager, CharacterSearchParameters } from "../manager/CharacterManager.ts";
+import { CharacterManager, CharacterSearchParameters } from "../managers/CharacterManager.ts";
 import { Image } from "../models/base.ts";
 import { AnimeRole, Character, MangaRole, Voice } from "../models/character.ts";
 import { CacheManager, CacheOptions } from "./CacheManager.ts";
