@@ -1,4 +1,6 @@
-import { CharacterManager } from "../manager/characterManager.ts";
+import { CharacterManager, CharacterSearchParameters } from "../manager/characterManager.ts";
+import { Image } from "../models/base.ts";
+import { AnimeRole, Character, MangaRole, Voice } from "../models/character.ts";
 import { CacheManager, CacheOptions } from "./cache.ts";
 import { RequestManager } from "./request.ts";
 
@@ -75,12 +77,46 @@ export class JikanClient {
 	public readonly options: ClientOptions;
 	public readonly cacheManager: CacheManager;
 	public readonly requestManager: RequestManager;
-	public readonly characters: CharacterManager;
+	public readonly characterManager: CharacterManager;
 
 	public constructor (options?: Partial<ClientOptions>) {
 		this.options = JikanClient.setDefaultOptions(options);
 		this.cacheManager = new CacheManager(this.options.cacheOptions);
 		this.requestManager = new RequestManager(this);
-		this.characters = new CharacterManager(this);
+		this.characterManager = new CharacterManager(this);
 	}
+
+	// Facade methods for the CharacterManager
+	/**
+	 * getCharacters: Get a Character array from the Jikan API
+	 */
+	public getCharacters(params?: CharacterSearchParameters): Promise<Character[]> { return this.characterManager.getCharacters(params); }
+	/**
+	 * getCharacter: Get a Character from the Jikan API by its ID
+	 */
+	public getCharacter(characterId: number): Promise<Character> { return this.characterManager.getCharacter(characterId); }
+	/**
+	 * getCharacterFull: Get a CharacterFull from the Jikan API by its ID
+	 */
+	public getCharacterFull(characterId: number): Promise<Character> { return this.characterManager.getCharacterFull(characterId); }
+	/**
+	 * getCharacterAnime: Get a Character's Anime from the Jikan API by its ID
+	 */
+	public getCharacterAnime(characterId: number): Promise<AnimeRole[]> { return this.characterManager.getCharacterAnime(characterId); }
+	/**
+	 * getCharacterManga: Get a Character's Manga from the Jikan API by its ID
+	 */
+	public getCharacterManga(characterId: number): Promise<MangaRole[]> { return this.characterManager.getCharacterManga(characterId); }
+	/**
+	 * getCharacterVoiceActors: Get a Character's Voice Actors from the Jikan API by its ID
+	 */
+	public getCharacterVoiceActors(characterId: number): Promise<Voice[]> { return this.characterManager.getCharacterVoiceActors(characterId); }
+	/**
+	 * getCharacterPictures: Get a Character's Pictures from the Jikan API by its ID
+	 */
+	public getCharacterPictures(characterId: number): Promise<Image[]> { return this.characterManager.getCharacterPictures(characterId); }
+
+
+
+
 }
