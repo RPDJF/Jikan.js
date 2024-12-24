@@ -1,3 +1,4 @@
+import { CharacterManager } from "../manager/characterManager.ts";
 import { CacheManager, CacheOptions } from "./cache.ts";
 import { RequestManager } from "./request.ts";
 
@@ -74,10 +75,12 @@ export class JikanClient {
 	public readonly options: ClientOptions;
 	public readonly cacheManager: CacheManager;
 	public readonly requestManager: RequestManager;
+	public readonly characters: CharacterManager;
 
 	public constructor (options?: Partial<ClientOptions>) {
 		this.options = JikanClient.setDefaultOptions(options);
 		this.cacheManager = new CacheManager(this.options.cacheOptions);
 		this.requestManager = new RequestManager(this);
+		this.characters = new CharacterManager(this);
 	}
 }
