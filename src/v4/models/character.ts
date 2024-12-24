@@ -18,7 +18,7 @@ export interface Voice {
 export interface Character extends BaseModel {
 	name: string;
 	name_kanji?: string;
-	nicknames: string[]; // TODO: Check if this is correct
+	nicknames: string[];
 	favorites: number;
 	about?: string;
 }
