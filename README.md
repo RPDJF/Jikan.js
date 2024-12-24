@@ -1,7 +1,5 @@
 <img src="meta/banner.svg" alt="Jikan.js Banner" style="border-radius: 15px;">
 
-<br>
-
 # Jikan.js - Unofficial Jikan API Wrapper for Deno
 
 Jikan.js is a simple, easy-to-use and efficient wrapper for [Jikan API](https://github.com/jikan-me/jikan) written in TypeScript for Deno.
