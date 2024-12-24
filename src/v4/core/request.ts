@@ -5,7 +5,6 @@ export class RequestQueue {
 	private _queue: (APIRequestPromise)[] = [];
 	private _size: number = 0;
 	private _maxSize: number;
-	private _lastIdentifier: number = 0;
 
 	public get size(): number { return this._size; }
 	public get maxSize(): number { return this._maxSize; }
@@ -22,15 +21,12 @@ export class RequestQueue {
 	 * @returns The identifier of the item
 	 * @throws Error if the queue is full
 	 */
-    protected enqueue(item: APIRequestPromise): number {
+    protected enqueue(requestPromise: APIRequestPromise) {
         if (this._size === this.maxSize && this.maxSize) {
             throw new Error("Internal library request queue is full", { cause: "QueueFull" });
         }
-        item.query.id = this._lastIdentifier;
-        this._lastIdentifier = (this._lastIdentifier + 1) % Number.MAX_SAFE_INTEGER;
-        this._queue.push(item);
+        this._queue.push(requestPromise);
         this._size++;
-        return item.query.id;
     }
 
 	/**
@@ -58,7 +54,7 @@ export class RequestManager extends RequestQueue {
 	}
 
 	public buildURL(requestQuery: APIRequestQuery): URL {
-		return new URL(`${this.client.options.host}${this.client.options.baseUri}${requestQuery.endpoint}${requestQuery.params ? `?${new URLSearchParams(requestQuery.params)}` : ""}`);
+		return new URL(`${this.client.options.host}/${this.client.options.baseUri}/${requestQuery.endpoint}${requestQuery.params ? `?${new URLSearchParams(requestQuery.params)}` : ""}`);
 	}
 
 	public async processQueue() {
@@ -72,8 +68,9 @@ export class RequestManager extends RequestQueue {
 			if (!item) {
 				continue;
 			}
-			console.debug(`RequestManager: Processing request [${item.query.id}]`, item.query);
+			console.debug(`RequestManager: Processing request`, item.query);
 			const url: URL = this.buildURL(item.query);
+			console.debug("RequestManager: Fetching", url);
 			const response: Promise<Response> = fetch(url, {
 				method: item.query.method,
 				cache: "no-store",
