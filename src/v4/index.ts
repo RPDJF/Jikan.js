@@ -1,1 +1,1 @@
-export * from './core/client.ts';
+export * from './core/JikanClient.ts';

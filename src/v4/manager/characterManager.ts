@@ -1,7 +1,7 @@
 import { Image } from "../models/base.ts";
 import { MangaRole } from "../models/character.ts";
 import { AnimeRole, Character, CharacterFull, Voice } from "../models/character.ts";
-import { BaseManager, BaseSearchParameters } from "./baseManager.ts";
+import { BaseManager, BaseSearchParameters } from "./BaseManager.ts";
 
 export interface CharacterSearchParameters extends BaseSearchParameters {
 	order_by?: "mal_id" | "name" | "favorites";

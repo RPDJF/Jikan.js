@@ -1,8 +1,8 @@
-import { CharacterManager, CharacterSearchParameters } from "../manager/characterManager.ts";
+import { CharacterManager, CharacterSearchParameters } from "../manager/CharacterManager.ts";
 import { Image } from "../models/base.ts";
 import { AnimeRole, Character, MangaRole, Voice } from "../models/character.ts";
-import { CacheManager, CacheOptions } from "./cache.ts";
-import { RequestManager } from "./request.ts";
+import { CacheManager, CacheOptions } from "./CacheManager.ts";
+import { RequestManager } from "./RequestManager.ts";
 
 export interface ClientOptions {
 	/**

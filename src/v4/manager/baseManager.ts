@@ -1,5 +1,5 @@
-import { APIRequestQuery } from "../core/api.ts";
-import { JikanClient } from "../core/client.ts";
+import { APIRequestQuery } from "../core/apiModels.ts";
+import { JikanClient } from "../core/JikanClient.ts";
 
 export enum BaseOrderBy {
 	mal_id = "mal_id",

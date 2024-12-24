@@ -1,5 +1,5 @@
-import { APIRequestQuery, APIRequestPromise } from "./api.ts";
-import { JikanClient } from "./client.ts";
+import { APIRequestQuery, APIRequestPromise } from "./apiModels.ts";
+import { JikanClient } from "./JikanClient.ts";
 
 export class RequestQueue {
 	private _queue: (APIRequestPromise)[] = [];
@@ -23,7 +23,7 @@ export class RequestQueue {
 	 */
     protected enqueue(requestPromise: APIRequestPromise) {
         if (this._size === this.maxSize && this.maxSize) {
-            throw new Error("Internal library request queue is full", { cause: "QueueFull" });
+            throw new Error(`Internal library request queue is full". Adding context like "Request queue exceeded the limit of ${this.maxSize}`, { cause: "QueueFull" });
         }
         this._queue.push(requestPromise);
         this._size++;
