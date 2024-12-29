@@ -1,6 +1,6 @@
 import { AnimeManager, AnimeSearchParameters } from "../managers/AnimeManager.ts";
 import { CharacterManager, CharacterSearchParameters } from "../managers/CharacterManager.ts";
-import { Anime, AnimeFull, CharacterRole } from "../models/anime.ts";
+import { Anime, AnimeEpisode, AnimeEpisodeFull, AnimeFull, CharacterRole } from "../models/anime.ts";
 import { Image, VoiceActors, Staff } from "../models/base.ts";
 import { AnimeRole, Character, MangaRole } from "../models/character.ts";
 import { CacheManager, CacheOptions } from "./CacheManager.ts";
@@ -141,4 +141,12 @@ export class JikanClient {
 	 * getAnimeStaff: Get an Anime's Staff from the Jikan API by its ID
 	 */
 	public getAnimeStaff(animeId: number): Promise<Staff[]> { return this.animeManager.getAnimeStaff(animeId); }
+	/**
+	 * getAnimeEpisodes: Get an Anime's Episodes from the Jikan API by its ID
+	 */
+	public getAnimeEpisodes(animeId: number, params?: AnimeSearchParameters): Promise<AnimeEpisode[]> { return this.animeManager.getAnimeEpisodes(animeId, params); }
+	/**
+	 * getAnimeEpisode: Get an Anime's Episode from the Jikan API by its ID and Episode number
+	 */
+	public getAnimeEpisode(animeId: number, episodeNumber: number): Promise<AnimeEpisodeFull> { return this.animeManager.getAnimeEpisode(animeId, episodeNumber); }
 }
