@@ -4,7 +4,7 @@ import { JikanClient } from "../../../src/index.ts";
 import { AnimeSearchParameters, AnimeStatus } from "../../../src/v4/managers/AnimeManager.ts";
 import { Anime } from "../../../src/v4/models/anime.ts";
 
-export default function (client: JikanClient) {
+export default function runAnimeManagerTests(client: JikanClient) {
 	// Tested value:
 	// is the length of the array 5?
 	Deno.test({
@@ -51,4 +51,37 @@ export default function (client: JikanClient) {
 			}
 		}
 	});
+
+	// Tested:
+	// test each getter method in the AnimeManager class
+	Deno.test({
+		name: "AnimeManager getters",
+		sanitizeResources: false,
+		sanitizeOps: false,
+	}, async () => {
+		await Promise.all([
+			client.getAnime(1).then((anime) => {
+				if (!anime.mal_id) {
+					throw new Error("The mal_id is not defined");
+				}
+			}),
+			client.getAnimeFull(1).then((anime) => {
+				if (!anime.mal_id) {
+					throw new Error("The mal_id is not defined");
+				}
+			}),
+			client.getAnimeCharacters(1).then((characters) => {
+				if (!characters.length) {
+					throw new Error("The array is empty");
+				}
+			}),
+			client.getAnimeStaff(1).then((staff) => {
+				if (!staff.length) {
+					throw new Error("The array is empty");
+				}
+			}),
+		]);
+	});
 }
+
+runAnimeManagerTests(new JikanClient());
