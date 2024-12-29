@@ -1,4 +1,4 @@
-import { Image, VoiceActors } from "../models/base.ts";
+import { CommonImage, VoiceActors } from "../models/base.ts";
 import { MangaRole } from "../models/character.ts";
 import { AnimeRole, Character, CharacterFull } from "../models/character.ts";
 import { BaseManager, BaseSearchParameters } from "./BaseManager.ts";
@@ -68,7 +68,7 @@ export class CharacterManager extends BaseManager {
 	 *
 	 * This method may throw an error if status is not between 200 and 300
 	 */
-	public getCharacterPictures(characterId: number): Promise<Image[]> {
-		return this._fetchData<Image[]>(this._buildAPIRequestQuery(characterId.toString(), undefined, "pictures"));
+	public getCharacterPictures(characterId: number): Promise<CommonImage[]> {
+		return this._fetchData<CommonImage[]>(this._buildAPIRequestQuery(characterId.toString(), undefined, "pictures"));
 	}
 }

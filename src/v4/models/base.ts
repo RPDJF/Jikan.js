@@ -1,4 +1,4 @@
-export interface Image {
+export interface CommonImage {
 	jpg?: {
 		image_url?: string;
 		small_image_url?: string;
@@ -7,6 +7,14 @@ export interface Image {
 		image_url?: string;
 		small_image_url?: string;
 	}
+}
+
+export interface ImageFull {
+	image_url?: string;
+	small_image_url?: string;
+	medium_image_url?: string;
+	large_image_url?: string;
+	maximum_image_url?: string;
 }
 
 export interface GenericModel {
@@ -24,14 +32,14 @@ export interface MalEntries {
 export interface Ressource {
 	mal_id: number;
 	url: string;
-	images: Image;
+	images: CommonImage;
 	title: string;
 }
 
 export interface Person {
 	mal_id: number;
 	url: string;
-	images: Image;
+	images: CommonImage;
 	name: string;
 }
 

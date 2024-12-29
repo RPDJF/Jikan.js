@@ -1,4 +1,4 @@
-import { Image, Ressource, VoiceActors } from "./base.ts";
+import { CommonImage, Ressource, VoiceActors } from "./base.ts";
 
 export interface AnimeRole {
 	role: string;
@@ -13,7 +13,7 @@ export interface MangaRole {
 export interface CharacterMinimal {
 	mal_id: number;
 	url: string;
-	images: Image;
+	images: CommonImage;
 	name: string;
 }
 

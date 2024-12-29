@@ -1,4 +1,4 @@
-import { Anime, AnimeFull, Rating, CharacterRole, AnimeEpisode, AnimeEpisodeFull } from "../models/anime.ts";
+import { Anime, AnimeFull, Rating, CharacterRole, AnimeEpisode, AnimeEpisodeFull, AnimeNews, AnimeForum, AnimeVideo } from "../models/anime.ts";
 import { Staff } from "../models/base.ts";
 import { BaseManager, BaseSearchParameters } from "./BaseManager.ts";
 
@@ -106,12 +106,27 @@ export class AnimeManager extends BaseManager {
 	public getAnimeEpisode(animeId: number, episodeNumber: number): Promise<AnimeEpisodeFull> {
 		return this._fetchData<AnimeEpisodeFull>(this._buildAPIRequestQuery(animeId.toString(), undefined, `episodes/${episodeNumber}`));
 	}
-
-	// TODO: AnimeEpisodes (testing) 
-	// TODO: AnimeEpisodesById (testing)
-	// TODO: AnimeNews
-	// TODO: AnimeForum
-	// TODO: AnimeVideos
+	/** getAnimeNews: Get an Anime's News from the Jikan API by its ID
+	 * 
+	 * This method may throw an error if status is not between 200 and 300
+	 */
+	public getAnimeNews(animeId: number): Promise<AnimeNews[]> {
+		return this._fetchData<AnimeNews[]>(this._buildAPIRequestQuery(animeId.toString(), undefined, "news"));
+	}
+	/** getAnimeForum: Get an Anime's Forum from the Jikan API by its ID
+	 * 
+	 * This method may throw an error if status is not between 200 and 300
+	 */
+	public getAnimeForum(animeId: number): Promise<AnimeForum[]> {
+		return this._fetchData<AnimeForum[]>(this._buildAPIRequestQuery(animeId.toString(), undefined, "forum"));
+	}
+	/** getAnimeVideos: Get an Anime's Videos from the Jikan API by its ID
+	 * 
+	 * This method may throw an error if status is not between 200 and 300
+	 */
+	public getAnimeVideos(animeId: number): Promise<AnimeVideo> {
+		return this._fetchData<AnimeVideo>(this._buildAPIRequestQuery(animeId.toString(), undefined, "videos"));
+	}
 	// TODO: AnimeVideosEpisodes
 	// TODO: AnimePictures
 	// TODO: AnimeStatistics

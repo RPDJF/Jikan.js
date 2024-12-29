@@ -1,7 +1,7 @@
 import { AnimeManager, AnimeSearchParameters } from "../managers/AnimeManager.ts";
 import { CharacterManager, CharacterSearchParameters } from "../managers/CharacterManager.ts";
-import { Anime, AnimeEpisode, AnimeEpisodeFull, AnimeFull, CharacterRole } from "../models/anime.ts";
-import { Image, VoiceActors, Staff } from "../models/base.ts";
+import { Anime, AnimeEpisode, AnimeEpisodeFull, AnimeForum, AnimeFull, AnimeNews, AnimeVideo, CharacterRole } from "../models/anime.ts";
+import { CommonImage, VoiceActors, Staff } from "../models/base.ts";
 import { AnimeRole, Character, MangaRole } from "../models/character.ts";
 import { CacheManager, CacheOptions } from "./CacheManager.ts";
 import { RequestManager } from "./RequestManager.ts";
@@ -118,7 +118,7 @@ export class JikanClient {
 	/**
 	 * getCharacterPictures: Get a Character's Pictures from the Jikan API by its ID
 	 */
-	public getCharacterPictures(characterId: number): Promise<Image[]> { return this.characterManager.getCharacterPictures(characterId); }
+	public getCharacterPictures(characterId: number): Promise<CommonImage[]> { return this.characterManager.getCharacterPictures(characterId); }
 	
 	// Facade methods for the AnimeManager
 	/**
@@ -149,4 +149,16 @@ export class JikanClient {
 	 * getAnimeEpisode: Get an Anime's Episode from the Jikan API by its ID and Episode number
 	 */
 	public getAnimeEpisode(animeId: number, episodeNumber: number): Promise<AnimeEpisodeFull> { return this.animeManager.getAnimeEpisode(animeId, episodeNumber); }
+	/**
+	 * getAnimeNews: Get an Anime's News from the Jikan API by its ID
+	 */
+	public getAnimeNews(animeId: number): Promise<AnimeNews[]> { return this.animeManager.getAnimeNews(animeId); }
+	/**
+	 * getAnimeForum: Get an Anime's Forum from the Jikan API by its ID
+	 */
+	public getAnimeForum(animeId: number): Promise<AnimeForum[]> { return this.animeManager.getAnimeForum(animeId); }
+	/**
+	 * getAnimeVideos: Get an Anime's Videos from the Jikan API by its ID
+	 */
+	public getAnimeVideos(animeId: number): Promise<AnimeVideo> { return this.animeManager.getAnimeVideos(animeId); }
 }

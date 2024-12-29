@@ -1,4 +1,4 @@
-import { MalEntries, VoiceActors, Image } from "./base.ts";
+import { MalEntries, VoiceActors, CommonImage, ImageFull } from "./base.ts";
 import { CharacterMinimal } from "./character.ts";
 
 export interface Title {
@@ -6,10 +6,14 @@ export interface Title {
     title: string;
 }
 
-export interface Trailer {
-    youtube_id: string;
-    url: string;
-    embed_url: string;
+export interface TrailerBase {
+	youtube_id?: string;
+	url?: string;
+	embed_url?: string;
+}
+
+export interface Trailer extends TrailerBase {
+	images?: ImageFull;
 }
 
 export enum Type {
@@ -96,11 +100,70 @@ export interface AnimeEpisodeFull {
 	synopsis?: string;
 }
 
+export interface AnimeNews {
+	mal_id: number;
+	url: string;
+	title: string;
+	date: string;
+	author_username: string;
+	author_url: string;
+	form_url: string;
+	images: CommonImage;
+	comments: number;
+	excerpt: string;
+}
+
+export interface LastComment {
+	url: string;
+	author_username: string;
+	author_url: string;
+	date?: string;
+}
+
+export interface AnimeForum {
+	mal_id: number;
+	url: string;
+	title: string;
+	date: string;
+	author_username: string;
+	author_url: string;
+	comments: number;
+	last_comment: LastComment;
+}
+
+export interface MusicVideo {
+	title: string;
+	video: Trailer;
+	meta: {
+		title?: string;
+		author?: string;
+	}
+}
+
+export interface AnimePromo {
+	title: string;
+	trailer: Trailer;
+}
+
+export interface VideoEpisode {
+	mal_id: number;
+	url: string;
+	title: string;
+	episode: string;
+	images: CommonImage;
+}
+
+export interface AnimeVideo {
+	promo: AnimePromo[];
+	episodes: VideoEpisode[];
+	music_videos: MusicVideo[];
+}
+
 export interface Anime {
 	mal_id: number;
 	url: string;
-	Images: Image;
-    trailer: Trailer;
+	Images: CommonImage;
+    trailer: TrailerBase;
     approved: boolean;
     titles: Title[];
     type?: Type;

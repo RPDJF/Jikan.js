@@ -80,13 +80,28 @@ export default function runAnimeManagerTests(client: JikanClient) {
 					throw new Error("The array is empty");
 				}
 			}),
+			client.getAnimeForum(1).then((forum) => {
+				if (!forum.length) {
+					throw new Error("The mal_id is not defined");
+				}
+			}),
 			client.getAnimeFull(1).then((anime) => {
 				if (!anime.mal_id) {
 					throw new Error("The mal_id is not defined");
 				}
 			}),
+			client.getAnimeNews(1).then((news) => {
+				if (!news.length) {
+					throw new Error("The array is empty");
+				}
+			}),
 			client.getAnimeStaff(1).then((staff) => {
 				if (!staff.length) {
+					throw new Error("The array is empty");
+				}
+			}),
+			client.getAnimeVideos(1).then((videos) => {
+				if (!videos.episodes.length) {
 					throw new Error("The array is empty");
 				}
 			}),
