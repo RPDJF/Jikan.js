@@ -1,34 +1,39 @@
 <img src="meta/banner.svg" alt="Jikan.js Banner" style="border-radius: 15px;">
 
-# Jikan.js - Unofficial Jikan API Wrapper for Deno
+# Jikan.js - Unofficial Jikan API Wrapper for Deno  🚀
 
-Jikan.js is a simple, easy-to-use and efficient wrapper for [Jikan API](https://github.com/jikan-me/jikan) written in TypeScript for Deno.
+**Jikan.js** is a **simple**, **efficient**, and **easy-to-use** library for interacting with the [Jikan API](https://github.com/jikan-me/jikan) — a RESTful API that brings MyAnimeList data to your fingertips!  
 
-This library provides a queue system to prevent rate limiting and allows you to fetch data from the Jikan API with ease. The library is designed to be simple and flexible, you can use it with your own self-hosted Jikan API or the official Jikan API (by default).
+Built with ❤️ in TypeScript, Jikan.js is designed for Deno and comes with powerful features like **rate-limiting**, **caching**, and **self-hosted API support**. Whether you're building the next anime tracker or just want to fetch your favorite characters, Jikan.js has you covered!  
 
-## Warning ⚠️ - And contribution
-This library is still in development and is not ready for production use. The main features are not implemented yet, and the library is not stable and really not ready for use. I want to make the first release by myself as an exercise to learn Deno, and then I'll open the project for contributions.
+⚠️ **Heads up!** This library is still a work in progress. The first release is coming soon, but you're welcome to follow along and share your feedback! 🙌
 
-Plus, this library is my first one, my first Deno project, first TypeScript project and mainly my first real project. So, don't expect too much from me, I'm still learning. Feel free to open an issue if you find a bug or bad code, I'll be happy to learn from you.
+---
 
-## What even is Jikan API?
-Jikan API is an unofficial MyAnimeList PHP API that scrapes data from MyAnimeList. It is a RESTful API that provides data for anime, manga, characters, people, search, top, season, schedule, and genre.
+## ✨ Why Jikan.js?
 
-Why not using the official MyAnimeList API then ? Well, these lazy bums at MyAnimeList don't have features like getting Character and Staff information, and don't even provide useful information like API rate limits. Jikan API is a community-driven project that provides a simple and easy-to-use API for MyAnimeList data.
+1. **Unleash the Power of MyAnimeList:** Fetch anime, manga, characters, and more with ease!  
+2. **No More Rate-Limit Headaches:** Built-in queue system to keep things smooth.  
+3. **Cache It Like a Pro:** Cache responses to save time and bandwidth.  
+4. **Fully Typed:** Enjoy TypeScript's sweet autocompletion and safety.  
+5. **Customizable:** Use the official Jikan API or your self-hosted version.  
 
-However, Jikan API doesn't have support for authenticated requests; I'll give that a shot in the future for this library.
+---
 
-## Why Deno?
-No real reason, I just wanted to try out Deno. I've been using Node.js for a long time, and I wanted to see how Deno is different from Node.js. I've heard that Deno is more secure, has better performance, and has a better module system than Node.js. So, I thought why not give it a try.
+## 🌟 Features (So Far...)
 
-## Features
-Jikan.js will provide you with the following features in his first release:
-- Fetch data from the Jikan API with ease.
-- Queue system to prevent rate limiting.
-- Interfaced responses for easy access to data.
-- Cache system to store responses for a certain amount of time.
+- ✅ Fetch data effortlessly from the Jikan API.  
+- ✅ Queue system to handle rate limits like a champ.  
+- ✅ Interfaced responses for clean and easy data handling.  
+- 🔄 Cache system to store responses for reuse (**in progress**).  
+- ✅ Support for self-hosted Jikan API setups.  
 
-## Roadmap 🗺️
+💡 **Coming Soon:**  
+- Full Jikan API v4 support, auto retry, and more! 🚧
+
+---
+
+## 🚧 Roadmap to Awesomeness 🗺️
 
 <table>
   <thead>
@@ -154,19 +159,18 @@ Jikan.js will provide you with the following features in his first release:
   </tbody>
 </table>
 
-## Getting Started 🚀
-### Warning ⚠️ (again)
-This library is still in development and is not ready for production use. The main features are not implemented yet, and the library is not stable and really not ready for use.
+## 🚀 Getting Started
 
-### Importing the library to your Deno project
-**note**: This library is not published to the Deno third-party module registry yet. This import statement may not work once the library is in a stable state.
+### 🛠️ Importing the Library
+**Note:** This library isn’t on the Deno registry yet. Stay tuned for updates!
 
-You can import the library to your Deno project by using the following import statement:
+
+To try it out now:
 ```typescript
 import { JikanClient } from "https://raw.githubusercontent.com/RPDJF/Jikan.js/refs/heads/main/src/index.ts";
 ```
 
-### Using the library
+### 🎯 Example Usage
 Here is an example of how you can use the library to fetch data from the Jikan API:
 ```typescript
 const client = new JikanClient();
@@ -176,9 +180,52 @@ client.getCharacter(1).then((character) => {
 });
 ```
 
-**note**: All of the methods in the library return a promise that resolves to the data fetched from the Jikan API. You can use the `then` method to access the data or use the `await` keyword to wait for the promise to resolve.
+You also can use your own self-hosted Jikan API:
+```typescript
+const client = new JikanClient({
+	host: "https://my-jikan-api.com",
+	baseUri: "/v4",
+});
+```
 
-Also keep in mind that these functions may throw an error if the request fails, so make sure to catch the error using a `try`/`catch` block and handle it accordingly to the http status code.
+**Pro Tip**: Always handle errors gracefully:
 
-## License 📜
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. ( Just want some credit for this repo if you use this library in your project 😉 )
+```typescript
+try {
+	const character = await client.getCharacter(1);
+	console.log(character.name);
+} catch (error) {
+	console.error(error);
+}
+```
+
+## 💬 What is Jikan API?
+
+[Jikan API](https://github.com/jikan-me/jikan) is an **unofficial MyAnimeList API** that scrapes MAL data. It provides information on anime, manga, characters, schedules, and more!  
+
+**Why Jikan over MAL’s official API?**  
+- More features (e.g., character & staff info).  
+- No weird rate limit mysteries.  
+- Community-driven goodness.  
+
+---
+
+## 🌌 Why Deno?
+
+Deno is **secure**, **fast**, and **modern** — the perfect playground for this library! Plus, it’s a refreshing break from Node.js. 🦕  
+
+---
+
+## 🛤️ What’s Next?
+
+I’m just getting started! Stay tuned for more features and a polished first release. Want to contribute or share ideas? Open an issue or fork the repo — I’d love to learn from you! 😊  
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License. Use it, share it, and don’t forget to give a ⭐ if you like it!  
+
+---
+
+✨ **Let’s build something awesome together!** ✨
