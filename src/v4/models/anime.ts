@@ -1,4 +1,4 @@
-import { BaseModel, MalEntries, VoiceActors } from "./base.ts";
+import { MalEntries, VoiceActors, Image } from "./base.ts";
 import { CharacterMinimal } from "./character.ts";
 
 export interface Title {
@@ -70,7 +70,36 @@ export interface CharacterRole {
 	voice_actors: VoiceActors[];
 }
 
-export interface Anime extends BaseModel {
+export interface AnimeEpisode {
+	mal_id: number;
+	url: string;
+	title: string;
+	title_japanese?: string;
+	title_romanji?: string;
+	aired?: string;
+	score?: number;
+	filler: boolean;
+	recap: boolean;
+	forum_url?: string;
+}
+
+export interface AnimeEpisodeFull {
+	mal_id: number;
+	url: string;
+	title: string;
+	title_japanese?: string;
+	title_romanji?: string;
+	duration?: number;
+	aired?: string;
+	filler: boolean;
+	recap: boolean;
+	synopsis?: string;
+}
+
+export interface Anime {
+	mal_id: number;
+	url: string;
+	Images: Image;
     trailer: Trailer;
     approved: boolean;
     titles: Title[];

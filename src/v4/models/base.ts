@@ -14,20 +14,24 @@ export interface GenericModel {
 	url: string;
 }
 
-export interface MalEntries extends GenericModel {
+export interface MalEntries {
+	mal_id: number;
+	url: string;
     type: string;
     name: string;
 }
 
-export interface BaseModel extends GenericModel {
+export interface Ressource {
+	mal_id: number;
+	url: string;
 	images: Image;
-}
-
-export interface Ressource extends BaseModel {
 	title: string;
 }
 
-export interface Person extends BaseModel {
+export interface Person {
+	mal_id: number;
+	url: string;
+	images: Image;
 	name: string;
 }
 
@@ -39,4 +43,9 @@ export interface VoiceActors {
 export interface Staff {
 	person: Person;
 	positions: string[];
+}
+
+export interface Pagination {
+	last_visible_page: number;
+	has_next_page: boolean;
 }

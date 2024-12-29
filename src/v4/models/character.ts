@@ -1,4 +1,4 @@
-import { BaseModel, Ressource, VoiceActors } from "./base.ts";
+import { Image, Ressource, VoiceActors } from "./base.ts";
 
 export interface AnimeRole {
 	role: string;
@@ -10,7 +10,10 @@ export interface MangaRole {
 	manga: Ressource;
 }
 
-export interface CharacterMinimal extends BaseModel {
+export interface CharacterMinimal {
+	mal_id: number;
+	url: string;
+	images: Image;
 	name: string;
 }
 
