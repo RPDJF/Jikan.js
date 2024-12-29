@@ -55,7 +55,7 @@ jobs:
           fi
 
           # Update the README badge
-           sed -i "s/Test%20Status-[^ ]*-.*/Test%20Status-${STATUS}-${COLOR}?logo=github&style=for-the-badge)/g" README.md
+           sed -i "s/\(Test%20Status-\)[^?]*\?/\1${STATUS}-${COLOR}/" README.md
 
       - name: Commit and Push Changes
         if: always()  # Always attempt to commit changes
