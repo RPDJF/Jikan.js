@@ -65,14 +65,24 @@ export default function runAnimeManagerTests(client: JikanClient) {
 					throw new Error("The mal_id is not defined");
 				}
 			}),
-			client.getAnimeFull(1).then((anime) => {
-				if (!anime.mal_id) {
-					throw new Error("The mal_id is not defined");
-				}
-			}),
 			client.getAnimeCharacters(1).then((characters) => {
 				if (!characters.length) {
 					throw new Error("The array is empty");
+				}
+			}),
+			client.getAnimeEpisode(1, 1).then((episode) => {
+				if (!episode.mal_id) {
+					throw new Error("The mal_id is not defined");
+				}
+			}),
+			client.getAnimeEpisodes(1).then((episodes) => {
+				if (!episodes.length) {
+					throw new Error("The array is empty");
+				}
+			}),
+			client.getAnimeFull(1).then((anime) => {
+				if (!anime.mal_id) {
+					throw new Error("The mal_id is not defined");
 				}
 			}),
 			client.getAnimeStaff(1).then((staff) => {

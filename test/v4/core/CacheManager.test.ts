@@ -1,6 +1,6 @@
 import { JikanClient } from "../../../src/index.ts";
 
-export default function runCacheManagerTests (client: JikanClient) {
+function runCacheManagerTests (client: JikanClient) {
 	// Will test the cache manager from the client
 
 	// Tested:
@@ -16,3 +16,5 @@ export default function runCacheManagerTests (client: JikanClient) {
 		}
 	});
 }
+
+runCacheManagerTests(new JikanClient());

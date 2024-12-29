@@ -4,7 +4,7 @@ import { JikanClient } from "../../../src/index.ts";
 import { CharacterOrder, CharacterSearchParameters } from "../../../src/v4/managers/CharacterManager.ts";
 import { Character } from "../../../src/v4/models/character.ts";
 
-export default function runCharacterManagerTests (client: JikanClient) {
+function runCharacterManagerTests (client: JikanClient) {
 	// Tested value:
 	// is the length of the array 5?
 	Deno.test({

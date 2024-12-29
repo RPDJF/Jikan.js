@@ -2,7 +2,7 @@ import { JikanClient } from "../../../src/index.ts";
 import { APIRequestQuery } from "../../../src/v4/core/apiModels.ts";
 import * as rgb from "https://deno.land/std/fmt/colors.ts";
 
-export default function runRequestManagerTests (client: JikanClient) {
+function runRequestManagerTests (client: JikanClient) {
 	// Will test the request manager from the client
 	
 	// Tested:
@@ -94,3 +94,5 @@ export default function runRequestManagerTests (client: JikanClient) {
 		});
 	});
 }
+
+runRequestManagerTests(new JikanClient());
