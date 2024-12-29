@@ -1,6 +1,6 @@
 {
     "tasks": {
-        "start": "deno run --allow-net --allow-env --allow-read --allow-write src/main.ts",
+        "test": "deno test --allow-net --allow-env --allow-read --allow-write --trace-leaks test/main.test.ts",
         "check": "deno check src/**/*.ts ; deno lint src/**/*.ts"
     }
 }
