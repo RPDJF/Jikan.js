@@ -92,4 +92,8 @@ export class CacheManager {
 			}
 		}
 	}
+
+	public get cachePath(): string {
+		return this.options.cachePath;
+	}
 }

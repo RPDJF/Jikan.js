@@ -60,7 +60,7 @@ export interface ClientOptions {
 	/**
 	 * Cache options (optional)
 	 */
-	cacheOptions?: CacheOptions;
+	cacheOptions?: Partial<CacheOptions>;
 };
 
 export class JikanClient {
