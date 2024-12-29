@@ -58,19 +58,14 @@ export class RequestManager extends RequestQueue {
 	}
 
 	public async processQueue() {
-		if (this._isProcessing) {
-			console.debug("RequestManager: Already processing queue");
-			return;
-		}
+		if (this._isProcessing) { return; }
 		this._isProcessing = true;
 		while (!this.isEmpty) {
 			const item: APIRequestPromise | undefined = this.dequeue();
 			if (!item) {
 				continue;
 			}
-			console.debug(`RequestManager: Processing request`, item.query);
 			const url: URL = this.buildURL(item.query);
-			console.debug("RequestManager: Fetching", url);
 			const response: Promise<Response> = fetch(url, {
 				method: item.query.method,
 				cache: "no-store",
@@ -82,6 +77,7 @@ export class RequestManager extends RequestQueue {
 			await new Promise(resolve => setTimeout(resolve, this.client.options.rateLimit));
 		}
 		this._isProcessing = false;
+
 	}
 
 	/**
@@ -94,7 +90,6 @@ export class RequestManager extends RequestQueue {
 	 * @returns promise of the response
 	 */
 	public request(requestQuery: APIRequestQuery): Promise<Response> {
-		console.debug("RequestManager: Enqueueing request", requestQuery);
 		return new Promise((resolve) => {
 			const requestPromise: APIRequestPromise = {
 				query: requestQuery,

@@ -1,5 +1,7 @@
+import { AnimeManager, AnimeSearchParameters } from "../managers/AnimeManager.ts";
 import { CharacterManager, CharacterSearchParameters } from "../managers/CharacterManager.ts";
-import { Image, VoiceActors } from "../models/base.ts";
+import { Anime, AnimeFull, CharacterRole } from "../models/anime.ts";
+import { Image, VoiceActors, Staff } from "../models/base.ts";
 import { AnimeRole, Character, MangaRole } from "../models/character.ts";
 import { CacheManager, CacheOptions } from "./CacheManager.ts";
 import { RequestManager } from "./RequestManager.ts";
@@ -78,12 +80,14 @@ export class JikanClient {
 	public readonly cacheManager: CacheManager;
 	public readonly requestManager: RequestManager;
 	public readonly characterManager: CharacterManager;
+	public readonly animeManager: AnimeManager;
 
 	public constructor (options?: Partial<ClientOptions>) {
 		this.options = JikanClient.setDefaultOptions(options);
 		this.cacheManager = new CacheManager(this.options.cacheOptions);
 		this.requestManager = new RequestManager(this);
 		this.characterManager = new CharacterManager(this);
+		this.animeManager = new AnimeManager(this);
 	}
 
 	// Facade methods for the CharacterManager
@@ -115,8 +119,26 @@ export class JikanClient {
 	 * getCharacterPictures: Get a Character's Pictures from the Jikan API by its ID
 	 */
 	public getCharacterPictures(characterId: number): Promise<Image[]> { return this.characterManager.getCharacterPictures(characterId); }
-
-
-
-
+	
+	// Facade methods for the AnimeManager
+	/**
+	 * getAnimes: Get an Anime array from the Jikan API
+	 */
+	public getAnimes(params?: AnimeSearchParameters): Promise<Anime[]> { return this.animeManager.getAnimes(params); }
+	/**
+	 * getAnimeFull: Get an AnimeFull from the Jikan API by its ID
+	 */
+	public getAnimeFull(animeId: number): Promise<AnimeFull> { return this.animeManager.getAnimeFull(animeId); }
+	/**
+	 * getAnime: Get an Anime from the Jikan API by its ID
+	 */
+	public getAnime(animeId: number): Promise<Anime> { return this.animeManager.getAnime(animeId); }
+	/**
+	 * getAnimeCharacters: Get an Anime's Characters from the Jikan API by its ID
+	 */
+	public getAnimeCharacters(animeId: number): Promise<CharacterRole[]> { return this.animeManager.getAnimeCharacters(animeId); }
+	/**
+	 * getAnimeStaff: Get an Anime's Staff from the Jikan API by its ID
+	 */
+	public getAnimeStaff(animeId: number): Promise<Staff[]> { return this.animeManager.getAnimeStaff(animeId); }
 }
