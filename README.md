@@ -2,7 +2,7 @@
 
 # Jikan.js - Unofficial Jikan API Wrapper for Deno  🚀
 
-![Test Status](https://img.shields.io/badge/Test%20Status-Not%20Tested%20Yet-orange)
+![Test Status](https://img.shields.io/badge/Test%20Status-Passing-brightgreen)
 
 **Jikan.js** is a **simple**, **efficient**, and **easy-to-use** library for interacting with the [Jikan API](https://github.com/jikan-me/jikan) — a RESTful API that brings MyAnimeList data to your fingertips!  
 
