@@ -1,4 +1,4 @@
-import { Anime, AnimeFull, Rating, CharacterRole } from "../models/anime.ts";
+import { Anime, AnimeFull, Rating, CharacterRole, AnimeEpisode, AnimeEpisodeFull } from "../models/anime.ts";
 import { Staff } from "../models/base.ts";
 import { BaseManager, BaseSearchParameters } from "./BaseManager.ts";
 
@@ -50,6 +50,10 @@ export interface AnimeSearchParameters extends BaseSearchParameters {
 	end_date?: string;
 };
 
+export interface EpisodeSearchParameters {
+	page?: number;
+}
+
 export class AnimeManager extends BaseManager {
 	public readonly endpoint: string = "anime";
 
@@ -88,8 +92,23 @@ export class AnimeManager extends BaseManager {
 	public getAnimeStaff(animeId: number): Promise<Staff[]> {
 		return this._fetchData<Staff[]>(this._buildAPIRequestQuery(animeId.toString(), undefined, "staff"));
 	}
-	// TODO: AnimeEpisodes
-	// TODO: AnimeEpisodesById
+	/** getAnimeEpisodes: Get an Anime's Episodes from the Jikan API by its ID
+	 * 
+	 * This method may throw an error if status is not between 200 and 300
+	 */
+	public getAnimeEpisodes(animeId: number, params?: EpisodeSearchParameters): Promise<AnimeEpisode[]> {
+		return this._fetchData<AnimeEpisode[]>(this._buildAPIRequestQuery(animeId.toString(), params, "episodes"));
+	}
+	/** getAnimeEpisode: Get an Anime's Episode from the Jikan API by its ID and Episode number
+	 * 
+	 * This method may throw an error if status is not between 200 and 300
+	 */
+	public getAnimeEpisode(animeId: number, episodeNumber: number): Promise<AnimeEpisodeFull> {
+		return this._fetchData<AnimeEpisodeFull>(this._buildAPIRequestQuery(animeId.toString(), undefined, `episodes/${episodeNumber}`));
+	}
+
+	// TODO: AnimeEpisodes (testing) 
+	// TODO: AnimeEpisodesById (testing)
 	// TODO: AnimeNews
 	// TODO: AnimeForum
 	// TODO: AnimeVideos
