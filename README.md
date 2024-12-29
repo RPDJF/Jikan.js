@@ -2,7 +2,12 @@
 
 # Jikan.js - Unofficial Jikan API Wrapper for Deno  🚀
 
-![Test Status](https://img.shields.io/badge/Test%20Status-Passing-brightgreen)
+![Development Status](https://img.shields.io/badge/Status-In%20Development-orange?style=for-the-badge&logo=github)
+![Test Status](https://img.shields.io/badge/Test%20Status-Passing-brightgreen?logo=github&style=for-the-badge)
+
+![Deno badge](https://img.shields.io/badge/Deno-464647?style=for-the-badge&logo=deno&logoColor=white)
+![TypeScript badge](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+
 
 **Jikan.js** is a **simple**, **efficient**, and **easy-to-use** library for interacting with the [Jikan API](https://github.com/jikan-me/jikan) — a RESTful API that brings MyAnimeList data to your fingertips!  
 
@@ -31,7 +36,7 @@ Built with ❤️ in TypeScript, Jikan.js is designed for Deno and comes with po
 - ✅ Support for self-hosted Jikan API setups.  
 
 💡 **Coming Soon:**  
-- Full Jikan API v4 support, auto retry, and more! 🚧
+- Full Jikan API v4 support, NodeJS support (or alternative repo), automatic retries, and more!
 
 ---
 
