@@ -47,40 +47,49 @@ Built with ❤️ in TypeScript, Jikan.js is designed for Deno and comes with po
     <tr>
       <th>Feature</th>
       <th>Status</th>
+	  <th>Will be in first stable release?</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>Stable release</td>
       <td>🔄 In Progress</td>
+	  <td>Obviously 🥲</td>
     </tr>
     <tr>
       <td>Full documentation</td>
       <td>❌ Not Started</td>
+	  <td>Maybe after❔</td>
     </tr>
     <tr>
       <td>Queue system to prevent rate limiting</td>
       <td>✅ Complete</td>
+	  <td>✅</td>
     </tr>
     <tr>
       <td>Interfaced responses for easy access to data</td>
       <td>✅ Complete</td>
+	  <td>✅</td>
     </tr>
     <tr>
       <td>Cache system to store responses for a certain amount of time</td>
       <td>🔄 In Progress</td>
+	  <td>✅</td>
     </tr>
     <tr>
       <td>Support for self-hosted Jikan API</td>
       <td>✅ Complete</td>
+	  <td>✅</td>
     </tr>
     <tr>
       <td>Support for authenticated requests</td>
       <td>❌ Not Started</td>
+	  <td>❌</td>
     </tr>
 	<tr>
 	  <td>Support for request retries (not part of stable)</td>
 	  <td>❌ Not Started</td>
+	  <td>❌</td>
     <tr>
       <td>
         <details>
@@ -162,6 +171,7 @@ Built with ❤️ in TypeScript, Jikan.js is designed for Deno and comes with po
         </details>
       </td>
       <td>🔄 In Progress</td>
+	  <td>✅</td>
     </tr>
   </tbody>
 </table>
