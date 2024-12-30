@@ -1,11 +1,6 @@
 import { MalEntries, VoiceActors, CommonImage, ImageFull } from "./base.ts";
 import { CharacterMinimal } from "./character.ts";
 
-export interface Title {
-    type: string;
-    title: string;
-}
-
 export interface TrailerBase {
 	youtube_id?: string;
 	url?: string;
@@ -25,23 +20,11 @@ export enum Type {
     Music = "Music"
 }
 
-export interface daterange {
-    from: string | null;
-    to: string | null;
-}
-
 export enum Season {
     Summer = "summer",
     Winter = "winter",
     Spring = "spring",
     Fall = "fall"
-}
-
-export interface Broadcast {
-    day: string | null;
-    time: string | null;
-    timezone: string | null;
-    string: string | null;
 }
 
 export interface Relation {
@@ -183,13 +166,19 @@ export interface Anime {
 	Images: CommonImage;
     trailer: TrailerBase;
     approved: boolean;
-    titles: Title[];
+    titles: {
+		type: string;
+		title: string;
+	}[];
     type?: Type;
     source?: string;
     episodes?: number;
     status?: string;
     airing: boolean;
-    aired: daterange;
+    aired: {
+		from?: string;
+		to?: string;
+	};
     duration?: string;
     rating?: Rating;
     score?: number;
@@ -202,7 +191,12 @@ export interface Anime {
     background?: string;
     season?: Season;
     year?: number;
-    broadcast: Broadcast;
+    broadcast: {
+		day?: string;
+		time?: string;
+		timezone?: string;
+		string?: string;
+	};
     producers: MalEntries[];
     licensors: MalEntries[];
     studios: MalEntries[];
