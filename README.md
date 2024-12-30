@@ -95,7 +95,7 @@ Built with ❤️ in TypeScript, Jikan.js is designed for Deno and comes with po
             <tbody>
               <tr>
                 <td>Anime</td>
-                <td>🔄 In Progress</td>
+                <td>✅ Complete</td>
               </tr>
               <tr>
                 <td>Characters</td>
@@ -115,7 +115,7 @@ Built with ❤️ in TypeScript, Jikan.js is designed for Deno and comes with po
               </tr>
               <tr>
                 <td>Manga</td>
-                <td>❌ Not Started</td>
+                <td>🔄 In Progress</td>
               </tr>
               <tr>
                 <td>People</td>

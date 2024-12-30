@@ -54,6 +54,11 @@ export interface AnimeForumSearchParameters {
 	filter: AnimeModel.ForumFilter | string;
 }
 
+export interface AnimeReviewsParameters extends PageSearchParameter {
+	preliminary?: boolean;
+	spoiler?: boolean;
+}
+
 export class AnimeManager extends BaseManager {
 	public readonly endpoint: string = "anime";
 
@@ -153,9 +158,34 @@ export class AnimeManager extends BaseManager {
 	public getAnimeUserUpdates(animeId: number, params?: PageSearchParameter): Promise<AnimeModel.AnimeUserUpdate[]> {
 		return this._fetchData<AnimeModel.AnimeUserUpdate[]>(this._buildAPIRequestQuery(animeId.toString(), params, "userupdates"));
 	}
-	// TODO: AnimeReviews
-	// TODO: AnimeRelations
-	// TODO: AnimeThemes
-	// TODO: AnimeExternal
-	// TODO: AnimeStreaming
+	/**
+	 * getAnimeReviews: Get an Anime's Reviews from the Jikan API by its ID
+	 */
+	public getAnimeReviews(animeId: number, params?: AnimeReviewsParameters): Promise<AnimeModel.AnimeReview[]> {
+		return this._fetchData<AnimeModel.AnimeReview[]>(this._buildAPIRequestQuery(animeId.toString(), params, "reviews"));
+	}
+	/**
+	 * getAnimeRelations: Get an Anime's Relations from the Jikan API by its ID
+	 */
+	public getAnimeRelations(animeId: number): Promise<AnimeModel.Relation[]> {
+		return this._fetchData<AnimeModel.Relation[]>(this._buildAPIRequestQuery(animeId.toString(), undefined, "relations"));
+	}
+	/**
+	 * getAnimeThemes: Get an Anime's Themes from the Jikan API by its ID
+	 */
+	public getAnimeThemes(animeId: number): Promise<AnimeModel.Theme> {
+		return this._fetchData<AnimeModel.Theme>(this._buildAPIRequestQuery(animeId.toString(), undefined, "themes"));
+	}
+	/**
+	 * getAnimeExternal: Get an Anime's External from the Jikan API by its ID
+	 */
+	public getAnimeExternal(animeId: number): Promise<AnimeModel.External[]> {
+		return this._fetchData<AnimeModel.External[]>(this._buildAPIRequestQuery(animeId.toString(), undefined, "external"));
+	}
+	/**
+	 * getAnimeStreaming: Get an Anime's Streaming from the Jikan API by its ID
+	 */
+	public getAnimeStreaming(animeId: number): Promise<AnimeModel.External[]> {
+		return this._fetchData<AnimeModel.External[]>(this._buildAPIRequestQuery(animeId.toString(), undefined, "streaming"));
+	}
 }

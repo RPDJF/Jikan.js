@@ -1,4 +1,4 @@
-import { AnimeManager, AnimeSearchParameters } from "../managers/AnimeManager.ts";
+import { AnimeManager, AnimeReviewsParameters, AnimeSearchParameters } from "../managers/AnimeManager.ts";
 import { CharacterManager, CharacterSearchParameters } from "../managers/CharacterManager.ts";
 import * as AnimeModel from "../models/anime.ts";
 import * as BaseModel from "../models/base.ts";
@@ -185,4 +185,24 @@ export class JikanClient {
 	 * getAnimeUserUpdates: Get an Anime's User Updates from the Jikan API by its ID
 	 */
 	public getAnimeUserUpdates(animeId: number): Promise<AnimeModel.AnimeUserUpdate[]> { return this.animeManager.getAnimeUserUpdates(animeId); }
+	/**
+	 * getAnimeReviews: Get an Anime's Reviews from the Jikan API by its ID
+	 */
+	public getAnimeReviews(animeId: number, params?: AnimeReviewsParameters): Promise<AnimeModel.AnimeReview[]> { return this.animeManager.getAnimeReviews(animeId, params); }
+	/**
+	 * getAnimeForum: Get an Anime's Forum from the Jikan API by its ID
+	 */
+	public getAnimeRelations(animeId: number): Promise<AnimeModel.Relation[]> { return this.animeManager.getAnimeRelations(animeId); }
+	/**
+	 * getAnimeThemes: Get an Anime's Themes from the Jikan API by its ID
+	 */
+	public getAnimeThemes(animeId: number): Promise<AnimeModel.Theme> { return this.animeManager.getAnimeThemes(animeId); }
+	/**
+	 * getAnimeExternal: Get an Anime's External Links from the Jikan API by its ID
+	 */
+	public getAnimeExternal(animeId: number): Promise<AnimeModel.External[]> { return this.animeManager.getAnimeExternal(animeId); }
+	/**
+	 * getAnimeStreaming: Get an Anime's Streaming Links from the Jikan API by its ID
+	 */
+	public getAnimeStreaming(animeId: number): Promise<AnimeModel.External[]> { return this.animeManager.getAnimeStreaming(animeId); }
 }

@@ -80,6 +80,11 @@ export default function runAnimeManagerTests(client: JikanClient) {
 					throw new Error("The array is empty");
 				}
 			}),
+			client.getAnimeExternal(1).then((external) => {
+				if (!external.length) {
+					throw new Error("The array is empty");
+				}
+			}),
 			client.getAnimeForum(1).then((forum) => {
 				if (!forum.length) {
 					throw new Error("The mal_id is not defined");
@@ -110,6 +115,16 @@ export default function runAnimeManagerTests(client: JikanClient) {
 					throw new Error("The array is empty");
 				}
 			}),
+			client.getAnimeRelations(1).then((relations) => {
+				if (!relations.length) {
+					throw new Error("The array is empty");
+				}
+			}),
+			client.getAnimeReviews(1).then((reviews) => {
+				if (!reviews.length) {
+					throw new Error("The array is empty");
+				}
+			}),
 			client.getAnimeStaff(1).then((staff) => {
 				if (!staff.length) {
 					throw new Error("The array is empty");
@@ -118,6 +133,16 @@ export default function runAnimeManagerTests(client: JikanClient) {
 			client.getAnimeStatistics(1).then((stats) => {
 				if (!stats.total) {
 					throw new Error("Stats total is not defined");
+				}
+			}),
+			client.getAnimeStreaming(1).then((streaming) => {
+				if (!streaming.length) {
+					throw new Error("The array is empty");
+				}
+			}),
+			client.getAnimeThemes(1).then((themes) => {
+				if (!themes.openings.length || !themes.endings.length) {
+					throw new Error("The array is empty");
 				}
 			}),
 			client.getAnimeUserUpdates(1).then((updates) => {
