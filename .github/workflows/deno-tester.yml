@@ -66,6 +66,13 @@ jobs:
           # Update the README badge
            sed -i "s/\(Test%20Status-\)[^?]*\?/\1${STATUS}-${COLOR}/" README.md
 
+          # Update the docs
+          # workaround for deno docs broken generation
+          mkdir docs
+          deno doc --output="docs/tmp" --html --name="Jikan.JS" src/v4/index.ts
+          mv docs/tmp/* docs/
+          rmdir docs/tmp
+
       - name: Commit and Push Changes
         if: always() # Always attempt to commit changes
         run: |
