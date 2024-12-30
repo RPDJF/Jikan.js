@@ -23,7 +23,7 @@ export abstract class BaseManager {
 		this.client = client;
 	}
 
-	protected _buildAPIRequestQuery(subPath?:string, searchParams?: BaseSearchParameters, suffix?: string): APIRequestQuery {
+	protected _buildAPIRequestQuery(subPath?:string, searchParams?: BaseSearchParameters | object, suffix?: string): APIRequestQuery {
 		const params = new URLSearchParams();
 		if (searchParams) {
 			Object.entries(searchParams).forEach(([key, value]) => {

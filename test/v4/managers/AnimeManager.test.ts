@@ -105,6 +105,11 @@ export default function runAnimeManagerTests(client: JikanClient) {
 					throw new Error("The array is empty");
 				}
 			}),
+			client.getAnimeRecommendations(1).then((recommendations) => {
+				if (!recommendations.length) {
+					throw new Error("The array is empty");
+				}
+			}),
 			client.getAnimeStaff(1).then((staff) => {
 				if (!staff.length) {
 					throw new Error("The array is empty");
@@ -113,6 +118,11 @@ export default function runAnimeManagerTests(client: JikanClient) {
 			client.getAnimeStatistics(1).then((stats) => {
 				if (!stats.total) {
 					throw new Error("Stats total is not defined");
+				}
+			}),
+			client.getAnimeUserUpdates(1).then((updates) => {
+				if (!updates.length) {
+					throw new Error("The array is empty");
 				}
 			}),
 			client.getAnimeVideos(1).then((videos) => {

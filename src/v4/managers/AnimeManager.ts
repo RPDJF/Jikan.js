@@ -1,5 +1,5 @@
 import * as AnimeModel from "../models/anime.ts";
-import { CommonImage, Staff } from "../models/base.ts";
+import { CommonImage, Staff, PageSearchParameter } from "../models/base.ts";
 import { BaseManager, BaseSearchParameters } from "./BaseManager.ts";
 
 export enum AnimeType {
@@ -50,8 +50,8 @@ export interface AnimeSearchParameters extends BaseSearchParameters {
 	end_date?: string;
 };
 
-export interface EpisodeSearchParameters {
-	page?: number;
+export interface AnimeForumSearchParameters {
+	filter: AnimeModel.ForumFilter | string;
 }
 
 export class AnimeManager extends BaseManager {
@@ -90,7 +90,7 @@ export class AnimeManager extends BaseManager {
 	/**
 	 * getAnimeEpisodes: Get an Anime's Episodes from the Jikan API by its ID
 	 */
-	public getAnimeEpisodes(animeId: number, params?: EpisodeSearchParameters): Promise<AnimeModel.AnimeEpisode[]> {
+	public getAnimeEpisodes(animeId: number, params?: PageSearchParameter): Promise<AnimeModel.AnimeEpisode[]> {
 		return this._fetchData<AnimeModel.AnimeEpisode[]>(this._buildAPIRequestQuery(animeId.toString(), params, "episodes"));
 	}
 	/**
@@ -102,14 +102,14 @@ export class AnimeManager extends BaseManager {
 	/**
 	 * getAnimeNews: Get an Anime's News from the Jikan API by its ID
 	 */
-	public getAnimeNews(animeId: number): Promise<AnimeModel.AnimeNews[]> {
-		return this._fetchData<AnimeModel.AnimeNews[]>(this._buildAPIRequestQuery(animeId.toString(), undefined, "news"));
+	public getAnimeNews(animeId: number, params?: PageSearchParameter): Promise<AnimeModel.AnimeNews[]> {
+		return this._fetchData<AnimeModel.AnimeNews[]>(this._buildAPIRequestQuery(animeId.toString(), params, "news"));
 	}
 	/**
 	 * getAnimeForum: Get an Anime's Forum from the Jikan API by its ID
 	 */
-	public getAnimeForum(animeId: number): Promise<AnimeModel.AnimeForum[]> {
-		return this._fetchData<AnimeModel.AnimeForum[]>(this._buildAPIRequestQuery(animeId.toString(), undefined, "forum"));
+	public getAnimeForum(animeId: number, params?: AnimeForumSearchParameters): Promise<AnimeModel.AnimeForum[]> {
+		return this._fetchData<AnimeModel.AnimeForum[]>(this._buildAPIRequestQuery(animeId.toString(), params, "forum"));
 	}
 	/**
 	 * getAnimeVideos: Get an Anime's Videos from the Jikan API by its ID
@@ -120,8 +120,8 @@ export class AnimeManager extends BaseManager {
 	/**
 	 * getAnimeVideosEpisodes: Get an Anime's Videos
 	 */
-	public getAnimeVideosEpisodes(animeId: number): Promise<AnimeModel.VideoEpisode[]> {
-		return this._fetchData<AnimeModel.VideoEpisode[]>(this._buildAPIRequestQuery(animeId.toString(), undefined, "videos/episodes"));
+	public getAnimeVideosEpisodes(animeId: number, params?: PageSearchParameter): Promise<AnimeModel.VideoEpisode[]> {
+		return this._fetchData<AnimeModel.VideoEpisode[]>(this._buildAPIRequestQuery(animeId.toString(), params, "videos/episodes"));
 	}
 	/**
 	 * getAnimePictures: Get an Anime's Pictures from the Jikan API by its ID
@@ -141,8 +141,18 @@ export class AnimeManager extends BaseManager {
 	public getAnimeMoreInfo(animeId: number): Promise<AnimeModel.AnimeMoreInfo> {
 		return this._fetchData<AnimeModel.AnimeMoreInfo>(this._buildAPIRequestQuery(animeId.toString(), undefined, "moreinfo"));
 	}
-	// TODO: AnimeRecommendations
-	// TODO: AnimeUserUpdates
+	/**
+	 * getAnimeRecommendations: Get an Anime's Recommendations from the Jikan API by its ID
+	 */
+	public getAnimeRecommendations(animeId: number): Promise<AnimeModel.AnimeMeta[]> {
+		return this._fetchData<AnimeModel.AnimeMeta[]>(this._buildAPIRequestQuery(animeId.toString(), undefined, "recommendations"));
+	}
+	/**
+	 * getAnimeUserUpdates: Get an Anime's User Updates from the Jikan API by its ID
+	 */
+	public getAnimeUserUpdates(animeId: number, params?: PageSearchParameter): Promise<AnimeModel.AnimeUserUpdate[]> {
+		return this._fetchData<AnimeModel.AnimeUserUpdate[]>(this._buildAPIRequestQuery(animeId.toString(), params, "userupdates"));
+	}
 	// TODO: AnimeReviews
 	// TODO: AnimeRelations
 	// TODO: AnimeThemes

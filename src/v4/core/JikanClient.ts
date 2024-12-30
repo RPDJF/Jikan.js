@@ -144,7 +144,7 @@ export class JikanClient {
 	/**
 	 * getAnimeEpisodes: Get an Anime's Episodes from the Jikan API by its ID
 	 */
-	public getAnimeEpisodes(animeId: number, params?: AnimeSearchParameters): Promise<AnimeModel.AnimeEpisode[]> { return this.animeManager.getAnimeEpisodes(animeId, params); }
+	public getAnimeEpisodes(animeId: number, params?: BaseModel.PageSearchParameter): Promise<AnimeModel.AnimeEpisode[]> { return this.animeManager.getAnimeEpisodes(animeId, params); }
 	/**
 	 * getAnimeEpisode: Get an Anime's Episode from the Jikan API by its ID and Episode number
 	 */
@@ -152,7 +152,7 @@ export class JikanClient {
 	/**
 	 * getAnimeNews: Get an Anime's News from the Jikan API by its ID
 	 */
-	public getAnimeNews(animeId: number): Promise<AnimeModel.AnimeNews[]> { return this.animeManager.getAnimeNews(animeId); }
+	public getAnimeNews(animeId: number, params?: BaseModel.PageSearchParameter): Promise<AnimeModel.AnimeNews[]> { return this.animeManager.getAnimeNews(animeId, params); }
 	/**
 	 * getAnimeForum: Get an Anime's Forum from the Jikan API by its ID
 	 */
@@ -164,7 +164,7 @@ export class JikanClient {
 	/**
 	 * getAnimeVideosEpisodes: Get an Anime's Videos Episodes from the Jikan API by its ID
 	 */
-	public getAnimeVideosEpisodes(animeId: number): Promise<AnimeModel.VideoEpisode[]> { return this.animeManager.getAnimeVideosEpisodes(animeId); }
+	public getAnimeVideosEpisodes(animeId: number, params?: BaseModel.PageSearchParameter): Promise<AnimeModel.VideoEpisode[]> { return this.animeManager.getAnimeVideosEpisodes(animeId, params); }
 	/**
 	 * getAnimePictures: Get an Anime's Pictures from the Jikan API by its ID
 	 */
@@ -177,4 +177,12 @@ export class JikanClient {
 	 * getAnimeMoreInfo: Get an Anime's More Info from the Jikan API by its ID
 	 */
 	public getAnimeMoreInfo(animeId: number): Promise<AnimeModel.AnimeMoreInfo> { return this.animeManager.getAnimeMoreInfo(animeId); }
+	/**
+	 * getAnimeRecommendations: Get an Anime's Recommendations from the Jikan API by its ID
+	 */
+	public getAnimeRecommendations(animeId: number): Promise<AnimeModel.AnimeMeta[]> { return this.animeManager.getAnimeRecommendations(animeId); }
+	/**
+	 * getAnimeUserUpdates: Get an Anime's User Updates from the Jikan API by its ID
+	 */
+	public getAnimeUserUpdates(animeId: number): Promise<AnimeModel.AnimeUserUpdate[]> { return this.animeManager.getAnimeUserUpdates(animeId); }
 }

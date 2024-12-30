@@ -1,5 +1,26 @@
 import { MalEntries, VoiceActors, CommonImage, ImageFull } from "./base.ts";
 import { CharacterMinimal } from "./character.ts";
+import { UserMeta } from "./user.ts";
+
+export interface AnimeImages {
+	jpg?: {
+		image_url?: string;
+		small_image_url?: string;
+		large_image_url?: string;
+	};
+	webp?: {
+		image_url?: string;
+		small_image_url?: string;
+		large_image_url?: string;
+	};
+}
+
+export interface AnimeMeta {
+	mal_id: number;
+	url: string;
+	images: AnimeImages;
+	title: string;
+}
 
 export interface TrailerBase {
 	youtube_id?: string;
@@ -49,6 +70,12 @@ export enum Rating {
     R17 = "R - 17+ (violence & profanity)",
     R = "R+ - Mild Nudity",
     RX = "Rx - Hentai"
+}
+
+export enum ForumFilter {
+	All = "all",
+	Episode = "episode",
+	Other = "other"
 }
 
 export interface CharacterRole {
@@ -160,10 +187,19 @@ export interface AnimeMoreInfo {
 	moreinfo?: string;
 }
 
+export interface AnimeUserUpdate {
+	user: UserMeta;
+	score?: number;
+	status: string;
+	episodes_seen?: number;
+	episodes_total?: number;
+	date: string;
+}
+
 export interface Anime {
 	mal_id: number;
 	url: string;
-	Images: CommonImage;
+	Images: AnimeImages;
     trailer: TrailerBase;
     approved: boolean;
     titles: {

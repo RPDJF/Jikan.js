@@ -1,12 +1,7 @@
 export interface CommonImage {
 	jpg?: {
 		image_url?: string;
-		small_image_url?: string;
 	},
-	webp?: {
-		image_url?: string;
-		small_image_url?: string;
-	}
 }
 
 export interface ImageFull {
@@ -15,6 +10,10 @@ export interface ImageFull {
 	medium_image_url?: string;
 	large_image_url?: string;
 	maximum_image_url?: string;
+}
+
+export interface PageSearchParameter {
+	page?: number;
 }
 
 export interface GenericModel {
