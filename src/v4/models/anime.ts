@@ -1,3 +1,4 @@
+import { AnimeRating } from "../managers/AnimeManager.ts";
 import { CommonImage, ImageFull, MalEntries, VoiceActors } from "./base.ts";
 import { CharacterMinimal } from "./character.ts";
 import { UserMeta } from "./user.ts";
@@ -61,21 +62,6 @@ export interface Theme {
 export interface External {
   name: string;
   url: string;
-}
-
-export enum Rating {
-  G = "G - All Ages",
-  PG = "PG - Children",
-  PG13 = "PG-13 - Teens 13 or older",
-  R17 = "R - 17+ (violence & profanity)",
-  R = "R+ - Mild Nudity",
-  RX = "Rx - Hentai",
-}
-
-export enum ForumFilter {
-  All = "all",
-  Episode = "episode",
-  Other = "other",
 }
 
 export interface CharacterRole {
@@ -240,7 +226,7 @@ export interface Anime {
     to?: string;
   };
   duration?: string;
-  rating?: Rating;
+  rating?: AnimeRating;
   score?: number;
   scored_by?: number;
   rank?: number;

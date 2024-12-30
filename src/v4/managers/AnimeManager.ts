@@ -2,6 +2,21 @@ import * as AnimeModel from "../models/anime.ts";
 import { CommonImage, PageSearchParameter, Staff } from "../models/base.ts";
 import { BaseManager, BaseSearchParameters } from "./BaseManager.ts";
 
+export enum AnimeForumFilter {
+  All = "all",
+  Episode = "episode",
+  Other = "other",
+}
+
+export enum AnimeRating {
+  G = "G - All Ages",
+  PG = "PG - Children",
+  PG13 = "PG-13 - Teens 13 or older",
+  R17 = "R - 17+ (violence & profanity)",
+  R = "R+ - Mild Nudity",
+  RX = "Rx - Hentai",
+}
+
 export enum AnimeType {
   TV = "tv",
   Movie = "movie",
@@ -40,7 +55,7 @@ export interface AnimeSearchParameters extends BaseSearchParameters {
   min_score?: number;
   max_score?: number;
   status?: AnimeStatus | string;
-  rating?: AnimeModel.Rating | string;
+  rating?: AnimeRating | string;
   sfw?: boolean;
   genres?: string;
   genres_exclude?: string;
@@ -51,7 +66,7 @@ export interface AnimeSearchParameters extends BaseSearchParameters {
 }
 
 export interface AnimeForumSearchParameters {
-  filter: AnimeModel.ForumFilter | string;
+  filter: AnimeForumFilter | string;
 }
 
 export interface AnimeReviewsParameters extends PageSearchParameter {
@@ -59,6 +74,7 @@ export interface AnimeReviewsParameters extends PageSearchParameter {
   spoiler?: boolean;
 }
 
+// test
 export class AnimeManager extends BaseManager {
   public readonly endpoint: string = "anime";
 
