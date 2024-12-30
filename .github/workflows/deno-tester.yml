@@ -69,8 +69,8 @@ jobs:
           # Update the docs
           rm -rf docs
           mkdir docs
-          touch docs/.nojekyll
           deno doc --html --name="Jikan.JS" src/v4/index.ts
+          touch docs/.nojekyll
 
       - name: Commit and Push Changes
         if: always() # Always attempt to commit changes
