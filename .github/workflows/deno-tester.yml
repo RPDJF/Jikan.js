@@ -9,7 +9,7 @@ on:
     - cron: "0 0 * * *"
 
 permissions:
-  contents: write  # Required to update the README
+  contents: write # Required to update the README
 
 jobs:
   test:
@@ -27,7 +27,7 @@ jobs:
           sed -i "s/\(Test%20Status-\)[^?]*\?/\1${STATUS}-${COLOR}/" README.md
 
       - name: Commit and Push Changes pending status
-        if: always()  # Always attempt to commit changes
+        if: always() # Always attempt to commit changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
@@ -36,22 +36,22 @@ jobs:
           git push
 
       - name: Setup Deno
-        uses: denoland/setup-deno@61fe2df320078202e33d7d5ad347e7dcfa0e8f31  # v1.1.2
+        uses: denoland/setup-deno@61fe2df320078202e33d7d5ad347e7dcfa0e8f31 # v1.1.2
         with:
           deno-version: v1.x
 
       # Uncomment this step to verify the use of 'deno fmt' on each commit.
       # - name: Verify formatting
       #   run: deno fmt --check
-      
+
       - name: Run tests
         id: test-results
         run: |
           deno task test
-        continue-on-error: true  # Allow tests to fail so we can update the badge accordingly
+        continue-on-error: true # Allow tests to fail so we can update the badge accordingly
 
       - name: Update Test Status Badge
-        if: always()  # Always run this step, even if tests fail
+        if: always() # Always run this step, even if tests fail
         run: |
           STATUS="Unknown"
           COLOR="orange"
@@ -67,7 +67,7 @@ jobs:
            sed -i "s/\(Test%20Status-\)[^?]*\?/\1${STATUS}-${COLOR}/" README.md
 
       - name: Commit and Push Changes
-        if: always()  # Always attempt to commit changes
+        if: always() # Always attempt to commit changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"

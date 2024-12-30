@@ -1,6 +1,6 @@
 <img src="meta/banner.svg" alt="Jikan.js Banner" style="border-radius: 15px;">
 
-# Jikan.js - Unofficial Jikan API Wrapper for Deno  🚀
+# Jikan.js - Unofficial Jikan API Wrapper for Deno 🚀
 
 ![Development Status](https://img.shields.io/badge/Status-In%20Development-orange?style=for-the-badge&logo=github)
 ![Test Status](https://img.shields.io/badge/Test%20Status-Passing-brightgreen?logo=github&style=for-the-badge)
@@ -8,35 +8,44 @@
 ![Deno badge](https://img.shields.io/badge/Deno-464647?style=for-the-badge&logo=deno&logoColor=white)
 ![TypeScript badge](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 
+**Jikan.js** is a **simple**, **efficient**, and **easy-to-use** library for
+interacting with the [Jikan API](https://github.com/jikan-me/jikan) — a RESTful
+API that brings MyAnimeList data to your fingertips!
 
-**Jikan.js** is a **simple**, **efficient**, and **easy-to-use** library for interacting with the [Jikan API](https://github.com/jikan-me/jikan) — a RESTful API that brings MyAnimeList data to your fingertips!  
+Built with ❤️ in TypeScript, Jikan.js is designed for Deno and comes with
+powerful features like **rate-limiting**, **caching**, and **self-hosted API
+support**. Whether you're building the next anime tracker or just want to fetch
+your favorite characters, Jikan.js has you covered!
 
-Built with ❤️ in TypeScript, Jikan.js is designed for Deno and comes with powerful features like **rate-limiting**, **caching**, and **self-hosted API support**. Whether you're building the next anime tracker or just want to fetch your favorite characters, Jikan.js has you covered!  
-
-⚠️ **Heads up!** This library is still a work in progress. The first release is coming soon, but you're welcome to follow along and share your feedback! 🙌
+⚠️ **Heads up!** This library is still a work in progress. The first release is
+coming soon, but you're welcome to follow along and share your feedback! 🙌
 
 ---
 
 ## ✨ Why Jikan.js?
 
-1. **Unleash the Power of MyAnimeList:** Fetch anime, manga, characters, and more with ease!  
-2. **No More Rate-Limit Headaches:** Built-in queue system to keep things smooth.  
-3. **Cache It Like a Pro:** Cache responses to save time and bandwidth.  
-4. **Fully Typed:** Enjoy TypeScript's sweet autocompletion and safety.  
-5. **Customizable:** Use the official Jikan API or your self-hosted version.  
+1. **Unleash the Power of MyAnimeList:** Fetch anime, manga, characters, and
+   more with ease!
+2. **No More Rate-Limit Headaches:** Built-in queue system to keep things
+   smooth.
+3. **Cache It Like a Pro:** Cache responses to save time and bandwidth.
+4. **Fully Typed:** Enjoy TypeScript's sweet autocompletion and safety.
+5. **Customizable:** Use the official Jikan API or your self-hosted version.
 
 ---
 
 ## 🌟 Features (So Far...)
 
-- ✅ Fetch data effortlessly from the Jikan API.  
-- ✅ Queue system to handle rate limits like a champ.  
-- ✅ Interfaced responses for clean and easy data handling.  
-- 🔄 Cache system to store responses for reuse (**in progress**).  
-- ✅ Support for self-hosted Jikan API setups.  
+- ✅ Fetch data effortlessly from the Jikan API.
+- ✅ Queue system to handle rate limits like a champ.
+- ✅ Interfaced responses for clean and easy data handling.
+- 🔄 Cache system to store responses for reuse (**in progress**).
+- ✅ Support for self-hosted Jikan API setups.
 
-💡 **Coming Soon:**  
-- Full Jikan API v4 support, NodeJS support (or alternative repo), automatic retries, and more!
+💡 **Coming Soon:**
+
+- Full Jikan API v4 support, NodeJS support (or alternative repo), automatic
+  retries, and more!
 
 ---
 
@@ -179,16 +188,20 @@ Built with ❤️ in TypeScript, Jikan.js is designed for Deno and comes with po
 ## 🚀 Getting Started
 
 ### 🛠️ Importing the Library
+
 **Note:** This library isn’t on the Deno registry yet. Stay tuned for updates!
 
-
 To try it out now:
+
 ```typescript
 import { JikanClient } from "https://raw.githubusercontent.com/RPDJF/Jikan.js/refs/heads/main/src/index.ts";
 ```
 
 ### 🎯 Example Usage
-Here is an example of how you can use the library to fetch data from the Jikan API:
+
+Here is an example of how you can use the library to fetch data from the Jikan
+API:
+
 ```typescript
 const client = new JikanClient();
 
@@ -198,10 +211,11 @@ client.getCharacter(1).then((character) => {
 ```
 
 You also can use your own self-hosted Jikan API:
+
 ```typescript
 const client = new JikanClient({
-	host: "https://my-jikan-api.com",
-	baseUri: "/v4",
+  host: "https://my-jikan-api.com",
+  baseUri: "/v4",
 });
 ```
 
@@ -209,39 +223,46 @@ const client = new JikanClient({
 
 ```typescript
 try {
-	const character = await client.getCharacter(1);
-	console.log(character.name);
+  const character = await client.getCharacter(1);
+  console.log(character.name);
 } catch (error) {
-	console.error(error);
+  console.error(error);
 }
 ```
 
 ## 💬 What is Jikan API?
 
-[Jikan API](https://github.com/jikan-me/jikan) is an **unofficial MyAnimeList API** that scrapes MAL data. It provides information on anime, manga, characters, schedules, and more!  
+[Jikan API](https://github.com/jikan-me/jikan) is an **unofficial MyAnimeList
+API** that scrapes MAL data. It provides information on anime, manga,
+characters, schedules, and more!
 
-**Why Jikan over MAL’s official API?**  
-- More features (e.g., character & staff info).  
-- No weird rate limit mysteries.  
-- Community-driven goodness.  
+**Why Jikan over MAL’s official API?**
+
+- More features (e.g., character & staff info).
+- No weird rate limit mysteries.
+- Community-driven goodness.
 
 ---
 
 ## 🌌 Why Deno?
 
-Deno is **secure**, **fast**, and **modern** — the perfect playground for this library! Plus, it’s a refreshing break from Node.js. 🦕  
+Deno is **secure**, **fast**, and **modern** — the perfect playground for this
+library! Plus, it’s a refreshing break from Node.js. 🦕
 
 ---
 
 ## 🛤️ What’s Next?
 
-I’m just getting started! Stay tuned for more features and a polished first release. Want to contribute or share ideas? Open an issue or fork the repo — I’d love to learn from you! 😊  
+I’m just getting started! Stay tuned for more features and a polished first
+release. Want to contribute or share ideas? Open an issue or fork the repo — I’d
+love to learn from you! 😊
 
 ---
 
 ## 📜 License
 
-This project is licensed under the MIT License. Use it, share it, and don’t forget to give a ⭐ if you like it!  
+This project is licensed under the MIT License. Use it, share it, and don’t
+forget to give a ⭐ if you like it!
 
 ---
 
