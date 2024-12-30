@@ -67,13 +67,10 @@ jobs:
            sed -i "s/\(Test%20Status-\)[^?]*\?/\1${STATUS}-${COLOR}/" README.md
 
           # Update the docs
-          # workaround for deno docs broken generation
           rm -rf docs
           mkdir docs
           touch docs/.nojekyll
-          deno doc --output="docs/tmp" --html --name="Jikan.JS" src/v4/index.ts
-          mv docs/tmp/* docs/
-          rmdir docs/tmp
+          deno doc --html --name="Jikan.JS" src/v4/index.ts
 
       - name: Commit and Push Changes
         if: always() # Always attempt to commit changes
