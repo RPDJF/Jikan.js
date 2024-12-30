@@ -44,6 +44,8 @@ export abstract class BaseManager {
 			const req = await this.client.requestManager.request(query);
 			const json = await req.json();
 			if (json.status < 200 || json.status >= 300) {
+				console.error(`Error on APIRequestQuery:`, query);
+				console.error(`Error fetching data:`, json);
 				throw new Error(`Error fetching data: ${json.status} - ${json.message}`);
 			}
 			return json.data as T;

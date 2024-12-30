@@ -159,6 +159,24 @@ export interface AnimeVideo {
 	music_videos: MusicVideo[];
 }
 
+export interface AnimeStatistics {
+	watching: number;
+	completed: number;
+	on_hold: number;
+	dropped: number;
+	plan_to_watch: number;
+	total: number;
+	scores: {
+		score: number;
+		votes: number;
+		percentage: number;
+	}[];
+}
+
+export interface AnimeMoreInfo {
+	moreinfo?: string;
+}
+
 export interface Anime {
 	mal_id: number;
 	url: string;
