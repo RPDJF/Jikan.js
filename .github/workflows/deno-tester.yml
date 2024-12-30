@@ -68,7 +68,9 @@ jobs:
 
           # Update the docs
           # workaround for deno docs broken generation
+          rm -rf docs
           mkdir docs
+          touch docs/.nojekyll
           deno doc --output="docs/tmp" --html --name="Jikan.JS" src/v4/index.ts
           mv docs/tmp/* docs/
           rmdir docs/tmp
@@ -80,4 +82,6 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add README.md
           git commit -m "Update Test Status badge"
+          git add docs
+          git commit -m "Update docs"
           git push
