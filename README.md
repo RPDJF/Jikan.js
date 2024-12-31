@@ -3,7 +3,7 @@
 # Jikan.js - Unofficial Jikan API Wrapper for Deno 🚀
 
 ![Development Status](https://img.shields.io/badge/Status-In%20Development-orange?style=for-the-badge&logo=github)
-![Test Status](https://img.shields.io/badge/Test%20Status-Pending-yellow?logo=github&style=for-the-badge)
+![Test Status](https://img.shields.io/badge/Test%20Status-Unknown-orange?logo=github&style=for-the-badge)
 
 ![Deno badge](https://img.shields.io/badge/Deno-464647?style=for-the-badge&logo=deno&logoColor=white)
 ![TypeScript badge](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
