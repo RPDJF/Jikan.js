@@ -77,7 +77,7 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-		  git pull origin main --no-edit
+          git pull origin main --no-edit
           git add README.md
           git commit -m "Update Test Status badge"
           git add docs
