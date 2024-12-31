@@ -32,8 +32,12 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add README.md
-          git commit -m "Update Test Status badge"
-          git push
+          if git diff-index --quiet HEAD; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update Test Status badge"
+            git push
+          fi
 
       - name: Setup Deno
         uses: denoland/setup-deno@v2
@@ -79,7 +83,11 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git pull origin main --no-edit
           git add README.md
-          git commit -m "Update Test Status badge"
           git add docs
-          git commit -m "Update docs"
+          if git diff-index --quiet HEAD; then
+            echo "No changes to commit"
+          else
+            git commit -m "Docs and Test Status Update"
+            git push
+          fi
           git push
