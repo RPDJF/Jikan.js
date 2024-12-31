@@ -64,7 +64,7 @@ jobs:
           fi
 
           # Update the README badge
-           sed -i "s/\(Test%20Status-\)[^?]*\?/\1${STATUS}-${COLOR}/" README.md
+          sed -i "s/\(Test%20Status-\)[^?]*\?/\1${STATUS}-${COLOR}/" README.md
 
           # Update the docs
           rm -rf docs
@@ -77,6 +77,7 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+		  git pull origin main --no-edit
           git add README.md
           git commit -m "Update Test Status badge"
           git add docs
