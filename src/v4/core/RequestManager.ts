@@ -1,8 +1,8 @@
-import { APIRequestPromise, APIRequestQuery } from "./apiModels.ts";
+import * as apiModel from "./apiModels.ts";
 import { JikanClient } from "./JikanClient.ts";
 
 export class RequestQueue {
-  private _queue: (APIRequestPromise)[] = [];
+  private _queue: (apiModel.APIRequestPromise)[] = [];
   private _size: number = 0;
   private _maxSize: number;
 
@@ -29,7 +29,7 @@ export class RequestQueue {
    * @returns The identifier of the item
    * @throws Error if the queue is full
    */
-  protected enqueue(requestPromise: APIRequestPromise) {
+  protected enqueue(requestPromise: apiModel.APIRequestPromise) {
     if (this._size === this.maxSize && this.maxSize) {
       throw new Error(
         `Internal library request queue is full". Adding context like "Request queue exceeded the limit of ${this.maxSize}`,
@@ -45,7 +45,7 @@ export class RequestQueue {
    *
    * @returns The item that was removed or undefined if the queue is empty
    */
-  protected dequeue(): APIRequestPromise | undefined {
+  protected dequeue(): apiModel.APIRequestPromise | undefined {
     if (this._size === 0) {
       return undefined;
     }
@@ -64,7 +64,7 @@ export class RequestManager extends RequestQueue {
     this.client = client;
   }
 
-  public buildURL(requestQuery: APIRequestQuery): URL {
+  public buildURL(requestQuery: apiModel.APIRequestQuery): URL {
     return new URL(
       `${this.client.options.host}/${this.client.options.baseUri}/${requestQuery.endpoint}${
         requestQuery.params
@@ -78,7 +78,7 @@ export class RequestManager extends RequestQueue {
     if (this._isProcessing) return;
     this._isProcessing = true;
     while (!this.isEmpty) {
-      const item: APIRequestPromise | undefined = this.dequeue();
+      const item: apiModel.APIRequestPromise | undefined = this.dequeue();
       if (!item) {
         continue;
       }
@@ -107,9 +107,9 @@ export class RequestManager extends RequestQueue {
    *
    * @returns promise of the response
    */
-  public request(requestQuery: APIRequestQuery): Promise<Response> {
+  public request(requestQuery: apiModel.APIRequestQuery): Promise<Response> {
     return new Promise((resolve) => {
-      const requestPromise: APIRequestPromise = {
+      const requestPromise: apiModel.APIRequestPromise = {
         query: requestQuery,
         resolve: resolve,
       };

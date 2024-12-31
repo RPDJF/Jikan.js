@@ -1,4 +1,10 @@
 export * from "./core/JikanClient.ts";
-export * as base from "./managers/BaseManager.ts";
-export * as anime from "./managers/AnimeManager.ts";
-export * as character from "./managers/CharacterManager.ts";
+export * as cacheManager from "./core/CacheManager.ts";
+export * as requestManager from "./core/RequestManager.ts";
+export * as baseManager from "./managers/BaseManager.ts";
+export * as animeManager from "./managers/AnimeManager.ts";
+export * as characterManager from "./managers/CharacterManager.ts";
+export * as baseModel from "./models/base.ts";
+export * as animeModel from "./models/anime.ts";
+export * as characterModel from "./models/character.ts";
+export * as userModel from "./models/user.ts";

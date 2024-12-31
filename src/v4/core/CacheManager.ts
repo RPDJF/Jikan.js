@@ -40,6 +40,11 @@ export interface CacheOptions {
   cachePath: string;
 }
 
+/**
+ * CacheManager: Manager class for the cache
+ * This component is used to manage the cache of the Jikan API
+ * The cache isn't implemented yet, the manager only creates a cache directory and deletes it when the program exits
+ */
 export class CacheManager {
   private static setDefaultOptions(
     options?: Partial<CacheOptions>,

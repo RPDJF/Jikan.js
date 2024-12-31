@@ -1,19 +1,30 @@
-import { CommonImage, VoiceActors } from "../models/base.ts";
-import { MangaRole } from "../models/character.ts";
-import { AnimeRole, Character, CharacterFull } from "../models/character.ts";
-import { BaseManager, BaseSearchParameters } from "./BaseManager.ts";
+import * as baseModel from "../models/base.ts";
+import * as characterModel from "../models/character.ts";
+import * as baseManager from "./BaseManager.ts";
 
+/**
+ * CharacterOrder: Enum for Character orders
+ * (i.e. MalId, Name, Favorites)
+ */
 export enum CharacterOrder {
   mal_id = "mal_id",
   Name = "name",
   Favorites = "favorites",
 }
 
-export interface CharacterSearchParameters extends BaseSearchParameters {
+/**
+ * CharacterSearchParameters: Interface for Character search parameters
+ */
+export interface CharacterSearchParameters
+  extends baseManager.BaseSearchParameters {
   order_by?: CharacterOrder | string;
 }
 
-export class CharacterManager extends BaseManager {
+/**
+ * CharacterManager: Manager class for the Character endpoint
+ * This component is used to make requests to the Jikan API's Character endpoint
+ */
+export class CharacterManager extends baseManager.BaseManager {
   public readonly endpoint: string = "characters";
 
   /* getCharacters: Get a Character array from the Jikan API
@@ -22,8 +33,8 @@ export class CharacterManager extends BaseManager {
 	 */
   public getCharacters(
     params?: CharacterSearchParameters,
-  ): Promise<Character[]> {
-    return this._fetchData<Character[]>(
+  ): Promise<characterModel.Character[]> {
+    return this._fetchData<characterModel.Character[]>(
       this._buildAPIRequestQuery(undefined, params),
     );
   }
@@ -32,8 +43,8 @@ export class CharacterManager extends BaseManager {
    *
    * This method may throw an error if status is not between 200 and 300
    */
-  public getCharacter(characterId: number): Promise<Character> {
-    return this._fetchData<Character>(
+  public getCharacter(characterId: number): Promise<characterModel.Character> {
+    return this._fetchData<characterModel.Character>(
       this._buildAPIRequestQuery(characterId.toString()),
     );
   }
@@ -42,8 +53,10 @@ export class CharacterManager extends BaseManager {
    *
    * This method may throw an error if status is not between 200 and 300
    */
-  public getCharacterFull(characterId: number): Promise<CharacterFull> {
-    return this._fetchData<CharacterFull>(
+  public getCharacterFull(
+    characterId: number,
+  ): Promise<characterModel.CharacterFull> {
+    return this._fetchData<characterModel.CharacterFull>(
       this._buildAPIRequestQuery(characterId.toString(), undefined, "full"),
     );
   }
@@ -52,8 +65,10 @@ export class CharacterManager extends BaseManager {
    *
    * This method may throw an error if status is not between 200 and 300
    */
-  public getCharacterAnime(characterId: number): Promise<AnimeRole[]> {
-    return this._fetchData<AnimeRole[]>(
+  public getCharacterAnime(
+    characterId: number,
+  ): Promise<characterModel.AnimeRole[]> {
+    return this._fetchData<characterModel.AnimeRole[]>(
       this._buildAPIRequestQuery(characterId.toString(), undefined, "anime"),
     );
   }
@@ -62,8 +77,10 @@ export class CharacterManager extends BaseManager {
    *
    * This method may throw an error if status is not between 200 and 300
    */
-  public getCharacterManga(characterId: number): Promise<MangaRole[]> {
-    return this._fetchData<MangaRole[]>(
+  public getCharacterManga(
+    characterId: number,
+  ): Promise<characterModel.MangaRole[]> {
+    return this._fetchData<characterModel.MangaRole[]>(
       this._buildAPIRequestQuery(characterId.toString(), undefined, "manga"),
     );
   }
@@ -72,8 +89,10 @@ export class CharacterManager extends BaseManager {
    *
    * This method may throw an error if status is not between 200 and 300
    */
-  public getCharacterVoiceActors(characterId: number): Promise<VoiceActors[]> {
-    return this._fetchData<VoiceActors[]>(
+  public getCharacterVoiceActors(
+    characterId: number,
+  ): Promise<baseModel.VoiceActors[]> {
+    return this._fetchData<baseModel.VoiceActors[]>(
       this._buildAPIRequestQuery(characterId.toString(), undefined, "voices"),
     );
   }
@@ -82,8 +101,10 @@ export class CharacterManager extends BaseManager {
    *
    * This method may throw an error if status is not between 200 and 300
    */
-  public getCharacterPictures(characterId: number): Promise<CommonImage[]> {
-    return this._fetchData<CommonImage[]>(
+  public getCharacterPictures(
+    characterId: number,
+  ): Promise<baseModel.CommonImage[]> {
+    return this._fetchData<baseModel.CommonImage[]>(
       this._buildAPIRequestQuery(characterId.toString(), undefined, "pictures"),
     );
   }

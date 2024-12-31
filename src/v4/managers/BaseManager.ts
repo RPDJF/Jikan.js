@@ -1,11 +1,17 @@
-import { APIRequestQuery } from "../core/apiModels.ts";
+import * as apiModel from "../core/apiModels.ts";
 import { JikanClient } from "../core/JikanClient.ts";
 
+/**
+ * BaseSort: Enum for base sorting
+ */
 export enum BaseSort {
   asc = "asc",
   desc = "desc",
 }
 
+/**
+ * BaseSearchParameters: Interface for base search parameters
+ */
 export interface BaseSearchParameters {
   page?: number;
   limit?: number;
@@ -14,6 +20,10 @@ export interface BaseSearchParameters {
   letter?: string;
 }
 
+/**
+ * BaseManager: Base class for all managers
+ * This component is an abstract class used to create managers for the Jikan API
+ */
 export abstract class BaseManager {
   public readonly client: JikanClient;
   public abstract readonly endpoint: string;
@@ -26,7 +36,7 @@ export abstract class BaseManager {
     subPath?: string,
     searchParams?: BaseSearchParameters | object,
     suffix?: string,
-  ): APIRequestQuery {
+  ): apiModel.APIRequestQuery {
     const params = new URLSearchParams();
     if (searchParams) {
       Object.entries(searchParams).forEach(([key, value]) => {
@@ -44,7 +54,7 @@ export abstract class BaseManager {
     };
   }
 
-  protected async _fetchData<T>(query: APIRequestQuery): Promise<T> {
+  protected async _fetchData<T>(query: apiModel.APIRequestQuery): Promise<T> {
     try {
       const req = await this.client.requestManager.request(query);
       const json = await req.json();
