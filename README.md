@@ -67,8 +67,8 @@ coming soon, but you're welcome to follow along and share your feedback! 🙌
     </tr>
     <tr>
       <td>Full documentation</td>
-      <td>❌ Not Started</td>
-	  <td>Maybe after❔</td>
+      <td>🔄 In Progress</td>
+	  <td>✅</td>
     </tr>
     <tr>
       <td>Queue system to prevent rate limiting</td>
