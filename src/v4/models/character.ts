@@ -1,4 +1,4 @@
-import { Ressource, VoiceActors } from "./base.ts";
+import { baseModel } from "../index.ts";
 
 export interface CharacterImages {
   jpg?: {
@@ -13,17 +13,15 @@ export interface CharacterImages {
 
 export interface AnimeRole {
   role: string;
-  anime: Ressource;
+  anime: baseModel.Ressource;
 }
 
 export interface MangaRole {
   role: string;
-  manga: Ressource;
+  manga: baseModel.Ressource;
 }
 
-export interface CharacterMinimal {
-  mal_id: number;
-  url: string;
+export interface CharacterMinimal extends baseModel.GenericModel {
   images: CharacterImages;
   name: string;
 }
@@ -38,5 +36,5 @@ export interface Character extends CharacterMinimal {
 export interface CharacterFull extends Character {
   anime: AnimeRole[];
   manga: MangaRole[];
-  voices: VoiceActors[];
+  voices: baseModel.VoiceActors[];
 }

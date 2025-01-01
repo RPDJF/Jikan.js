@@ -1,7 +1,4 @@
-import { AnimeRating } from "../managers/AnimeManager.ts";
-import { CommonImage, ImageFull, MalEntries, VoiceActors } from "./base.ts";
-import { CharacterMinimal } from "./character.ts";
-import { UserMeta } from "./user.ts";
+import { animeManager, baseModel, characterModel, userModel } from "../index.ts";
 
 export interface AnimeImages {
   jpg?: {
@@ -16,9 +13,7 @@ export interface AnimeImages {
   };
 }
 
-export interface AnimeMeta {
-  mal_id: number;
-  url: string;
+export interface AnimeMeta extends baseModel.GenericModel {
   images: AnimeImages;
   title: string;
 }
@@ -30,7 +25,7 @@ export interface TrailerBase {
 }
 
 export interface Trailer extends TrailerBase {
-  images?: ImageFull;
+  images?: baseModel.ImageFull;
 }
 
 export enum Type {
@@ -51,7 +46,7 @@ export enum Season {
 
 export interface Relation {
   relation: string;
-  entry: MalEntries[];
+  entry: baseModel.MalEntries[];
 }
 
 export interface Theme {
@@ -65,14 +60,12 @@ export interface External {
 }
 
 export interface CharacterRole {
-  character: CharacterMinimal;
+  character: characterModel.CharacterMinimal;
   role: string;
-  voice_actors: VoiceActors[];
+  voice_actors: baseModel.VoiceActors[];
 }
 
-export interface AnimeEpisode {
-  mal_id: number;
-  url: string;
+export interface AnimeEpisode extends baseModel.GenericModel{
   title: string;
   title_japanese?: string;
   title_romanji?: string;
@@ -83,9 +76,7 @@ export interface AnimeEpisode {
   forum_url?: string;
 }
 
-export interface AnimeEpisodeFull {
-  mal_id: number;
-  url: string;
+export interface AnimeEpisodeFull extends baseModel.GenericModel {
   title: string;
   title_japanese?: string;
   title_romanji?: string;
@@ -96,15 +87,13 @@ export interface AnimeEpisodeFull {
   synopsis?: string;
 }
 
-export interface AnimeNews {
-  mal_id: number;
-  url: string;
+export interface AnimeNews extends baseModel.GenericModel {
   title: string;
   date: string;
   author_username: string;
   author_url: string;
   form_url: string;
-  images: CommonImage;
+  images: baseModel.CommonImage;
   comments: number;
   excerpt: string;
 }
@@ -116,9 +105,7 @@ export interface LastComment {
   date?: string;
 }
 
-export interface AnimeForum {
-  mal_id: number;
-  url: string;
+export interface AnimeForum extends baseModel.GenericModel {
   title: string;
   date: string;
   author_username: string;
@@ -141,12 +128,10 @@ export interface AnimePromo {
   trailer: Trailer;
 }
 
-export interface VideoEpisode {
-  mal_id: number;
-  url: string;
+export interface VideoEpisode extends baseModel.GenericModel {
   title: string;
   episode: string;
-  images: CommonImage;
+  images: baseModel.CommonImage;
 }
 
 export interface AnimeVideo {
@@ -174,7 +159,7 @@ export interface AnimeMoreInfo {
 }
 
 export interface AnimeUserUpdate {
-  user: UserMeta;
+  user: userModel.UserMeta;
   score?: number;
   status: string;
   episodes_seen?: number;
@@ -182,10 +167,8 @@ export interface AnimeUserUpdate {
   date: string;
 }
 
-export interface AnimeReview {
-  user: UserMeta;
-  mal_id: number;
-  url: string;
+export interface AnimeReview extends baseModel.GenericModel {
+  user: userModel.UserMeta;
   type: string;
   reactions: {
     overall: number;
@@ -206,9 +189,7 @@ export interface AnimeReview {
   episodes_watched: number;
 }
 
-export interface Anime {
-  mal_id: number;
-  url: string;
+export interface Anime extends baseModel.GenericModel {
   Images: AnimeImages;
   trailer: TrailerBase;
   approved: boolean;
@@ -226,7 +207,7 @@ export interface Anime {
     to?: string;
   };
   duration?: string;
-  rating?: AnimeRating;
+  rating?: animeManager.AnimeRating;
   score?: number;
   scored_by?: number;
   rank?: number;
@@ -243,13 +224,13 @@ export interface Anime {
     timezone?: string;
     string?: string;
   };
-  producers: MalEntries[];
-  licensors: MalEntries[];
-  studios: MalEntries[];
-  genres: MalEntries[];
-  explicit_genres: MalEntries[];
-  themes: MalEntries[];
-  demographics: MalEntries[];
+  producers: baseModel.MalEntries[];
+  licensors: baseModel.MalEntries[];
+  studios: baseModel.MalEntries[];
+  genres: baseModel.MalEntries[];
+  explicit_genres: baseModel.MalEntries[];
+  themes: baseModel.MalEntries[];
+  demographics: baseModel.MalEntries[];
 }
 
 export interface AnimeFull extends Anime {
