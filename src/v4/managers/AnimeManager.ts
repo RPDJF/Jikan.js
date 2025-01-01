@@ -1,6 +1,4 @@
-import * as animeModel from "../models/anime.ts";
-import * as baseModel from "../models/base.ts";
-import * as baseManager from "./BaseManager.ts";
+import { animeModel, baseManager, baseModel } from "../index.ts";
 
 /**
  * AnimeForumFilter: Enum for Anime Forum filters

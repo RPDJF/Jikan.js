@@ -1,10 +1,12 @@
-import * as animeManager from "../managers/AnimeManager.ts";
-import * as characterManager from "../managers/CharacterManager.ts";
-import * as animeModel from "../models/anime.ts";
-import * as baseModel from "../models/base.ts";
-import * as characterModel from "../models/character.ts";
-import * as cacheManager from "./CacheManager.ts";
-import * as requestManager from "./RequestManager.ts";
+import {
+  animeManager,
+  animeModel,
+  baseModel,
+  cacheManager,
+  characterManager,
+  characterModel,
+  requestManager,
+} from "../index.ts";
 
 export interface ClientOptions {
   /**

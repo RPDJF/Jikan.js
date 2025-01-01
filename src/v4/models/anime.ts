@@ -1,4 +1,9 @@
-import { animeManager, baseModel, characterModel, userModel } from "../index.ts";
+import {
+  animeManager,
+  baseModel,
+  characterModel,
+  userModel,
+} from "../index.ts";
 
 export interface AnimeImages {
   jpg?: {
@@ -65,7 +70,7 @@ export interface CharacterRole {
   voice_actors: baseModel.VoiceActors[];
 }
 
-export interface AnimeEpisode extends baseModel.GenericModel{
+export interface AnimeEpisode extends baseModel.GenericModel {
   title: string;
   title_japanese?: string;
   title_romanji?: string;
