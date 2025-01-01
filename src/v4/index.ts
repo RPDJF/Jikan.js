@@ -109,6 +109,7 @@ export * as cacheManager from "./core/CacheManager.ts";
 export * as requestManager from "./core/RequestManager.ts";
 export * as baseManager from "./managers/BaseManager.ts";
 export * as animeManager from "./managers/AnimeManager.ts";
+export * as mangaManager from "./managers/MangaManager.ts";
 export * as characterManager from "./managers/CharacterManager.ts";
 export * as baseModel from "./models/base.ts";
 export * as animeModel from "./models/anime.ts";
