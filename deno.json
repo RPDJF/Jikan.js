@@ -1,6 +1,6 @@
 {
   "tasks": {
     "test": "deno task check && deno test --allow-net --allow-env --allow-read --allow-write --trace-leaks",
-    "check": "deno fmt src/ && deno check src/**/*.ts ; deno lint src/**/*.ts"
+    "check": "deno fmt src/ && deno fmt test/ && deno check src/**/*.ts ; deno lint src/**/*.ts"
   }
 }
