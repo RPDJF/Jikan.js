@@ -24,7 +24,7 @@ jobs:
           STATUS="Pending"
           COLOR="yellow"
           # Update the status badge to "Pending"
-          wget -q -o /dev/null "https://img.shields.io/badge/Test%20Status-${STATUS}-${COLOR}.svg" -O ./meta/statusBadge.svg
+          wget -q -o /dev/null "https://img.shields.io/badge/Test%20Status-${STATUS}-${COLOR}?logo=github&style=for-the-badge" -O ./meta/statusBadge.svg
 
       - name: Commit and Push Changes pending status
         if: always() # Always attempt to commit changes
@@ -68,7 +68,7 @@ jobs:
           fi
 
           # Update the status badge
-          wget -q -o /dev/null "https://img.shields.io/badge/Test%20Status-${STATUS}-${COLOR}.svg" -O ./meta/statusBadge.svg
+          wget -q -o /dev/null "https://img.shields.io/badge/Test%20Status-${STATUS}-${COLOR}?logo=github&style=for-the-badge" -O ./meta/statusBadge.svg
 
           # Update the docs
           rm -rf docs
