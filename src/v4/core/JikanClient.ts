@@ -339,10 +339,35 @@ export class JikanClient {
 
   // Facade methods for the MangaManager
   /**
+   * getMangas: Get a Manga array from the Jikan API
+   * @throws Error if status is not between 200 and 300
+   */
+  public getMangas(
+    params?: mangaManager.MangaSearchParameters,
+  ): Promise<mangaModel.Manga[]> {
+    return this.mangaManager.getMangas(params);
+  }
+  /**
    * getManga: Get a Manga from the Jikan API by its ID
    * @throws Error if status is not between 200 and 300
    */
   public getManga(mangaId: number): Promise<mangaModel.Manga> {
     return this.mangaManager.getManga(mangaId);
+  }
+  /**
+   * getMangaFull: Get a MangaFull from the Jikan API by its ID
+   * @throws Error if status is not between 200 and 300
+   */
+  public getMangaFull(mangaId: number): Promise<mangaModel.MangaFull> {
+    return this.mangaManager.getMangaFull(mangaId);
+  }
+  /**
+   * getMangaCharacters: Get a Manga's Characters from the Jikan API by its ID
+   * @throws Error if status is not between 200 and 300
+   */
+  public getMangaCharacters(
+    mangaId: number,
+  ): Promise<mangaModel.MangaCharacterRole[]> {
+    return this.mangaManager.getMangaCharacters(mangaId);
   }
 }

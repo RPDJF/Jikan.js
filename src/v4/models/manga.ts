@@ -1,4 +1,4 @@
-import { baseModel } from "../index.ts";
+import { baseModel, characterModel } from "../index.ts";
 
 export interface MangaImages {
   jpg: {
@@ -30,6 +30,11 @@ export enum MangaStatus {
   OnHiatus = "On Hiatus",
   Discontinued = "Discontinued",
   NotYetPublished = "Not yet published",
+}
+
+export interface MangaCharacterRole {
+  character: characterModel.CharacterMinimal;
+  role: string;
 }
 
 export interface Manga extends baseModel.GenericModel {
