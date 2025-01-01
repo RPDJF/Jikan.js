@@ -1,4 +1,4 @@
-import { baseModel, characterModel, baseManager } from "../index.ts";
+import { baseManager, baseModel, characterModel } from "../index.ts";
 
 /**
  * CharacterOrder: Enum for Character orders
