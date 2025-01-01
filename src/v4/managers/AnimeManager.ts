@@ -144,8 +144,8 @@ export class AnimeManager extends baseManager.BaseManager {
    */
   public getAnimeCharacters(
     animeId: number,
-  ): Promise<animeModel.CharacterRole[]> {
-    return this._fetchData<animeModel.CharacterRole[]>(
+  ): Promise<animeModel.AnimeCharacterRole[]> {
+    return this._fetchData<animeModel.AnimeCharacterRole[]>(
       this._buildAPIRequestQuery(animeId.toString(), undefined, "characters"),
     );
   }

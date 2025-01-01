@@ -193,7 +193,7 @@ export class JikanClient {
    */
   public getAnimeCharacters(
     animeId: number,
-  ): Promise<animeModel.CharacterRole[]> {
+  ): Promise<animeModel.AnimeCharacterRole[]> {
     return this.animeManager.getAnimeCharacters(animeId);
   }
   /**

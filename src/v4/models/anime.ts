@@ -54,7 +54,7 @@ export interface Theme {
   endings: string[];
 }
 
-export interface CharacterRole {
+export interface AnimeCharacterRole {
   character: characterModel.CharacterMinimal;
   role: string;
   voice_actors: baseModel.VoiceActors[];
