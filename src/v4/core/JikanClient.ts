@@ -5,6 +5,8 @@ import {
   cacheManager,
   characterManager,
   characterModel,
+  mangaManager,
+  mangaModel,
   requestManager,
 } from "../index.ts";
 
@@ -85,6 +87,7 @@ export class JikanClient {
   public readonly requestManager: requestManager.RequestManager;
   public readonly characterManager: characterManager.CharacterManager;
   public readonly animeManager: animeManager.AnimeManager;
+  public readonly mangaManager: mangaManager.MangaManager;
 
   public constructor(options?: Partial<ClientOptions>) {
     this.options = JikanClient.setDefaultOptions(options);
@@ -94,6 +97,7 @@ export class JikanClient {
     this.requestManager = new requestManager.RequestManager(this);
     this.characterManager = new characterManager.CharacterManager(this);
     this.animeManager = new animeManager.AnimeManager(this);
+    this.mangaManager = new mangaManager.MangaManager(this);
   }
 
   // Facade methods for the CharacterManager
@@ -331,5 +335,14 @@ export class JikanClient {
    */
   public getAnimeStreaming(animeId: number): Promise<animeModel.External[]> {
     return this.animeManager.getAnimeStreaming(animeId);
+  }
+
+  // Facade methods for the MangaManager
+  /**
+   * getManga: Get a Manga from the Jikan API by its ID
+   * @throws Error if status is not between 200 and 300
+   */
+  public getManga(mangaId: number): Promise<mangaModel.Manga> {
+    return this.mangaManager.getManga(mangaId);
   }
 }

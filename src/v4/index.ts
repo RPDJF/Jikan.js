@@ -114,5 +114,6 @@ export * as mangaManager from "./managers/MangaManager.ts";
 export * as characterManager from "./managers/CharacterManager.ts";
 export * as baseModel from "./models/base.ts";
 export * as animeModel from "./models/anime.ts";
+export * as mangaModel from "./models/manga.ts";
 export * as characterModel from "./models/character.ts";
 export * as userModel from "./models/user.ts";
