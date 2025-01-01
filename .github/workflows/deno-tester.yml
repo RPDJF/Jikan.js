@@ -19,26 +19,6 @@ jobs:
       - name: Setup repo
         uses: actions/checkout@v4
 
-      - name: Set Test Status Badge to Pending
-        run: |
-          STATUS="Pending"
-          COLOR="yellow"
-          # Update the status badge to "Pending"
-          wget -q -o /dev/null "https://img.shields.io/badge/Test%20Status-${STATUS}-${COLOR}?logo=github&style=for-the-badge" -O ./meta/statusBadge.svg
-
-      - name: Commit and Push Changes pending status
-        if: always() # Always attempt to commit changes
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add ./meta/statusBadge.svg
-          if git diff-index --quiet HEAD; then
-            echo "No changes to commit"
-          else
-            git commit -m "Update Test Status badge"
-            git push
-          fi
-
       - name: Setup Deno
         uses: denoland/setup-deno@v2
         with:
