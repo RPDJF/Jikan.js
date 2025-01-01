@@ -44,21 +44,6 @@ your favorite characters, Jikan.js has you covered!</p>
 <p>⚠️ <strong>Heads up!</strong> This library is still a work in progress. The first release is
 coming soon, but you're welcome to follow along and share your feedback! 🙌</p>
 <hr />
-<h2 id="-features-so-far">
-🌟 Features (So Far...)</h2>
-<ul>
-<li>✅ Fetch data effortlessly from the Jikan API.</li>
-<li>✅ Queue system to handle rate limits like a champ.</li>
-<li>✅ Interfaced responses for clean and easy data handling.</li>
-<li>🔄 Cache system to store responses for reuse (<strong>in progress</strong>).</li>
-<li>✅ Support for self-hosted Jikan API setups.</li>
-</ul>
-<p>💡 <strong>Coming Soon:</strong></p>
-<ul>
-<li>Full Jikan API v4 support, NodeJS support (or alternative repo), automatic
-retries, and more!</li>
-</ul>
-<hr />
 <h2 id="-getting-started">
 🚀 Getting Started</h2>
 <h3 id="️-importing-the-library">
@@ -79,6 +64,7 @@ retries, and more!</li>
 </button><code></code></pre>
 <h3 id="-example-usage">
 🎯 Example Usage</h3>
+<p>Take a look at <a href="https://rpdjf.github.io/Jikan.js/~/JikanClient.html#methods">JikanClient facade methods</a></p>
 <p>Here is an example of how you can use the library to fetch data from the Jikan
 API:</p>
 <pre class="highlight"><code class="language-typescript">const client = new JikanClient();
@@ -101,14 +87,22 @@ client.getCharacter(1).then((character) =&gt; {
 <path d="M5 12l5 5l10 -10" />
 </svg>
 </button><code></code></pre>
-<p>You also can use your own self-hosted Jikan API:</p>
-<pre class="highlight"><code class="language-typescript">const client = new JikanClient({
-  host: &quot;https://my-jikan-api.com&quot;,
-  baseUri: &quot;/v4&quot;,
+<p>The library will fully support Jikan API v4, meaning you can make the same queries as you would on the official Jikan API:</p>
+<pre class="highlight"><code class="language-typescript">client.getMangas({
+	page: 5,
+	limit: 5,
+	order_by: &quot;popularity&quot;,
+	sort: &quot;desc&quot;,
+}).then((mangas) =&gt; {
+	console.log(mangas);
 });
-</code><button class="context_button" data-copy="const client = new JikanClient({
-  host: &quot;https://my-jikan-api.com&quot;,
-  baseUri: &quot;/v4&quot;,
+</code><button class="context_button" data-copy="client.getMangas({
+	page: 5,
+	limit: 5,
+	order_by: &quot;popularity&quot;,
+	sort: &quot;desc&quot;,
+}).then((mangas) =&gt; {
+	console.log(mangas);
 });
 "><svg class="copy" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect x="2" y="2" width="7" height="7" fill="none"/>
@@ -120,7 +114,7 @@ client.getCharacter(1).then((character) =&gt; {
 <path d="M5 12l5 5l10 -10" />
 </svg>
 </button><code></code></pre>
-<p><strong>Pro Tip</strong>: Always handle errors gracefully:</p>
+<p><strong>Pro Tip</strong>: The client requests may throw errors, so it’s a good idea to wrap them in a try-catch block:</p>
 <pre class="highlight"><code class="language-typescript">try {
   const character = await client.getCharacter(1);
   console.log(character.name);
@@ -143,18 +137,26 @@ client.getCharacter(1).then((character) =&gt; {
 <path d="M5 12l5 5l10 -10" />
 </svg>
 </button><code></code></pre>
-<hr />
-<h2 id="-why-deno">
-🌌 Why Deno?</h2>
-<p>Deno is <strong>secure</strong>, <strong>fast</strong>, and <strong>modern</strong> — the perfect playground for this
-library! Plus, it’s a refreshing break from Node.js. 🦕</p>
-<hr />
-<h2 id="️-whats-next">
-🛤️ What’s Next?</h2>
-<p>I’m just getting started! Stay tuned for more features and a polished first
-release. Want to contribute or share ideas? Open an issue or fork the repo — I’d
-love to learn from you! 😊</p>
-<hr />
+<h3 id="-self-hosted-jikan-api">
+🌐 Self-Hosted Jikan API</h3>
+<pre class="highlight"><code class="language-typescript">const client = new JikanClient({
+  host: &quot;https://my-jikan-api.com&quot;,
+  baseUri: &quot;/v4&quot;,
+});
+</code><button class="context_button" data-copy="const client = new JikanClient({
+  host: &quot;https://my-jikan-api.com&quot;,
+  baseUri: &quot;/v4&quot;,
+});
+"><svg class="copy" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="2" y="2" width="7" height="7" fill="none"/>
+<rect x="6" y="6" width="7" height="7" fill="none"/>
+<path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="#232323"/>
+</svg>
+<svg class="check" width="15" height="15" viewBox="0 0 24 24" stroke-width="2" stroke="#232323" fill="none" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+<path d="M5 12l5 5l10 -10" />
+</svg>
+</button><code></code></pre>
 <p>✨ <strong>Let’s build something awesome together!</strong> ✨</p>
 </div></div>
 </div>
@@ -183,7 +185,7 @@ love to learn from you! 😊</p>
 <span class="hover:bg-Interface/15">animeManager.AnimeForumSearchParameters</span>
                 </a>
               </li></ul><a class="flex items-center gap-0.5" href=".&#x2F;all_symbols.html">
-              <span class="leading-none">view all 81 symbols</span><svg
+              <span class="leading-none">view all 82 symbols</span><svg
 	width="16"
 	height="16"
 	viewBox="0 0 16 16"
@@ -192,7 +194,7 @@ love to learn from you! 😊</p>
 	<path fill-rule="evenodd" clip-rule="evenodd" d="M5.76748 11.8159C5.5378 11.577 5.54525 11.1972 5.78411 10.9675L8.93431 8L5.78411 5.0325C5.54525 4.80282 5.5378 4.423 5.76748 4.18413C5.99715 3.94527 6.37698 3.93782 6.61584 4.1675L10.2158 7.5675C10.3335 7.68062 10.4 7.83679 10.4 8C10.4 8.16321 10.3335 8.31938 10.2158 8.4325L6.61584 11.8325C6.37698 12.0622 5.99715 12.0547 5.76748 11.8159Z" fill="currentColor" />
 </svg>
 </a></nav><nav class="documentNavigation">
-          <h3>Document Navigation</h3><ul><li><a href="#jikanjs---unofficial-jikan-api-wrapper-for-deno-" title="Jikan.js - Unofficial Jikan API Wrapper for Deno 🚀">Jikan.js - Unofficial Jikan API Wrapper for Deno 🚀</a></li><li><ul><li><a href="#-features-so-far" title="🌟 Features (So Far...)">🌟 Features (So Far...)</a></li><li><a href="#-getting-started" title="🚀 Getting Started">🚀 Getting Started</a></li><li><ul><li><a href="#️-importing-the-library" title="🛠️ Importing the Library">🛠️ Importing the Library</a></li><li><a href="#-example-usage" title="🎯 Example Usage">🎯 Example Usage</a></li></ul></li><li><a href="#-why-deno" title="🌌 Why Deno?">🌌 Why Deno?</a></li><li><a href="#️-whats-next" title="🛤️ What’s Next?">🛤️ What’s Next?</a></li></ul></li></ul></nav></div>
+          <h3>Document Navigation</h3><ul><li><a href="#jikanjs---unofficial-jikan-api-wrapper-for-deno-" title="Jikan.js - Unofficial Jikan API Wrapper for Deno 🚀">Jikan.js - Unofficial Jikan API Wrapper for Deno 🚀</a></li><li><ul><li><a href="#-getting-started" title="🚀 Getting Started">🚀 Getting Started</a></li><li><ul><li><a href="#️-importing-the-library" title="🛠️ Importing the Library">🛠️ Importing the Library</a></li><li><a href="#-example-usage" title="🎯 Example Usage">🎯 Example Usage</a></li><li><a href="#-self-hosted-jikan-api" title="🌐 Self-Hosted Jikan API">🌐 Self-Hosted Jikan API</a></li></ul></li></ul></li></ul></nav></div>
   </div></div>
 </div>
 </div>
