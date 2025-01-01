@@ -77,33 +77,6 @@ export interface AnimeEpisodeFull extends baseModel.GenericModel {
   synopsis?: string;
 }
 
-export interface AnimeNews extends baseModel.GenericModel {
-  title: string;
-  date: string;
-  author_username: string;
-  author_url: string;
-  form_url: string;
-  images: baseModel.CommonImage;
-  comments: number;
-  excerpt: string;
-}
-
-export interface LastComment {
-  url: string;
-  author_username: string;
-  author_url: string;
-  date?: string;
-}
-
-export interface AnimeForum extends baseModel.GenericModel {
-  title: string;
-  date: string;
-  author_username: string;
-  author_url: string;
-  comments: number;
-  last_comment: LastComment;
-}
-
 export interface MusicVideo {
   title: string;
   video: Trailer;

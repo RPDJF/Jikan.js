@@ -1,4 +1,4 @@
-import { baseManager, mangaModel } from "../index.ts";
+import { baseManager, baseModel, mangaModel } from "../index.ts";
 
 /**
  * MangaSearchParameters: Interface for Manga search parameters
@@ -75,6 +75,10 @@ export interface MangaSearchParameters
   end_date?: string;
 }
 
+export interface MangaTopicsSearchParameters {
+  filter: "all" | "episode" | "other";
+}
+
 /**
  * MangaManager: Manager for the Manga endpoint
  * This component is used to get Manga data from the Jikan API
@@ -123,6 +127,39 @@ export class MangaManager extends baseManager.BaseManager {
   ): Promise<mangaModel.MangaCharacterRole[]> {
     return this._fetchData<mangaModel.MangaCharacterRole[]>(
       this._buildAPIRequestQuery(mangaId.toString(), undefined, "characters"),
+    );
+  }
+
+  /**
+   * getMangaNews: Get a Manga's News from the Jikan API by its ID
+   * @throws Error if status is not between 200 and 300
+   */
+  public getMangaNews(
+    mangaId: number,
+    params?: baseManager.PageSearchParameter,
+  ) {
+    return this._fetchData<baseModel.News[]>(
+      this._buildAPIRequestQuery(mangaId.toString(), params, "news"),
+    );
+  }
+
+  /**
+   * getMangaTopics: Get a Manga's Topics from the Jikan API by its ID
+   * @throws Error if status is not between 200 and 300
+   */
+  public getMangaTopics(mangaId: number, params?: MangaTopicsSearchParameters) {
+    return this._fetchData<baseModel.Forum[]>(
+      this._buildAPIRequestQuery(mangaId.toString(), params, "forum"),
+    );
+  }
+
+  /**
+   * getMangaPictures: Get a Manga's Pictures from the Jikan API by its ID
+   * @throws Error if status is not between 200 and 300
+   */
+  public getMangaPictures(mangaId: number) {
+    return this._fetchData<mangaModel.MangaImages[]>(
+      this._buildAPIRequestQuery(mangaId.toString(), undefined, "pictures"),
     );
   }
 }

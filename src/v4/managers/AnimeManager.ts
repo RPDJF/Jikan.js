@@ -100,7 +100,8 @@ export interface AnimeForumSearchParameters {
 /**
  * AnimeReviewsParameters: Interface for Anime Reviews search parameters
  */
-export interface AnimeReviewsParameters extends baseModel.PageSearchParameter {
+export interface AnimeReviewsParameters
+  extends baseManager.PageSearchParameter {
   preliminary?: boolean;
   spoiler?: boolean;
 }
@@ -167,7 +168,7 @@ export class AnimeManager extends baseManager.BaseManager {
    */
   public getAnimeEpisodes(
     animeId: number,
-    params?: baseModel.PageSearchParameter,
+    params?: baseManager.PageSearchParameter,
   ): Promise<animeModel.AnimeEpisode[]> {
     return this._fetchData<animeModel.AnimeEpisode[]>(
       this._buildAPIRequestQuery(animeId.toString(), params, "episodes"),
@@ -195,9 +196,9 @@ export class AnimeManager extends baseManager.BaseManager {
    */
   public getAnimeNews(
     animeId: number,
-    params?: baseModel.PageSearchParameter,
-  ): Promise<animeModel.AnimeNews[]> {
-    return this._fetchData<animeModel.AnimeNews[]>(
+    params?: baseManager.PageSearchParameter,
+  ): Promise<baseModel.News[]> {
+    return this._fetchData<baseModel.News[]>(
       this._buildAPIRequestQuery(animeId.toString(), params, "news"),
     );
   }
@@ -208,8 +209,8 @@ export class AnimeManager extends baseManager.BaseManager {
   public getAnimeForum(
     animeId: number,
     params?: AnimeForumSearchParameters,
-  ): Promise<animeModel.AnimeForum[]> {
-    return this._fetchData<animeModel.AnimeForum[]>(
+  ): Promise<baseModel.Forum[]> {
+    return this._fetchData<baseModel.Forum[]>(
       this._buildAPIRequestQuery(animeId.toString(), params, "forum"),
     );
   }
@@ -228,7 +229,7 @@ export class AnimeManager extends baseManager.BaseManager {
    */
   public getAnimeVideosEpisodes(
     animeId: number,
-    params?: baseModel.PageSearchParameter,
+    params?: baseManager.PageSearchParameter,
   ): Promise<animeModel.VideoEpisode[]> {
     return this._fetchData<animeModel.VideoEpisode[]>(
       this._buildAPIRequestQuery(animeId.toString(), params, "videos/episodes"),
@@ -284,7 +285,7 @@ export class AnimeManager extends baseManager.BaseManager {
    */
   public getAnimeUserUpdates(
     animeId: number,
-    params?: baseModel.PageSearchParameter,
+    params?: baseManager.PageSearchParameter,
   ): Promise<animeModel.AnimeUserUpdate[]> {
     return this._fetchData<animeModel.AnimeUserUpdate[]>(
       this._buildAPIRequestQuery(animeId.toString(), params, "userupdates"),

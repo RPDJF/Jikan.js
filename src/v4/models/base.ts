@@ -12,10 +12,6 @@ export interface ImageFull {
   maximum_image_url?: string;
 }
 
-export interface PageSearchParameter {
-  page?: number;
-}
-
 export interface GenericModel {
   mal_id: number;
   url: string;
@@ -90,4 +86,31 @@ export interface Relation {
 export interface External {
   name: string;
   url: string;
+}
+
+export interface News extends GenericModel {
+  title: string;
+  date: string;
+  author_username: string;
+  author_url: string;
+  form_url: string;
+  images: CommonImage;
+  comments: number;
+  excerpt: string;
+}
+
+export interface LastComment {
+  url: string;
+  author_username: string;
+  author_url: string;
+  date?: string;
+}
+
+export interface Forum extends GenericModel {
+  title: string;
+  date: string;
+  author_username: string;
+  author_url: string;
+  comments: number;
+  last_comment: LastComment;
 }

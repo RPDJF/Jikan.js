@@ -10,10 +10,16 @@ export enum BaseSort {
 }
 
 /**
+ * PageSearchParameter: Interface for page search parameter
+ */
+export interface PageSearchParameter {
+  page?: number;
+}
+
+/**
  * BaseSearchParameters: Interface for base search parameters
  */
-export interface BaseSearchParameters {
-  page?: number;
+export interface BaseSearchParameters extends PageSearchParameter {
   limit?: number;
   q?: string;
   /**

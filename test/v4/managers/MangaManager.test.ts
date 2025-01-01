@@ -66,6 +66,21 @@ function runMangaManagerTests(client: JikanClient) {
           throw new Error("The array is empty");
         }
       }),
+      client.getMangaNews(1).then((news) => {
+        if (!news.length) {
+          throw new Error("The array is empty");
+        }
+      }),
+      client.getMangaTopics(1).then((topics) => {
+        if (!topics.length) {
+          throw new Error("The array is empty");
+        }
+      }),
+      client.getMangaPictures(1).then((pictures) => {
+        if (!pictures.length) {
+          throw new Error("The array is empty");
+        }
+      }),
     ]);
   });
 }
