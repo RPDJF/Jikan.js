@@ -57,3 +57,8 @@ export interface Manga extends baseModel.GenericModel {
   themes: baseModel.MalEntries[];
   demographics: baseModel.MalEntries[];
 }
+
+export interface MangaFull extends Manga {
+  relations: baseModel.Relation[];
+  external: baseModel.External[];
+}

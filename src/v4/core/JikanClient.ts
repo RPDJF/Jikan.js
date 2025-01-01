@@ -312,7 +312,7 @@ export class JikanClient {
    * getAnimeForum: Get an Anime's Forum from the Jikan API by its ID
    * @throws Error if status is not between 200 and 300
    */
-  public getAnimeRelations(animeId: number): Promise<animeModel.Relation[]> {
+  public getAnimeRelations(animeId: number): Promise<baseModel.Relation[]> {
     return this.animeManager.getAnimeRelations(animeId);
   }
   /**
@@ -326,14 +326,14 @@ export class JikanClient {
    * getAnimeExternal: Get an Anime's External Links from the Jikan API by its ID
    * @throws Error if status is not between 200 and 300
    */
-  public getAnimeExternal(animeId: number): Promise<animeModel.External[]> {
+  public getAnimeExternal(animeId: number): Promise<baseModel.External[]> {
     return this.animeManager.getAnimeExternal(animeId);
   }
   /**
    * getAnimeStreaming: Get an Anime's Streaming Links from the Jikan API by its ID
    * @throws Error if status is not between 200 and 300
    */
-  public getAnimeStreaming(animeId: number): Promise<animeModel.External[]> {
+  public getAnimeStreaming(animeId: number): Promise<baseModel.External[]> {
     return this.animeManager.getAnimeStreaming(animeId);
   }
 

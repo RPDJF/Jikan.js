@@ -25,10 +25,10 @@ export interface CharacterSearchParameters
 export class CharacterManager extends baseManager.BaseManager {
   public readonly endpoint: string = "characters";
 
-  /* getCharacters: Get a Character array from the Jikan API
-	 *
-	 * This method may throw an error if status is not between 200 and 300
-	 */
+  /** getCharacters: Get a Character array from the Jikan API
+   *
+   * @throws Error if status is not between 200 and 300
+   */
   public getCharacters(
     params?: CharacterSearchParameters,
   ): Promise<characterModel.Character[]> {
@@ -39,7 +39,7 @@ export class CharacterManager extends baseManager.BaseManager {
 
   /** getCharacter: Get a Character from the Jikan API by its ID
    *
-   * This method may throw an error if status is not between 200 and 300
+   * @throws Error if status is not between 200 and 300
    */
   public getCharacter(characterId: number): Promise<characterModel.Character> {
     return this._fetchData<characterModel.Character>(
@@ -49,7 +49,7 @@ export class CharacterManager extends baseManager.BaseManager {
 
   /** getCharacter: Get a CharacterFull from the Jikan API by its ID
    *
-   * This method may throw an error if status is not between 200 and 300
+   * @throws Error if status is not between 200 and 300
    */
   public getCharacterFull(
     characterId: number,
@@ -61,7 +61,7 @@ export class CharacterManager extends baseManager.BaseManager {
 
   /** getCharacterAnime: Get a Character's Anime from the Jikan API by its ID
    *
-   * This method may throw an error if status is not between 200 and 300
+   * @throws Error if status is not between 200 and 300
    */
   public getCharacterAnime(
     characterId: number,
@@ -73,7 +73,7 @@ export class CharacterManager extends baseManager.BaseManager {
 
   /** getCharacterManga: Get a Character's Manga from the Jikan API by its ID
    *
-   * This method may throw an error if status is not between 200 and 300
+   * @throws Error if status is not between 200 and 300
    */
   public getCharacterManga(
     characterId: number,
@@ -85,7 +85,7 @@ export class CharacterManager extends baseManager.BaseManager {
 
   /** getCharacterVoiceActors: Get a Character's Voice Actors from the Jikan API by its ID
    *
-   * This method may throw an error if status is not between 200 and 300
+   * @throws Error if status is not between 200 and 300
    */
   public getCharacterVoiceActors(
     characterId: number,
@@ -97,7 +97,7 @@ export class CharacterManager extends baseManager.BaseManager {
 
   /** getCharacterPictures: Get a Character's Pictures from the Jikan API by its ID
    *
-   * This method may throw an error if status is not between 200 and 300
+   * @throws Error if status is not between 200 and 300
    */
   public getCharacterPictures(
     characterId: number,

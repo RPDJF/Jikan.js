@@ -49,19 +49,9 @@ export enum Season {
   Fall = "fall",
 }
 
-export interface Relation {
-  relation: string;
-  entry: baseModel.MalEntries[];
-}
-
 export interface Theme {
   openings: string[];
   endings: string[];
-}
-
-export interface External {
-  name: string;
-  url: string;
 }
 
 export interface CharacterRole {
@@ -236,8 +226,8 @@ export interface Anime extends baseModel.GenericModel {
 }
 
 export interface AnimeFull extends Anime {
-  relations: Relation[];
+  relations: baseModel.Relation[];
   theme: Theme;
-  external: External[];
-  streaming: External[];
+  external: baseModel.External[];
+  streaming: baseModel.External[];
 }

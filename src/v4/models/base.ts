@@ -81,3 +81,13 @@ export interface DateRange {
     string?: string;
   };
 }
+
+export interface Relation {
+  relation: string;
+  entry: MalEntries[];
+}
+
+export interface External {
+  name: string;
+  url: string;
+}

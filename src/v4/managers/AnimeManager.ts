@@ -111,6 +111,7 @@ export class AnimeManager extends baseManager.BaseManager {
 
   /**
    * getAnimes: Get an Anime array from the Jikan API
+   * @throws Error if status is not between 200 and 300
    */
   public getAnimes(
     params?: AnimeSearchParameters,
@@ -121,6 +122,7 @@ export class AnimeManager extends baseManager.BaseManager {
   }
   /**
    * getAnimeFull: Get an AnimeFull from the Jikan API by its ID
+   * @throws Error if status is not between 200 and 300
    */
   public getAnimeFull(animeId: number): Promise<animeModel.AnimeFull> {
     return this._fetchData<animeModel.AnimeFull>(
@@ -129,6 +131,7 @@ export class AnimeManager extends baseManager.BaseManager {
   }
   /**
    * getAnime: Get an Anime from the Jikan API by its ID
+   * @throws Error if status is not between 200 and 300
    */
   public getAnime(animeId: number): Promise<animeModel.Anime> {
     return this._fetchData<animeModel.Anime>(
@@ -137,6 +140,7 @@ export class AnimeManager extends baseManager.BaseManager {
   }
   /**
    * getAnimeCharacters: Get an Anime's Characters from the Jikan API by its ID
+   * @throws Error if status is not between 200 and 300
    */
   public getAnimeCharacters(
     animeId: number,
@@ -147,6 +151,7 @@ export class AnimeManager extends baseManager.BaseManager {
   }
   /**
    * getAnimeStaff: Get an Anime's Staff from the Jikan API by its ID
+   * @throws Error if status is not between 200 and 300
    */
   public getAnimeStaff(animeId: number): Promise<baseModel.Staff[]> {
     return this._fetchData<baseModel.Staff[]>(
@@ -155,6 +160,7 @@ export class AnimeManager extends baseManager.BaseManager {
   }
   /**
    * getAnimeEpisodes: Get an Anime's Episodes from the Jikan API by its ID
+   * @throws Error if status is not between 200 and 300
    */
   public getAnimeEpisodes(
     animeId: number,
@@ -166,6 +172,7 @@ export class AnimeManager extends baseManager.BaseManager {
   }
   /**
    * getAnimeEpisode: Get an Anime's Episode from the Jikan API by its ID and Episode number
+   * @throws Error if status is not between 200 and 300
    */
   public getAnimeEpisode(
     animeId: number,
@@ -181,6 +188,7 @@ export class AnimeManager extends baseManager.BaseManager {
   }
   /**
    * getAnimeNews: Get an Anime's News from the Jikan API by its ID
+   * @throws Error if status is not between 200 and 300
    */
   public getAnimeNews(
     animeId: number,
@@ -192,6 +200,7 @@ export class AnimeManager extends baseManager.BaseManager {
   }
   /**
    * getAnimeForum: Get an Anime's Forum from the Jikan API by its ID
+   * @throws Error if status is not between 200 and 300
    */
   public getAnimeForum(
     animeId: number,
@@ -203,6 +212,7 @@ export class AnimeManager extends baseManager.BaseManager {
   }
   /**
    * getAnimeVideos: Get an Anime's Videos from the Jikan API by its ID
+   * @throws Error if status is not between 200 and 300
    */
   public getAnimeVideos(animeId: number): Promise<animeModel.AnimeVideo> {
     return this._fetchData<animeModel.AnimeVideo>(
@@ -211,6 +221,7 @@ export class AnimeManager extends baseManager.BaseManager {
   }
   /**
    * getAnimeVideosEpisodes: Get an Anime's Videos
+   * @throws Error if status is not between 200 and 300
    */
   public getAnimeVideosEpisodes(
     animeId: number,
@@ -222,6 +233,7 @@ export class AnimeManager extends baseManager.BaseManager {
   }
   /**
    * getAnimePictures: Get an Anime's Pictures from the Jikan API by its ID
+   * @throws Error if status is not between 200 and 300
    */
   public getAnimePictures(animeId: number): Promise<baseModel.CommonImage[]> {
     return this._fetchData<baseModel.CommonImage[]>(
@@ -230,6 +242,7 @@ export class AnimeManager extends baseManager.BaseManager {
   }
   /**
    * getAnimeStatistics: Get an Anime's statistics from the Jikan API by its ID
+   * @throws Error if status is not between 200 and 300
    */
   public getAnimeStatistics(
     animeId: number,
@@ -240,6 +253,7 @@ export class AnimeManager extends baseManager.BaseManager {
   }
   /**
    * getAnimeMoreInfo: Get an Anime's More Info from the Jikan API by its ID
+   * @throws Error if status is not between 200 and 300
    */
   public getAnimeMoreInfo(animeId: number): Promise<animeModel.AnimeMoreInfo> {
     return this._fetchData<animeModel.AnimeMoreInfo>(
@@ -248,6 +262,7 @@ export class AnimeManager extends baseManager.BaseManager {
   }
   /**
    * getAnimeRecommendations: Get an Anime's Recommendations from the Jikan API by its ID
+   * @throws Error if status is not between 200 and 300
    */
   public getAnimeRecommendations(
     animeId: number,
@@ -262,6 +277,7 @@ export class AnimeManager extends baseManager.BaseManager {
   }
   /**
    * getAnimeUserUpdates: Get an Anime's User Updates from the Jikan API by its ID
+   * @throws Error if status is not between 200 and 300
    */
   public getAnimeUserUpdates(
     animeId: number,
@@ -273,6 +289,7 @@ export class AnimeManager extends baseManager.BaseManager {
   }
   /**
    * getAnimeReviews: Get an Anime's Reviews from the Jikan API by its ID
+   * @throws Error if status is not between 200 and 300
    */
   public getAnimeReviews(
     animeId: number,
@@ -284,14 +301,16 @@ export class AnimeManager extends baseManager.BaseManager {
   }
   /**
    * getAnimeRelations: Get an Anime's Relations from the Jikan API by its ID
+   * @throws Error if status is not between 200 and 300
    */
-  public getAnimeRelations(animeId: number): Promise<animeModel.Relation[]> {
-    return this._fetchData<animeModel.Relation[]>(
+  public getAnimeRelations(animeId: number): Promise<baseModel.Relation[]> {
+    return this._fetchData<baseModel.Relation[]>(
       this._buildAPIRequestQuery(animeId.toString(), undefined, "relations"),
     );
   }
   /**
    * getAnimeThemes: Get an Anime's Themes from the Jikan API by its ID
+   * @throws Error if status is not between 200 and 300
    */
   public getAnimeThemes(animeId: number): Promise<animeModel.Theme> {
     return this._fetchData<animeModel.Theme>(
@@ -300,17 +319,19 @@ export class AnimeManager extends baseManager.BaseManager {
   }
   /**
    * getAnimeExternal: Get an Anime's External from the Jikan API by its ID
+   * @throws Error if status is not between 200 and 300
    */
-  public getAnimeExternal(animeId: number): Promise<animeModel.External[]> {
-    return this._fetchData<animeModel.External[]>(
+  public getAnimeExternal(animeId: number): Promise<baseModel.External[]> {
+    return this._fetchData<baseModel.External[]>(
       this._buildAPIRequestQuery(animeId.toString(), undefined, "external"),
     );
   }
   /**
    * getAnimeStreaming: Get an Anime's Streaming from the Jikan API by its ID
+   * @throws Error if status is not between 200 and 300
    */
-  public getAnimeStreaming(animeId: number): Promise<animeModel.External[]> {
-    return this._fetchData<animeModel.External[]>(
+  public getAnimeStreaming(animeId: number): Promise<baseModel.External[]> {
+    return this._fetchData<baseModel.External[]>(
       this._buildAPIRequestQuery(animeId.toString(), undefined, "streaming"),
     );
   }
