@@ -62,8 +62,7 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git pull origin main --no-edit
-          git add ./meta/statusBadge.svg
-          git add docs
+          git add -A
           if git diff-index --quiet HEAD; then
             echo "No changes to commit"
           else
