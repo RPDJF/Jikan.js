@@ -23,15 +23,15 @@ jobs:
         run: |
           STATUS="Pending"
           COLOR="yellow"
-          # Update the README badge to "Pending"
-          sed -i "s/\(Test%20Status-\)[^?]*\?/\1${STATUS}-${COLOR}/" README.md
+          # Update the status badge to "Pending"
+          wget -q -o /dev/null "https://img.shields.io/badge/Test%20Status-${STATUS}-${COLOR}.svg" -O ./meta/statusBadge.svg
 
       - name: Commit and Push Changes pending status
         if: always() # Always attempt to commit changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add README.md
+          git add ./meta/statusBadge.svg
           if git diff-index --quiet HEAD; then
             echo "No changes to commit"
           else
@@ -67,8 +67,8 @@ jobs:
             COLOR="red"
           fi
 
-          # Update the README badge
-          sed -i "s/\(Test%20Status-\)[^?]*\?/\1${STATUS}-${COLOR}/" README.md
+          # Update the status badge
+          wget -q -o /dev/null "https://img.shields.io/badge/Test%20Status-${STATUS}-${COLOR}.svg" -O ./meta/statusBadge.svg
 
           # Update the docs
           rm -rf docs
@@ -82,7 +82,7 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git pull origin main --no-edit
-          git add README.md
+          git add ./meta/statusBadge.svg
           git add docs
           if git diff-index --quiet HEAD; then
             echo "No changes to commit"
