@@ -36,7 +36,7 @@
  * ```
  *
  * ### 🎯 Example Usage
- * 
+ *
  * Take a look at [JikanClient facade methods](https://rpdjf.github.io/Jikan.js/~/JikanClient.html#methods)
  *
  * Here is an example of how you can use the library to fetch data from the Jikan
