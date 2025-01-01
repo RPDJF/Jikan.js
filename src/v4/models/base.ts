@@ -21,9 +21,7 @@ export interface GenericModel {
   url: string;
 }
 
-export interface MalEntries {
-  mal_id: number;
-  url: string;
+export interface MalEntries extends GenericModel {
   type: string;
   name: string;
 }
@@ -55,4 +53,31 @@ export interface Staff {
 export interface Pagination {
   last_visible_page: number;
   has_next_page: boolean;
+}
+
+export interface Titles {
+  type: string;
+  title: string;
+}
+
+export interface DateProp {
+  day?: number;
+  month?: number;
+  year?: number;
+}
+
+export interface DateRange {
+  /**
+   * Date ISO8601
+   */
+  from?: string;
+  /**
+   * Date ISO8601
+   */
+  to?: string;
+  prop: {
+    from: DateProp;
+    to: DateProp;
+    string?: string;
+  };
 }

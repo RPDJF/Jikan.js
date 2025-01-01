@@ -33,7 +33,7 @@ export interface Trailer extends TrailerBase {
   images?: baseModel.ImageFull;
 }
 
-export enum Type {
+export enum AnimeType {
   TV = "TV",
   OVA = "OVA",
   Movie = "Movie",
@@ -198,11 +198,8 @@ export interface Anime extends baseModel.GenericModel {
   Images: AnimeImages;
   trailer: TrailerBase;
   approved: boolean;
-  titles: {
-    type: string;
-    title: string;
-  }[];
-  type?: Type;
+  titles: baseModel.Titles[];
+  type?: AnimeType;
   source?: string;
   episodes?: number;
   status?: string;
