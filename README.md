@@ -199,6 +199,8 @@ import { JikanClient } from "https://raw.githubusercontent.com/RPDJF/Jikan.js/re
 
 ### 🎯 Example Usage
 
+Have a look at [JikanClient facade methods](https://rpdjf.github.io/Jikan.js/~/JikanClient.html#methods)
+
 Here is an example of how you can use the library to fetch data from the Jikan
 API:
 
@@ -210,16 +212,19 @@ client.getCharacter(1).then((character) => {
 });
 ```
 
-You also can use your own self-hosted Jikan API:
-
+The library will fully support Jikan API v4, meaning you can make the same queries as you would on the official Jikan API:
 ```typescript
-const client = new JikanClient({
-  host: "https://my-jikan-api.com",
-  baseUri: "/v4",
+client.getMangas({
+	page: 5,
+	limit: 5,
+	order_by: "popularity",
+	sort: "desc",
+}).then((mangas) => {
+	console.log(mangas);
 });
 ```
 
-**Pro Tip**: Always handle errors gracefully:
+**Pro Tip**: The client requests may throw errors, so it’s a good idea to wrap them in a try-catch block:
 
 ```typescript
 try {
@@ -228,6 +233,15 @@ try {
 } catch (error) {
   console.error(error);
 }
+```
+
+### 🌐 Self-Hosted Jikan API
+
+```typescript
+const client = new JikanClient({
+  host: "https://my-jikan-api.com",
+  baseUri: "/v4",
+});
 ```
 
 ## 💬 What is Jikan API?

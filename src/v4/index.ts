@@ -23,21 +23,6 @@
  *
  * ---
  *
- * ## 🌟 Features (So Far...)
- *
- * - ✅ Fetch data effortlessly from the Jikan API.
- * - ✅ Queue system to handle rate limits like a champ.
- * - ✅ Interfaced responses for clean and easy data handling.
- * - 🔄 Cache system to store responses for reuse (**in progress**).
- * - ✅ Support for self-hosted Jikan API setups.
- *
- * 💡 **Coming Soon:**
- *
- * - Full Jikan API v4 support, NodeJS support (or alternative repo), automatic
- *   retries, and more!
- *
- * ---
- *
  * ## 🚀 Getting Started
  *
  * ### 🛠️ Importing the Library
@@ -51,6 +36,8 @@
  * ```
  *
  * ### 🎯 Example Usage
+ * 
+ * Take a look at [JikanClient facade methods](https://rpdjf.github.io/Jikan.js/~/JikanClient.html#methods)
  *
  * Here is an example of how you can use the library to fetch data from the Jikan
  * API:
@@ -63,16 +50,19 @@
  * });
  * ```
  *
- * You also can use your own self-hosted Jikan API:
- *
+ * The library will fully support Jikan API v4, meaning you can make the same queries as you would on the official Jikan API:
  * ```typescript
- * const client = new JikanClient({
- *   host: "https://my-jikan-api.com",
- *   baseUri: "/v4",
+ * client.getMangas({
+ * 	page: 5,
+ * 	limit: 5,
+ * 	order_by: "popularity",
+ * 	sort: "desc",
+ * }).then((mangas) => {
+ * 	console.log(mangas);
  * });
  * ```
  *
- * **Pro Tip**: Always handle errors gracefully:
+ * **Pro Tip**: The client requests may throw errors, so it’s a good idea to wrap them in a try-catch block:
  *
  * ```typescript
  * try {
@@ -83,22 +73,14 @@
  * }
  * ```
  *
- * ---
+ * ### 🌐 Self-Hosted Jikan API
  *
- * ## 🌌 Why Deno?
- *
- * Deno is **secure**, **fast**, and **modern** — the perfect playground for this
- * library! Plus, it’s a refreshing break from Node.js. 🦕
- *
- * ---
- *
- * ## 🛤️ What’s Next?
- *
- * I’m just getting started! Stay tuned for more features and a polished first
- * release. Want to contribute or share ideas? Open an issue or fork the repo — I’d
- * love to learn from you! 😊
- *
- * ---
+ * ```typescript
+ * const client = new JikanClient({
+ *   host: "https://my-jikan-api.com",
+ *   baseUri: "/v4",
+ * });
+ * ```
  *
  * ✨ **Let’s build something awesome together!** ✨
  *
