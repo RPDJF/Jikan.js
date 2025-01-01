@@ -1,9 +1,4 @@
-import {
-  animeManager,
-  baseModel,
-  characterModel,
-  userModel,
-} from "../index.ts";
+import { baseModel, characterModel, userModel } from "../index.ts";
 
 export interface AnimeImages {
   jpg?: {
@@ -199,7 +194,13 @@ export interface Anime extends baseModel.GenericModel {
     to?: string;
   };
   duration?: string;
-  rating?: animeManager.AnimeRating;
+  rating?:
+    | "G - All Ages"
+    | "PG - Children"
+    | "PG-13 - Teens 13 or older"
+    | "R - 17+ (violence & profanity)"
+    | "R+ - Mild Nudity"
+    | "Rx - Hentai";
   score?: number;
   scored_by?: number;
   rank?: number;

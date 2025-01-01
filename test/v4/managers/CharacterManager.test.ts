@@ -2,7 +2,6 @@
 
 import { JikanClient } from "../../../src/index.ts";
 import {
-  CharacterOrder,
   CharacterSearchParameters,
 } from "../../../src/v4/managers/CharacterManager.ts";
 import { Character } from "../../../src/v4/models/character.ts";
@@ -30,7 +29,7 @@ function runCharacterManagerTests(client: JikanClient) {
   }, async () => {
     const params: CharacterSearchParameters = {
       limit: 5,
-      order_by: CharacterOrder.Name,
+      order_by: "favorites",
       page: 2,
       sort: "asc",
     };

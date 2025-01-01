@@ -11,79 +11,82 @@ export enum AnimeForumFilter {
 }
 
 /**
- * AnimeRating: Enum for Anime ratings
- * (i.e. G, PG, PG-13, etc.)
- */
-export enum AnimeRating {
-  G = "G - All Ages",
-  PG = "PG - Children",
-  PG13 = "PG-13 - Teens 13 or older",
-  R17 = "R - 17+ (violence & profanity)",
-  R = "R+ - Mild Nudity",
-  RX = "Rx - Hentai",
-}
-
-/**
- * AnimeType: Enum for Anime types
- * (i.e. TV, Movie, OVA, etc.)
- */
-export enum AnimeType {
-  TV = "tv",
-  Movie = "movie",
-  OVA = "ova",
-  Special = "special",
-  ONA = "ona",
-  Music = "music",
-  CM = "cm",
-  PV = "pv",
-  TVSpecial = "tv_special",
-}
-
-/**
- * AnimeStatus: Enum for Anime statuses
- * (i.e. Airing, Complete, Upcoming)
- */
-export enum AnimeStatus {
-  Airing = "airing",
-  Complete = "complete",
-  Upcoming = "upcoming",
-}
-
-/**
- * AnimeOrder: Enum for Anime orders
- * (i.e. MalId, Title, StartDate, etc.)
- */
-export enum AnimeOrder {
-  MalId = "mal_id",
-  Title = "title",
-  StartDate = "start_date",
-  EndDate = "end_date",
-  Score = "score",
-  ScoredBy = "scored_by",
-  Rank = "rank",
-  Popularity = "popularity",
-  Members = "members",
-  Favorites = "favorites",
-}
-
-/**
  * AnimeSearchParameters: Interface for Anime search parameters
  */
 export interface AnimeSearchParameters
   extends baseManager.BaseSearchParameters {
+  /**
+   * This is a flag. When supplied it will include entries which are unapproved. Unapproved entries on MyAnimeList are those that are user submitted and have not yet been approved by MAL to show up on other pages. They will have their own specifc pages and are often removed resulting in a 404 error. You do not need to pass a value to it.
+   */
   unapproved?: boolean;
-  type?: AnimeType | string;
+  /**
+   * Available Anime types
+   */
+  type?:
+    | "tv"
+    | "movie"
+    | "ova"
+    | "special"
+    | "ona"
+    | "music"
+    | "cm"
+    | "pv"
+    | "tv_special";
   score?: number;
+  /**
+   * Set a minimum score for results.
+   */
   min_score?: number;
+  /**
+   * Set a maximum score for results.
+   */
   max_score?: number;
-  status?: AnimeStatus | string;
-  rating?: AnimeRating | string;
+  /**
+   * Available Anime statuses
+   */
+  status?: "airing" | "complete" | "upcoming";
+  /**
+   * Available Anime audience ratings
+   */
+  rating?: "g" | "pg" | "pg13" | "r17" | "r" | "rx";
+  /**
+   * Filter out Adult entries
+   */
   sfw?: boolean;
+  /**
+   * Filter by genre(s) IDs. Can pass multiple with a comma as a delimiter. e.g 1,2,3
+   */
   genres?: string;
+  /**
+   * Exclude genre(s) IDs. Can pass multiple with a comma as a delimiter. e.g 1,2,3
+   */
   genres_exclude?: string;
-  order_by?: AnimeOrder | string;
+  /**
+   * Available Anime order_by properties
+   */
+  order_by?:
+    | "mal_id"
+    | "title"
+    | "start_date"
+    | "end_date"
+    | "episodes"
+    | "score"
+    | "scored_by"
+    | "rank"
+    | "popularity"
+    | "members"
+    | "favorites";
+  /**
+   * Filter by producers. Can pass multiple with a comma as a delimiter. e.g 1,2,3
+   */
   producers?: string;
+  /**
+   * Filter by starting data. Format: YYYY-MM-DD. e.g ``2022``, ``2005-05``, ``2005-01-01``
+   */
   start_date?: string;
+  /**
+   * Filter by ending data. Format: YYYY-MM-DD. e.g ``2022``, ``2005-05``, ``2005-01-01``
+   */
   end_date?: string;
 }
 

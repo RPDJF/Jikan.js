@@ -1,21 +1,14 @@
 import { baseManager, baseModel, characterModel } from "../index.ts";
 
 /**
- * CharacterOrder: Enum for Character orders
- * (i.e. MalId, Name, Favorites)
- */
-export enum CharacterOrder {
-  mal_id = "mal_id",
-  Name = "name",
-  Favorites = "favorites",
-}
-
-/**
  * CharacterSearchParameters: Interface for Character search parameters
  */
 export interface CharacterSearchParameters
   extends baseManager.BaseSearchParameters {
-  order_by?: CharacterOrder | string;
+  /**
+   * Available Character order_by properties
+   */
+  order_by?: "mal_id" | "name" | "favorites";
 }
 
 /**

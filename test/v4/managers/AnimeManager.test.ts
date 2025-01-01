@@ -3,7 +3,6 @@
 import { JikanClient } from "../../../src/index.ts";
 import {
   AnimeSearchParameters,
-  AnimeStatus,
 } from "../../../src/v4/managers/AnimeManager.ts";
 import { Anime } from "../../../src/v4/models/anime.ts";
 
@@ -35,7 +34,7 @@ export default function runAnimeManagerTests(client: JikanClient) {
       max_score: 7,
       page: 2,
       sort: "asc",
-      status: AnimeStatus.Complete,
+      status: "complete",
     };
     const animes: Anime[] = await client.getAnimes(params);
     if (!animes.length) {

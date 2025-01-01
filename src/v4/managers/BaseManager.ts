@@ -16,7 +16,13 @@ export interface BaseSearchParameters {
   page?: number;
   limit?: number;
   q?: string;
-  sort?: BaseSort | string;
+  /**
+   * Search query sort direction
+   */
+  sort?: "asc" | "desc";
+  /**
+   * Return entries starting with the specified letter
+   */
   letter?: string;
 }
 
