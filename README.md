@@ -133,7 +133,7 @@ coming soon, but you're welcome to follow along and share your feedback! 🙌
               </tr>
               <tr>
                 <td>Manga</td>
-                <td>🔄 In Progress</td>
+                <td>✅ Complete</td>
               </tr>
               <tr>
                 <td>People</td>
@@ -145,7 +145,7 @@ coming soon, but you're welcome to follow along and share your feedback! 🙌
               </tr>
               <tr>
                 <td>Random</td>
-                <td>❌ Not Started</td>
+                <td>🔄 In Progress</td>
               </tr>
               <tr>
                 <td>Recommendations</td>

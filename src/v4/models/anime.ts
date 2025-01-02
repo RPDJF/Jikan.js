@@ -110,15 +110,7 @@ export interface AnimeStatistics {
   dropped: number;
   plan_to_watch: number;
   total: number;
-  scores: {
-    score: number;
-    votes: number;
-    percentage: number;
-  }[];
-}
-
-export interface AnimeMoreInfo {
-  moreinfo?: string;
+  scores: baseModel.Score[];
 }
 
 export interface AnimeUserUpdate {
@@ -133,16 +125,7 @@ export interface AnimeUserUpdate {
 export interface AnimeReview extends baseModel.GenericModel {
   user: userModel.UserMeta;
   type: string;
-  reactions: {
-    overall: number;
-    nice: number;
-    love_it: number;
-    funny: number;
-    confusing: number;
-    informative: number;
-    well_written: number;
-    creative: number;
-  };
+  reactions: baseModel.Recommendations;
   date: string;
   review: string;
   score: number;

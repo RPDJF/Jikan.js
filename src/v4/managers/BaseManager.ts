@@ -33,6 +33,14 @@ export interface BaseSearchParameters extends PageSearchParameter {
 }
 
 /**
+ * ReviewsParameters: Interface for Reviews search parameters
+ */
+export interface ReviewsParameters extends PageSearchParameter {
+  preliminary?: boolean;
+  spoiler?: boolean;
+}
+
+/**
  * BaseManager: Base class for all managers
  * This component is an abstract class used to create managers for the Jikan API
  */

@@ -278,7 +278,7 @@ export class JikanClient {
    * getAnimeMoreInfo: Get an Anime's More Info from the Jikan API by its ID
    * @throws Error if status is not between 200 and 300
    */
-  public getAnimeMoreInfo(animeId: number): Promise<animeModel.AnimeMoreInfo> {
+  public getAnimeMoreInfo(animeId: number): Promise<baseModel.MoreInfo> {
     return this.animeManager.getAnimeMoreInfo(animeId);
   }
   /**
@@ -305,7 +305,7 @@ export class JikanClient {
    */
   public getAnimeReviews(
     animeId: number,
-    params?: animeManager.AnimeReviewsParameters,
+    params?: baseManager.ReviewsParameters,
   ): Promise<animeModel.AnimeReview[]> {
     return this.animeManager.getAnimeReviews(animeId, params);
   }
@@ -378,7 +378,7 @@ export class JikanClient {
   public getMangaNews(
     mangaId: number,
     params?: baseManager.PageSearchParameter,
-  ) {
+  ): Promise<baseModel.News[]> {
     return this.mangaManager.getMangaNews(mangaId, params);
   }
   /**
@@ -388,7 +388,7 @@ export class JikanClient {
   public getMangaTopics(
     mangaId: number,
     params?: mangaManager.MangaTopicsSearchParameters,
-  ) {
+  ): Promise<baseModel.Forum[]> {
     return this.mangaManager.getMangaTopics(mangaId, params);
   }
   /**
@@ -397,5 +397,64 @@ export class JikanClient {
    */
   public getMangaPictures(mangaId: number): Promise<mangaModel.MangaImages[]> {
     return this.mangaManager.getMangaPictures(mangaId);
+  }
+  /**
+   * getMangaStatistics: Get a Manga's Statistics from the Jikan API by its ID
+   * @throws Error if status is not between 200 and 300
+   */
+  public getMangaStatistics(
+    mangaId: number,
+  ): Promise<mangaModel.MangaStatistics> {
+    return this.mangaManager.getMangaStatistics(mangaId);
+  }
+  /**
+   * getMangaMoreInfo: Get a Manga's More Info from the Jikan API by its ID
+   * @throws Error if status is not between 200 and 300
+   */
+  public getMangaMoreInfo(mangaId: number): Promise<baseModel.MoreInfo> {
+    return this.mangaManager.getMangaMoreInfo(mangaId);
+  }
+  /**
+   * getMangaRecommendations: Get a Manga's Recommendations from the Jikan API by its ID
+   * @throws Error if status is not between 200 and 300
+   */
+  public getMangaRecommendations(
+    mangaId: number,
+  ): Promise<baseModel.MalEntries[]> {
+    return this.mangaManager.getMangaRecommendations(mangaId);
+  }
+  /**
+   * getMangaUserUpdates: Get a Manga's User Updates from the Jikan API by its ID
+   * @throws Error if status is not between 200 and 300
+   */
+  public getMangaUserUpdates(
+    mangaId: number,
+    params?: baseManager.PageSearchParameter,
+  ): Promise<mangaModel.MangaUserUpdate[]> {
+    return this.mangaManager.getMangaUserUpdates(mangaId, params);
+  }
+  /**
+   * getMangaReviews: Get a Manga's Reviews from the Jikan API by its ID
+   * @throws Error if status is not between 200 and 300
+   */
+  public getMangaReviews(
+    mangaId: number,
+    params?: baseManager.ReviewsParameters,
+  ): Promise<mangaModel.MangaReview[]> {
+    return this.mangaManager.getMangaReviews(mangaId, params);
+  }
+  /**
+   * getMangaRelations: Get a Manga's Relations from the Jikan API by its ID
+   * @throws Error if status is not between 200 and 300
+   */
+  public getMangaRelations(mangaId: number): Promise<baseModel.Relation[]> {
+    return this.mangaManager.getMangaRelations(mangaId);
+  }
+  /**
+   * getMangaExternal: Get a Manga's External Links from the Jikan API by its ID
+   * @throws Error if status is not between 200 and 300
+   */
+  public getMangaExternal(mangaId: number): Promise<baseModel.External[]> {
+    return this.mangaManager.getMangaExternal(mangaId);
   }
 }

@@ -114,3 +114,24 @@ export interface Forum extends GenericModel {
   comments: number;
   last_comment: LastComment;
 }
+
+export interface Score {
+  score: number;
+  votes: number;
+  percentage: number;
+}
+
+export interface MoreInfo {
+  moreinfo?: string;
+}
+
+export interface Recommendations {
+  overall: number;
+  nice: number;
+  love_it: number;
+  funny: number;
+  confusing: number;
+  informative: number;
+  well_written: number;
+  creative: number;
+}

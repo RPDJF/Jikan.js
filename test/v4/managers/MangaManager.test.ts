@@ -81,6 +81,41 @@ function runMangaManagerTests(client: JikanClient) {
           throw new Error("The array is empty");
         }
       }),
+      client.getMangaStatistics(1).then((statistics) => {
+        if (!statistics.scores.length) {
+          throw new Error("The object is empty");
+        }
+      }),
+      client.getMangaMoreInfo(2).then((moreInfo) => {
+        if (!moreInfo.moreinfo) {
+          throw new Error("The object is empty");
+        }
+      }),
+      client.getMangaRecommendations(1).then((recommendations) => {
+        if (!recommendations.length) {
+          throw new Error("The array is empty");
+        }
+      }),
+      client.getMangaUserUpdates(1).then((updates) => {
+        if (!updates.length) {
+          throw new Error("The array is empty");
+        }
+      }),
+      client.getMangaReviews(1).then((reviews) => {
+        if (!reviews.length) {
+          throw new Error("The array is empty");
+        }
+      }),
+      client.getMangaRelations(1).then((relations) => {
+        if (!relations.length) {
+          throw new Error("The array is empty");
+        }
+      }),
+      client.getMangaExternal(1).then((external) => {
+        if (!external.length) {
+          throw new Error("The array is empty");
+        }
+      }),
     ]);
   });
 }

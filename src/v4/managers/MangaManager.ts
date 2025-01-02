@@ -137,7 +137,7 @@ export class MangaManager extends baseManager.BaseManager {
   public getMangaNews(
     mangaId: number,
     params?: baseManager.PageSearchParameter,
-  ) {
+  ): Promise<baseModel.News[]> {
     return this._fetchData<baseModel.News[]>(
       this._buildAPIRequestQuery(mangaId.toString(), params, "news"),
     );
@@ -147,7 +147,10 @@ export class MangaManager extends baseManager.BaseManager {
    * getMangaTopics: Get a Manga's Topics from the Jikan API by its ID
    * @throws Error if status is not between 200 and 300
    */
-  public getMangaTopics(mangaId: number, params?: MangaTopicsSearchParameters) {
+  public getMangaTopics(
+    mangaId: number,
+    params?: MangaTopicsSearchParameters,
+  ): Promise<baseModel.Forum[]> {
     return this._fetchData<baseModel.Forum[]>(
       this._buildAPIRequestQuery(mangaId.toString(), params, "forum"),
     );
@@ -157,9 +160,97 @@ export class MangaManager extends baseManager.BaseManager {
    * getMangaPictures: Get a Manga's Pictures from the Jikan API by its ID
    * @throws Error if status is not between 200 and 300
    */
-  public getMangaPictures(mangaId: number) {
+  public getMangaPictures(mangaId: number): Promise<mangaModel.MangaImages[]> {
     return this._fetchData<mangaModel.MangaImages[]>(
       this._buildAPIRequestQuery(mangaId.toString(), undefined, "pictures"),
+    );
+  }
+
+  /**
+   * getMangaStatistics: Get a Manga's Statistics from the Jikan API by its ID
+   * @throws Error if status is not between 200 and 300
+   */
+  public getMangaStatistics(
+    mangaId: number,
+  ): Promise<mangaModel.MangaStatistics> {
+    return this._fetchData<mangaModel.MangaStatistics>(
+      this._buildAPIRequestQuery(mangaId.toString(), undefined, "statistics"),
+    );
+  }
+
+  /**
+   * getMangaMoreInfo: Get a Manga's More Info from the Jikan API by its ID
+   * @throws Error if status is not between 200 and 300
+   */
+  public getMangaMoreInfo(mangaId: number): Promise<baseModel.MoreInfo> {
+    return this._fetchData<baseModel.MoreInfo>(
+      this._buildAPIRequestQuery(mangaId.toString(), undefined, "moreinfo"),
+    );
+  }
+
+  /**
+   * getMangaRecommendations: Get a Manga's Recommendations from the Jikan API by its ID
+   * @throws Error if status is not between 200 and 300
+   */
+  public getMangaRecommendations(
+    mangaId: number,
+  ): Promise<baseModel.MalEntries[]> {
+    return this._fetchData<baseModel.MalEntries[]>(
+      this._buildAPIRequestQuery(
+        mangaId.toString(),
+        undefined,
+        "recommendations",
+      ),
+    );
+  }
+
+  /**
+   * getMangaUserUpdates: Get a Manga's User Updates from the Jikan API by its ID
+   * @throws Error if status is not between 200 and 300
+   */
+  public getMangaUserUpdates(
+    mangaId: number,
+    params?: baseManager.PageSearchParameter,
+  ): Promise<mangaModel.MangaUserUpdate[]> {
+    return this._fetchData<mangaModel.MangaUserUpdate[]>(
+      this._buildAPIRequestQuery(mangaId.toString(), params, "userupdates"),
+    );
+  }
+
+  /**
+   * getMangaReviews: Get a Manga's Reviews from the Jikan API by its ID
+   * @throws Error if status is not between 200 and 300
+   */
+  public getMangaReviews(
+    mangaId: number,
+    params?: baseManager.ReviewsParameters,
+  ): Promise<mangaModel.MangaReview[]> {
+    return this._fetchData<mangaModel.MangaReview[]>(
+      this._buildAPIRequestQuery(mangaId.toString(), params, "reviews"),
+    );
+  }
+
+  /**
+   * getMangaRelations: Get a Manga's Relations from the Jikan API by its ID
+   * @throws Error if status is not between 200 and 300
+   */
+  public getMangaRelations(
+    mangaId: number,
+  ): Promise<baseModel.Relation[]> {
+    return this._fetchData<baseModel.Relation[]>(
+      this._buildAPIRequestQuery(mangaId.toString(), undefined, "relations"),
+    );
+  }
+
+  /**
+   * getMangaExternals: Get a Manga's Externals from the Jikan API by its ID
+   * @throws Error if status is not between 200 and 300
+   */
+  public getMangaExternal(
+    mangaId: number,
+  ): Promise<baseModel.External[]> {
+    return this._fetchData<baseModel.External[]>(
+      this._buildAPIRequestQuery(mangaId.toString(), undefined, "external"),
     );
   }
 }

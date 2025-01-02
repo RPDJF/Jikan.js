@@ -1,4 +1,4 @@
-import { baseModel, characterModel } from "../index.ts";
+import { baseModel, characterModel, userModel } from "../index.ts";
 
 export interface MangaImages {
   jpg: {
@@ -35,6 +35,39 @@ export enum MangaStatus {
 export interface MangaCharacterRole {
   character: characterModel.CharacterMinimal;
   role: string;
+}
+
+export interface MangaStatistics {
+  reading: number;
+  completed: number;
+  on_hold: number;
+  dropped: number;
+  plan_to_read: number;
+  total: number;
+  scores: baseModel.Score[];
+}
+
+export interface MangaUserUpdate {
+  user: userModel.UserMeta;
+  score?: number;
+  status: string;
+  volumes_read: number;
+  volumes_total: number;
+  chapters_read: number;
+  chapters_total: number;
+  date: string;
+}
+
+export interface MangaReview extends baseModel.GenericModel {
+  user: userModel.UserMeta;
+  type: string;
+  reactions: baseModel.Recommendations;
+  date: string;
+  review: string;
+  score: number;
+  tags: string[];
+  is_spoiler: boolean;
+  is_preliminary: boolean;
 }
 
 export interface Manga extends baseModel.GenericModel {

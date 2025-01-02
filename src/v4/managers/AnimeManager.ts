@@ -98,15 +98,6 @@ export interface AnimeForumSearchParameters {
 }
 
 /**
- * AnimeReviewsParameters: Interface for Anime Reviews search parameters
- */
-export interface AnimeReviewsParameters
-  extends baseManager.PageSearchParameter {
-  preliminary?: boolean;
-  spoiler?: boolean;
-}
-
-/**
  * AnimeManager: Manager for Anime
  * This component is used to get Anime data from the Jikan API
  */
@@ -259,8 +250,8 @@ export class AnimeManager extends baseManager.BaseManager {
    * getAnimeMoreInfo: Get an Anime's More Info from the Jikan API by its ID
    * @throws Error if status is not between 200 and 300
    */
-  public getAnimeMoreInfo(animeId: number): Promise<animeModel.AnimeMoreInfo> {
-    return this._fetchData<animeModel.AnimeMoreInfo>(
+  public getAnimeMoreInfo(animeId: number): Promise<baseModel.MoreInfo> {
+    return this._fetchData<baseModel.MoreInfo>(
       this._buildAPIRequestQuery(animeId.toString(), undefined, "moreinfo"),
     );
   }
@@ -297,7 +288,7 @@ export class AnimeManager extends baseManager.BaseManager {
    */
   public getAnimeReviews(
     animeId: number,
-    params?: AnimeReviewsParameters,
+    params?: baseManager.ReviewsParameters,
   ): Promise<animeModel.AnimeReview[]> {
     return this._fetchData<animeModel.AnimeReview[]>(
       this._buildAPIRequestQuery(animeId.toString(), params, "reviews"),
