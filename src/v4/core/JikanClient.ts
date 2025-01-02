@@ -68,6 +68,25 @@ export interface ClientOptions {
   cacheOptions?: Partial<cacheManager.CacheOptions>;
 }
 
+/**
+ * JikanClient: Main class for the Jikan API client
+ * This component is used to interact with the Jikan API using internal managers
+ * @example Usage
+ * ```typescript
+ * const client = new JikanClient();
+ *
+ * client.getCharacter(1).then((character) => {
+ *   console.log(character.name);
+ * });
+ * ```
+ * @example Using a self-hosted Jikan API
+ * ```typescript
+ * const client = new JikanClient({
+ *  host: "https://api.jikan.moe",
+ *  baseUri: "/v4",
+ * });
+ * ```
+ */
 export class JikanClient {
   private static setDefaultOptions(
     options?: Partial<ClientOptions>,
