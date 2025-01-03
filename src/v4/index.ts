@@ -81,6 +81,20 @@
  *   baseUri: "/v4",
  * });
  * ```
+ * 
+ * ### ⚙️ DEBUG Mode
+ * 
+ * You can enable debug mode to see detailed logs:
+ * Linux/MacOS:
+ * ```bash
+ * export DEBUG=true
+ * ```
+ * Windows:
+ * ```cmd
+ * set DEBUG=true
+ * ```
+ * 
+ * Then simply run your program as usual.
  *
  * ✨ **Let’s build something awesome together!** ✨
  *

@@ -244,6 +244,20 @@ const client = new JikanClient({
 });
 ```
 
+### ⚙️ DEBUG Mode
+
+You can enable debug mode to see detailed logs:
+Linux/MacOS:
+```bash
+export DEBUG=true
+```
+Windows:
+```cmd
+set DEBUG=true
+```
+
+Then simply run your program as usual.
+
 ## 💬 What is Jikan API?
 
 [Jikan API](https://github.com/jikan-me/jikan) is an **unofficial MyAnimeList

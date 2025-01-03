@@ -1,5 +1,6 @@
 import * as apiModel from "../core/apiModels.ts";
 import { cacheManager, JikanClient } from "../index.ts";
+import { Logger } from "../utilities/logger.ts";
 
 /**
  * BaseSort: Enum for base sorting
@@ -86,8 +87,8 @@ export abstract class BaseManager {
       const req = await this.client.requestManager.request(query);
       const json = await req.json();
       if (json.status < 200 || json.status >= 300) {
-        console.error(`Error on APIRequestQuery:`, query);
-        console.error(`Error fetching data:`, json);
+        Logger.error(`Error on APIRequestQuery:`, query);
+        Logger.error(`Error fetching data:`, json);
         throw new Error(
           `Error fetching data: ${json.status} - ${json.message}`,
         );
@@ -97,7 +98,7 @@ export abstract class BaseManager {
       }
       return json.data as T;
     } catch (e) {
-      console.error(`Error fetching data:`, e);
+      Logger.error(`Error fetching data:`, e);
       throw e;
     }
   }

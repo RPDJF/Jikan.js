@@ -1,5 +1,6 @@
 import { JikanClient } from "../index.ts";
 import { APICacheResponse, APIRequestQuery } from "./apiModels.ts";
+import { Logger } from "../utilities/logger.ts";
 
 export interface CacheOptions {
   /**
@@ -72,10 +73,10 @@ export class CacheManager {
 
     if (!this.options.cachePath) {
       cache = Deno.makeTempDirSync({ prefix: "jikanjs_" });
-      console.info(`CacheManager: Created new cache at ${cache}.`);
+      Logger.info(`CacheManager: Created new cache at ${cache}.`);
     } else {
       Deno.mkdirSync(this.options.cachePath, { recursive: true });
-      console.info(`CacheManager: Using cache at ${cache}.`);
+      Logger.info(`CacheManager: Using cache at ${cache}.`);
     }
 
     return cache;
@@ -89,18 +90,18 @@ export class CacheManager {
       this.options.cachePath = this._getDefaultCache();
       if (this.options.deleteCacheOnExit) {
         self.addEventListener("unload", () => {
-          console.warn(
+          Logger.warn(
             `CacheManager: Deleting cache... ${this.options.cachePath}`,
           );
           try {
             Deno.removeSync(this.options.cachePath, { recursive: true });
           } catch (e) {
-            console.error(`CacheManager: Error deleting cache: ${e}`);
+            Logger.error(`CacheManager: Error deleting cache: ${e}`);
           }
-          console.info(`CacheManager: Cache deleted.`);
+          Logger.info(`CacheManager: Cache deleted.`);
         });
         Deno.addSignalListener("SIGINT", () => {
-          console.warn(`CacheManager: SIGINT Signal received.`);
+          Logger.warn(`CacheManager: SIGINT Signal received.`);
           Deno.exit(0);
         });
       }
@@ -122,7 +123,7 @@ export class CacheManager {
         "_",
       ).replace(/\//g, "_").replace(/\?/g, "_")
     }.json`;
-    console.info(`CacheManager: Caching ${queryURL} to ${cacheFile}`);
+    Logger.info(`CacheManager: Caching ${queryURL} to ${cacheFile}`);
     const content: APICacheResponse = {
       data: data,
       expiration: Date.now() + this.options.cacheExpiration,
@@ -149,10 +150,10 @@ export class CacheManager {
         new TextDecoder().decode(Deno.readFileSync(cacheFile)),
       );
       if (content.expiration < Date.now()) {
-        console.info(`CacheManager: Cache expired for ${queryURL}`);
+        Logger.info(`CacheManager: Cache expired for ${queryURL}`);
         return null;
       }
-      console.info(`CacheManager: Cache hit for ${queryURL}`);
+      Logger.info(`CacheManager: Cache hit for ${queryURL}`);
       return content;
     } catch (_e) {
       return null;

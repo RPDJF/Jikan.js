@@ -1,5 +1,6 @@
 import * as apiModel from "./apiModels.ts";
 import { JikanClient } from "./JikanClient.ts";
+import { Logger } from "../utilities/logger.ts";
 
 export class RequestQueue {
   private _queue: (apiModel.APIRequestPromise)[] = [];
@@ -120,7 +121,7 @@ export class RequestManager extends RequestQueue {
       } catch (e) {
         if (e instanceof Error) {
           if (e.cause === "QueueFull") {
-            console.error(
+            Logger.error(
               "RequestManager: Queue is full, request dropped",
               requestQuery,
             );
@@ -134,7 +135,7 @@ export class RequestManager extends RequestQueue {
               ),
             );
           } else {
-            console.error("RequestManager: Unknown error", e);
+            Logger.error("RequestManager: Unknown error", e);
             resolve(
               this._createErrorResponse(
                 e.message,
@@ -145,7 +146,7 @@ export class RequestManager extends RequestQueue {
             );
           }
         } else {
-          console.error("RequestManager: Unknown error", e);
+          Logger.error("RequestManager: Unknown error", e);
           resolve(
             this._createErrorResponse(
               "Unknown error",
