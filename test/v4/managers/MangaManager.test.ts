@@ -1,6 +1,6 @@
 // write tests for the MangaManager class
 
-import { JikanClient, mangaManager, mangaModel } from "../../../src/index.ts";
+import { JikanClient, mangaManager, mangaModel } from "../../../src/mod.ts";
 
 function runMangaManagerTests(client: JikanClient) {
   // Tested value:

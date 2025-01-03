@@ -1,4 +1,4 @@
-import { JikanClient } from "../../../src/index.ts";
+import { JikanClient } from "../../../src/mod.ts";
 
 export default function runRandomManagerTests(client: JikanClient) {
   // Tested:

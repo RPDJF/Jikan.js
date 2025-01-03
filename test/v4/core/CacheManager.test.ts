@@ -1,4 +1,4 @@
-import { JikanClient } from "../../../src/index.ts";
+import { JikanClient } from "../../../src/mod.ts";
 
 function runCacheManagerTests(client: JikanClient) {
   // Will test the cache manager from the client

@@ -1,7 +1,6 @@
-import { JikanClient } from "../../../src/index.ts";
+import { JikanClient } from "../../../src/mod.ts";
 import { APIRequestQuery } from "../../../src/v4/core/apiModels.ts";
-import * as rgb from "https://deno.land/std/fmt/colors.ts";
-
+import * as deps from "../../test_deps.ts";
 function runRequestManagerTests(client: JikanClient) {
   // Will test the request manager from the client
 
@@ -27,11 +26,11 @@ function runRequestManagerTests(client: JikanClient) {
     const _res = new Promise<void>((resolve, reject) => {
       let count = 0;
       requests.forEach((request) => {
-        console.log(rgb.blue(`Requesting ${request.endpoint}`));
+        console.log(deps.blue(`Requesting ${request.endpoint}`));
         const res = requestManager.request(request);
         res.then(() => {
           count++;
-          console.log(rgb.green(`Request ${request.endpoint} done`));
+          console.log(deps.green(`Request ${request.endpoint} done`));
           if (count === requests.length) {
             resolve();
           }
@@ -53,9 +52,9 @@ function runRequestManagerTests(client: JikanClient) {
       } else if (duration > maxTimeout) {
         throw new Error(
           `The requests were made too slow. Took ${
-            rgb.blue(duration + "ms")
+            deps.blue(duration + "ms")
           } when timeout is ${
-            rgb.red(maxTimeout + "ms")
+            deps.red(maxTimeout + "ms")
           }. Network may just be slow.`,
         );
       }

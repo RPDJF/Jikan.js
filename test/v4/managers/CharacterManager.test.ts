@@ -1,6 +1,6 @@
 // write tests for the CharacterManager class
 
-import { JikanClient } from "../../../src/index.ts";
+import { JikanClient } from "../../../src/mod.ts";
 import {
   CharacterSearchParameters,
 } from "../../../src/v4/managers/CharacterManager.ts";

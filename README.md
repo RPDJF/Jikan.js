@@ -194,7 +194,7 @@ coming soon, but you're welcome to follow along and share your feedback! 🙌
 To try it out now:
 
 ```typescript
-import { JikanClient } from "https://raw.githubusercontent.com/RPDJF/Jikan.js/refs/heads/main/src/index.ts";
+import { JikanClient } from "https://raw.githubusercontent.com/RPDJF/Jikan.js/refs/heads/main/src/mod.ts";
 ```
 
 ### 🎯 Example Usage

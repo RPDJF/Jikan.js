@@ -1,6 +1,6 @@
 // write tests for the AnimeManager class
 
-import { JikanClient } from "../../../src/index.ts";
+import { JikanClient } from "../../../src/mod.ts";
 import {
   AnimeSearchParameters,
 } from "../../../src/v4/managers/AnimeManager.ts";
