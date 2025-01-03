@@ -8,6 +8,7 @@ import {
   characterModel,
   mangaManager,
   mangaModel,
+  randomManager,
   requestManager,
 } from "../index.ts";
 
@@ -106,6 +107,7 @@ export class JikanClient {
   public readonly cacheManager: cacheManager.CacheManager;
   public readonly requestManager: requestManager.RequestManager;
   public readonly characterManager: characterManager.CharacterManager;
+  public readonly randomManager: randomManager.RandomManager;
   public readonly animeManager: animeManager.AnimeManager;
   public readonly mangaManager: mangaManager.MangaManager;
 
@@ -119,6 +121,7 @@ export class JikanClient {
     this.characterManager = new characterManager.CharacterManager(this);
     this.animeManager = new animeManager.AnimeManager(this);
     this.mangaManager = new mangaManager.MangaManager(this);
+    this.randomManager = new randomManager.RandomManager(this);
   }
 
   // Facade methods for the CharacterManager
@@ -476,5 +479,28 @@ export class JikanClient {
    */
   public getMangaExternal(mangaId: number): Promise<baseModel.External[]> {
     return this.mangaManager.getMangaExternal(mangaId);
+  }
+
+  // Facade methods for the RandomManager
+  /**
+   * getAnimeRandom: Get a random Anime from the Jikan API
+   * @throws Error if status is not between 200 and 300
+   */
+  public getAnimeRandom(): Promise<animeModel.Anime> {
+    return this.randomManager.getRandomAnime();
+  }
+  /**
+   * getMangaRandom: Get a random Manga from the Jikan API
+   * @throws Error if status is not between 200 and 300
+   */
+  public getMangaRandom(): Promise<mangaModel.Manga> {
+    return this.randomManager.getRandomManga();
+  }
+  /**
+   * getCharacterRandom: Get a random Character from the Jikan API
+   * @throws Error if status is not between 200 and 300
+   */
+  public getCharacterRandom(): Promise<characterModel.Character> {
+    return this.randomManager.getRandomCharacter();
   }
 }

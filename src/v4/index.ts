@@ -108,6 +108,7 @@ export * as baseManager from "./managers/BaseManager.ts";
 export * as animeManager from "./managers/AnimeManager.ts";
 export * as mangaManager from "./managers/MangaManager.ts";
 export * as characterManager from "./managers/CharacterManager.ts";
+export * as randomManager from "./managers/RandomManager.ts";
 export * as baseModel from "./models/base.ts";
 export * as animeModel from "./models/anime.ts";
 export * as mangaModel from "./models/manga.ts";
