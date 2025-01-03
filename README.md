@@ -39,7 +39,7 @@ coming soon, but you're welcome to follow along and share your feedback! 🙌
 - ✅ Fetch data effortlessly from the Jikan API.
 - ✅ Queue system to handle rate limits like a champ.
 - ✅ Interfaced responses for clean and easy data handling.
-- 🔄 Cache system to store responses for reuse (**in progress**).
+- 🔄 Cache system to store responses for reuse (**implemented but need testing**).
 - ✅ Support for self-hosted Jikan API setups.
 
 💡 **Coming Soon:**
@@ -82,7 +82,7 @@ coming soon, but you're welcome to follow along and share your feedback! 🙌
     </tr>
     <tr>
       <td>Cache system to store responses for a certain amount of time</td>
-      <td>🔄 In Progress</td>
+      <td>🟡 Need testing</td>
 	  <td>✅</td>
     </tr>
     <tr>
