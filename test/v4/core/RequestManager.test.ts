@@ -16,11 +16,11 @@ function runRequestManagerTests(client: JikanClient) {
   }, async () => {
     const requestManager = client.requestManager;
     const requests: APIRequestQuery[] = [
-      { endpoint: "anime/1", method: "GET" },
-      { endpoint: "anime/2", method: "GET" },
-      { endpoint: "anime/3", method: "GET" },
-      { endpoint: "anime/4", method: "GET" },
-      { endpoint: "anime/5", method: "GET" },
+      { endpoint: "anime/1", method: "GET", cache: false },
+      { endpoint: "anime/2", method: "GET", cache: false },
+      { endpoint: "anime/3", method: "GET", cache: false },
+      { endpoint: "anime/4", method: "GET", cache: false },
+      { endpoint: "anime/5", method: "GET", cache: false },
     ];
 
     const start = Date.now();
@@ -83,7 +83,7 @@ function runRequestManagerTests(client: JikanClient) {
     const requestManager = _client.requestManager;
     const requests: APIRequestQuery[] = [];
     for (let i = 0; i < 2000; i++) {
-      requests.push({ endpoint: "posts", method: "GET" });
+      requests.push({ endpoint: "posts", method: "GET", cache: false });
     }
     const _res = new Promise<void>((resolve, reject) => {
       let count = 0;

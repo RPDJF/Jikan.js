@@ -1,3 +1,6 @@
+import { JikanClient } from "../index.ts";
+import { APICacheResponse, APIRequestQuery } from "./apiModels.ts";
+
 export interface CacheOptions {
   /**
    * Cache expiration time in milliseconds
@@ -62,6 +65,7 @@ export class CacheManager {
    * Cache options containing the cache options
    */
   private readonly options: CacheOptions;
+  private readonly _client: JikanClient;
 
   private _getDefaultCache(): string {
     let cache = this.options.cachePath;
@@ -76,8 +80,9 @@ export class CacheManager {
 
     return cache;
   }
-  public constructor(options?: Partial<CacheOptions>) {
+  public constructor(client: JikanClient, options?: Partial<CacheOptions>) {
     this.options = CacheManager.setDefaultOptions(options);
+    this._client = client;
 
     // cache initialization
     if (this.options.cache && !this.options.cachePath) {
@@ -87,7 +92,11 @@ export class CacheManager {
           console.warn(
             `CacheManager: Deleting cache... ${this.options.cachePath}`,
           );
-          Deno.removeSync(this.options.cachePath);
+          try {
+            Deno.removeSync(this.options.cachePath, { recursive: true });
+          } catch (e) {
+            console.error(`CacheManager: Error deleting cache: ${e}`);
+          }
           console.info(`CacheManager: Cache deleted.`);
         });
         Deno.addSignalListener("SIGINT", () => {
@@ -100,5 +109,53 @@ export class CacheManager {
 
   public get cachePath(): string {
     return this.options.cachePath;
+  }
+
+  public set(query: APIRequestQuery, data: JSON) {
+    if (!this.options.cache) {
+      return;
+    }
+    const queryURL = this._client.requestManager.buildURL(query);
+    const cacheFile = `${this.options.cachePath}/${
+      queryURL.toString().substring(queryURL.origin.length).replace(
+        /\/\//g,
+        "_",
+      ).replace(/\//g, "_").replace(/\?/g, "_")
+    }.json`;
+    console.info(`CacheManager: Caching ${queryURL} to ${cacheFile}`);
+    const content: APICacheResponse = {
+      data: data,
+      expiration: Date.now() + this.options.cacheExpiration,
+    };
+    Deno.writeFileSync(
+      cacheFile,
+      new TextEncoder().encode(JSON.stringify(content)),
+    );
+  }
+
+  public get(query: APIRequestQuery): APICacheResponse | null {
+    if (!this.options.cache) {
+      return null;
+    }
+    const queryURL = this._client.requestManager.buildURL(query);
+    const cacheFile = `${this.options.cachePath}/${
+      queryURL.toString().substring(queryURL.origin.length).replace(
+        /\/\//g,
+        "_",
+      ).replace(/\//g, "_").replace(/\?/g, "_")
+    }.json`;
+    try {
+      const content: APICacheResponse = JSON.parse(
+        new TextDecoder().decode(Deno.readFileSync(cacheFile)),
+      );
+      if (content.expiration < Date.now()) {
+        console.info(`CacheManager: Cache expired for ${queryURL}`);
+        return null;
+      }
+      console.info(`CacheManager: Cache hit for ${queryURL}`);
+      return content;
+    } catch (_e) {
+      return null;
+    }
   }
 }

@@ -112,6 +112,7 @@ export class JikanClient {
   public constructor(options?: Partial<ClientOptions>) {
     this.options = JikanClient.setDefaultOptions(options);
     this.cacheManager = new cacheManager.CacheManager(
+      this,
       this.options.cacheOptions,
     );
     this.requestManager = new requestManager.RequestManager(this);

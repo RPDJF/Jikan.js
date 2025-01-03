@@ -5,6 +5,7 @@
 export interface APIRequestQuery {
   method: string;
   endpoint: string;
+  cache: boolean;
   params?: Iterable<[string, string]>;
 }
 
@@ -15,4 +16,9 @@ export interface APIRequestQuery {
 export interface APIRequestPromise {
   query: APIRequestQuery;
   resolve: (response: Promise<Response>) => void;
+}
+
+export interface APICacheResponse {
+  data: JSON;
+  expiration: number;
 }

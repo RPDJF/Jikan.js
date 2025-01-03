@@ -1,5 +1,5 @@
 import * as apiModel from "../core/apiModels.ts";
-import { JikanClient } from "../core/JikanClient.ts";
+import { cacheManager, JikanClient } from "../index.ts";
 
 /**
  * BaseSort: Enum for base sorting
@@ -47,9 +47,11 @@ export interface ReviewsParameters extends PageSearchParameter {
 export abstract class BaseManager {
   public readonly client: JikanClient;
   public abstract readonly endpoint: string;
+  private readonly _cache: cacheManager.CacheManager;
 
   constructor(client: JikanClient) {
     this.client = client;
+    this._cache = client.cacheManager;
   }
 
   protected _buildAPIRequestQuery(
@@ -70,12 +72,17 @@ export abstract class BaseManager {
       endpoint: `${this.endpoint}${subPath ? `/${subPath}` : ""}${
         suffix ? `/${suffix}` : ""
       }`,
+      cache: this.endpoint !== "random",
       params: params,
     };
   }
 
   protected async _fetchData<T>(query: apiModel.APIRequestQuery): Promise<T> {
     try {
+      const cache = this._cache.get(query);
+      if (query.cache && cache) {
+        return cache.data as T;
+      }
       const req = await this.client.requestManager.request(query);
       const json = await req.json();
       if (json.status < 200 || json.status >= 300) {
@@ -84,6 +91,9 @@ export abstract class BaseManager {
         throw new Error(
           `Error fetching data: ${json.status} - ${json.message}`,
         );
+      }
+      if (query.cache) {
+        this._cache.set(query, json.data);
       }
       return json.data as T;
     } catch (e) {
