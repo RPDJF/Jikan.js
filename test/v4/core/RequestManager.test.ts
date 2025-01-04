@@ -1,5 +1,6 @@
 import { JikanClient } from "../../../src/mod.ts";
 import { APIRequestQuery } from "../../../src/v4/core/apiModels.ts";
+import { Logger } from "../../../src/v4/utilities/logger.ts";
 import * as deps from "../../test_deps.ts";
 function runRequestManagerTests(client: JikanClient) {
   // Will test the request manager from the client
@@ -97,6 +98,7 @@ function runRequestManagerTests(client: JikanClient) {
       });
     });
     await _res.catch((err) => {
+      Logger.error(err);
       throw err;
     });
   });
