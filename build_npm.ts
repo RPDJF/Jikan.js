@@ -9,6 +9,7 @@ await build({
 		deno: true,
 	},
 	typeCheck: false,
+	test: false,
 	package: {
 		name: "Jikan.js",
 		version: Deno.args[0] || "0.0.0",
