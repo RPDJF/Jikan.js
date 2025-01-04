@@ -88,22 +88,26 @@ export class CacheManager {
     // cache initialization
     if (this.options.cache && !this.options.cachePath) {
       this.options.cachePath = this._getDefaultCache();
-      if (this.options.deleteCacheOnExit) {
-        self.addEventListener("unload", () => {
-          Logger.warn(
-            `CacheManager: Deleting cache... ${this.options.cachePath}`,
-          );
-          try {
-            Deno.removeSync(this.options.cachePath, { recursive: true });
-          } catch (e) {
-            Logger.error(`CacheManager: Error deleting cache: ${e}`);
-          }
-          Logger.info(`CacheManager: Cache deleted.`);
-        });
-        Deno.addSignalListener("SIGINT", () => {
-          Logger.warn(`CacheManager: SIGINT Signal received.`);
-          Deno.exit(0);
-        });
+      try {
+        if (this.options.deleteCacheOnExit) {
+          self.addEventListener("unload", () => {
+            Logger.warn(
+              `CacheManager: Deleting cache... ${this.options.cachePath}`,
+            );
+            try {
+              Deno.removeSync(this.options.cachePath, { recursive: true });
+            } catch (e) {
+              Logger.error(`CacheManager: Error deleting cache: ${e}`);
+            }
+            Logger.info(`CacheManager: Cache deleted.`);
+          });
+          Deno.addSignalListener("SIGINT", () => {
+            Logger.warn(`CacheManager: SIGINT Signal received.`);
+            Deno.exit(0);
+          });
+        }
+      } catch (e) {
+        Logger.error(`CacheManager: Error setting up event listeners: ${e}`);
       }
     }
   }
