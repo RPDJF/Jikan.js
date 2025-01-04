@@ -136,7 +136,7 @@ export interface AnimeReview extends baseModel.GenericModel {
 }
 
 export interface Anime extends baseModel.GenericModel {
-  Images: AnimeImages;
+  images: AnimeImages;
   trailer: TrailerBase;
   approved: boolean;
   titles: baseModel.Titles[];
