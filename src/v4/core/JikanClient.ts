@@ -147,7 +147,7 @@ export class JikanClient {
    */
   public getCharacterFull(
     characterId: number,
-  ): Promise<characterModel.Character> {
+  ): Promise<characterModel.CharacterFull> {
     return this.characterManager.getCharacterFull(characterId);
   }
   /**
