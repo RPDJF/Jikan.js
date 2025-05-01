@@ -7,15 +7,15 @@
   <meta name="doc-current-file" content=".">
   <link rel="stylesheet" href="..&#x2F;styles.css">
   <link rel="stylesheet" href="..&#x2F;page.css">
-  <link id="ddocResetStylesheet" rel="stylesheet" href="..&#x2F;reset.css"><link href="../comrak.css" rel="stylesheet" /><link href="../prism.css" rel="stylesheet" /><script src="../prism.js"></script><script src="..&#x2F;search_index.js" defer></script>
-    <script src="..&#x2F;script.js" defer></script>
+  <link id="ddocResetStylesheet" rel="stylesheet" href="..&#x2F;reset.css"><link href="../comrak.css" rel="stylesheet" /><link href="../prism.css" rel="stylesheet" /><script src="../prism.js"></script><script src="..&#x2F;script.js" defer></script>
+  <script src="..&#x2F;darkmode_toggle.js"></script><script src="..&#x2F;search_index.js" defer></script>
     <script src="..&#x2F;fuse.js" defer></script>
     <script src="..&#x2F;search.js" defer></script></head>
 <body>
 <div class="ddoc">
-<div><nav class="top-0 sticky bg-white z-50 py-3 h-14" id="topnav">
+<div><nav id="topnav">
   <div class="h-full">
-    <div><ul class="breadcrumbs"><li><a href="..&#x2F;" class="contextLink">Jikan.JS</a></li><span class="text-[#0F172A]"><svg
+    <div class="flex items-center"><ul class="breadcrumbs"><li><a href="..&#x2F;" class="contextLink">Jikan.JS</a></li><span class="text-black dark:text-white"><svg
 	width="16"
 	height="16"
 	viewBox="0 0 16 16"
@@ -26,20 +26,41 @@
 </span><ul><li>baseModel</li></ul></ul>
 </div>
 
-      <input
-        type="text"
-        id="searchbar"
-        style="display: none;"
-        class="py-2 px-2.5 rounded text-sm border border-gray-300 bg-transparent" />
+    <div class="flex items-center gap-2">
+      <button id="theme-toggle" type="button" aria-label="Toggle dark mode" style="display: none;"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M12 1.992a10 10 0 1 0 9.236 13.838c.341 -.82 -.476 -1.644 -1.298 -1.31a6.5 6.5 0 0 1 -6.864 -10.787l.077 -.08c.551 -.63 .113 -1.653 -.758 -1.653h-.266l-.068 -.006l-.06 -.002z" />
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class=hidden>
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M12 19a1 1 0 0 1 .993 .883l.007 .117v1a1 1 0 0 1 -1.993 .117l-.007 -.117v-1a1 1 0 0 1 1 -1z" />
+  <path d="M18.313 16.91l.094 .083l.7 .7a1 1 0 0 1 -1.32 1.497l-.094 -.083l-.7 -.7a1 1 0 0 1 1.218 -1.567l.102 .07z" />
+  <path d="M7.007 16.993a1 1 0 0 1 .083 1.32l-.083 .094l-.7 .7a1 1 0 0 1 -1.497 -1.32l.083 -.094l.7 -.7a1 1 0 0 1 1.414 0z" />
+  <path d="M4 11a1 1 0 0 1 .117 1.993l-.117 .007h-1a1 1 0 0 1 -.117 -1.993l.117 -.007h1z" />
+  <path d="M21 11a1 1 0 0 1 .117 1.993l-.117 .007h-1a1 1 0 0 1 -.117 -1.993l.117 -.007h1z" />
+  <path d="M6.213 4.81l.094 .083l.7 .7a1 1 0 0 1 -1.32 1.497l-.094 -.083l-.7 -.7a1 1 0 0 1 1.217 -1.567l.102 .07z" />
+  <path d="M19.107 4.893a1 1 0 0 1 .083 1.32l-.083 .094l-.7 .7a1 1 0 0 1 -1.497 -1.32l.083 -.094l.7 -.7a1 1 0 0 1 1.414 0z" />
+  <path d="M12 2a1 1 0 0 1 .993 .883l.007 .117v1a1 1 0 0 1 -1.993 .117l-.007 -.117v-1a1 1 0 0 1 1 -1z" />
+  <path d="M12 7a5 5 0 1 1 -4.995 5.217l-.005 -.217l.005 -.217a5 5 0 0 1 4.995 -4.783z" />
+</svg>
+</button>
+
+        <input
+          type="text"
+          id="searchbar"
+          style="display: none;"
+          class="py-2 px-2.5 mx-1 rounded text-sm border border-gray-300 bg-transparent dark:bg-gray-800 dark:border-gray-700"
+          />
+    </div>
   </div>
 </nav>
 <div id="searchResults"></div><div id="content"><main class="symbolGroup" id="symbol_baseModel"><article>
-      <div>
+      <div class="symbolTitle">
         <div>
           <div class="text-2xl leading-none break-all">
             <span class="text-Namespace">namespace</span>&nbsp;<span class="font-bold">baseModel</span>
           </div></div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;index.ts"><svg
   width="14"
   height="14"
@@ -86,102 +107,102 @@
   </defs>
 </svg>
 </a>
-Interfaces</h2></div><div class="namespaceSection"><div id="namespace_basemodel_commonimage" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Interface bg-Interface/15" title="Interface">I</div></div>
+Interfaces</h2></div><div class="namespaceSection"><div id="namespace_basemodel_commonimage" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Interface bg-Interface/15 dark:text-InterfaceDark dark:bg-InterfaceDark/15" title="Interface">I</div></div>
 <div class="namespaceItemContent">
 		    <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.CommonImage.html" title="baseModel.CommonImage">baseModel.CommonImage</a>
 
 	      <div class="namespaceItemContentDoc"><span class="italic">No documentation available</span></div><ul class="namespaceItemContentSubItems"><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.CommonImage.html#property_jpg">jpg</a></li></ul></div>
-    </div><div id="namespace_basemodel_dateprop" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Interface bg-Interface/15" title="Interface">I</div></div>
+    </div><div id="namespace_basemodel_dateprop" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Interface bg-Interface/15 dark:text-InterfaceDark dark:bg-InterfaceDark/15" title="Interface">I</div></div>
 <div class="namespaceItemContent">
 		    <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.DateProp.html" title="baseModel.DateProp">baseModel.DateProp</a>
 
 	      <div class="namespaceItemContentDoc"><span class="italic">No documentation available</span></div><ul class="namespaceItemContentSubItems"><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.DateProp.html#property_day">day</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.DateProp.html#property_month">month</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.DateProp.html#property_year">year</a></li></ul></div>
-    </div><div id="namespace_basemodel_daterange" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Interface bg-Interface/15" title="Interface">I</div></div>
+    </div><div id="namespace_basemodel_daterange" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Interface bg-Interface/15 dark:text-InterfaceDark dark:bg-InterfaceDark/15" title="Interface">I</div></div>
 <div class="namespaceItemContent">
 		    <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.DateRange.html" title="baseModel.DateRange">baseModel.DateRange</a>
 
 	      <div class="namespaceItemContentDoc"><span class="italic">No documentation available</span></div><ul class="namespaceItemContentSubItems"><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.DateRange.html#property_from">from</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.DateRange.html#property_prop">prop</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.DateRange.html#property_to">to</a></li></ul></div>
-    </div><div id="namespace_basemodel_external" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Interface bg-Interface/15" title="Interface">I</div></div>
+    </div><div id="namespace_basemodel_external" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Interface bg-Interface/15 dark:text-InterfaceDark dark:bg-InterfaceDark/15" title="Interface">I</div></div>
 <div class="namespaceItemContent">
 		    <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.External.html" title="baseModel.External">baseModel.External</a>
 
 	      <div class="namespaceItemContentDoc"><span class="italic">No documentation available</span></div><ul class="namespaceItemContentSubItems"><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.External.html#property_name">name</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.External.html#property_url">url</a></li></ul></div>
-    </div><div id="namespace_basemodel_forum" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Interface bg-Interface/15" title="Interface">I</div></div>
+    </div><div id="namespace_basemodel_forum" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Interface bg-Interface/15 dark:text-InterfaceDark dark:bg-InterfaceDark/15" title="Interface">I</div></div>
 <div class="namespaceItemContent">
 		    <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.Forum.html" title="baseModel.Forum">baseModel.Forum</a>
 
 	      <div class="namespaceItemContentDoc"><span class="italic">No documentation available</span></div><ul class="namespaceItemContentSubItems"><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.Forum.html#property_author_url">author_url</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.Forum.html#property_author_username">author_username</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.Forum.html#property_comments">comments</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.Forum.html#property_date">date</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.Forum.html#property_last_comment">last_comment</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.Forum.html#property_title">title</a></li></ul></div>
-    </div><div id="namespace_basemodel_genericmodel" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Interface bg-Interface/15" title="Interface">I</div></div>
+    </div><div id="namespace_basemodel_genericmodel" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Interface bg-Interface/15 dark:text-InterfaceDark dark:bg-InterfaceDark/15" title="Interface">I</div></div>
 <div class="namespaceItemContent">
 		    <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.GenericModel.html" title="baseModel.GenericModel">baseModel.GenericModel</a>
 
 	      <div class="namespaceItemContentDoc"><span class="italic">No documentation available</span></div><ul class="namespaceItemContentSubItems"><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.GenericModel.html#property_mal_id">mal_id</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.GenericModel.html#property_url">url</a></li></ul></div>
-    </div><div id="namespace_basemodel_imagefull" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Interface bg-Interface/15" title="Interface">I</div></div>
+    </div><div id="namespace_basemodel_imagefull" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Interface bg-Interface/15 dark:text-InterfaceDark dark:bg-InterfaceDark/15" title="Interface">I</div></div>
 <div class="namespaceItemContent">
 		    <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.ImageFull.html" title="baseModel.ImageFull">baseModel.ImageFull</a>
 
 	      <div class="namespaceItemContentDoc"><span class="italic">No documentation available</span></div><ul class="namespaceItemContentSubItems"><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.ImageFull.html#property_image_url">image_url</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.ImageFull.html#property_large_image_url">large_image_url</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.ImageFull.html#property_maximum_image_url">maximum_image_url</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.ImageFull.html#property_medium_image_url">medium_image_url</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.ImageFull.html#property_small_image_url">small_image_url</a></li></ul></div>
-    </div><div id="namespace_basemodel_lastcomment" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Interface bg-Interface/15" title="Interface">I</div></div>
+    </div><div id="namespace_basemodel_lastcomment" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Interface bg-Interface/15 dark:text-InterfaceDark dark:bg-InterfaceDark/15" title="Interface">I</div></div>
 <div class="namespaceItemContent">
 		    <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.LastComment.html" title="baseModel.LastComment">baseModel.LastComment</a>
 
 	      <div class="namespaceItemContentDoc"><span class="italic">No documentation available</span></div><ul class="namespaceItemContentSubItems"><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.LastComment.html#property_author_url">author_url</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.LastComment.html#property_author_username">author_username</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.LastComment.html#property_date">date</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.LastComment.html#property_url">url</a></li></ul></div>
-    </div><div id="namespace_basemodel_malentries" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Interface bg-Interface/15" title="Interface">I</div></div>
+    </div><div id="namespace_basemodel_malentries" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Interface bg-Interface/15 dark:text-InterfaceDark dark:bg-InterfaceDark/15" title="Interface">I</div></div>
 <div class="namespaceItemContent">
 		    <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.MalEntries.html" title="baseModel.MalEntries">baseModel.MalEntries</a>
 
 	      <div class="namespaceItemContentDoc"><span class="italic">No documentation available</span></div><ul class="namespaceItemContentSubItems"><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.MalEntries.html#property_name">name</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.MalEntries.html#property_type">type</a></li></ul></div>
-    </div><div id="namespace_basemodel_moreinfo" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Interface bg-Interface/15" title="Interface">I</div></div>
+    </div><div id="namespace_basemodel_moreinfo" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Interface bg-Interface/15 dark:text-InterfaceDark dark:bg-InterfaceDark/15" title="Interface">I</div></div>
 <div class="namespaceItemContent">
 		    <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.MoreInfo.html" title="baseModel.MoreInfo">baseModel.MoreInfo</a>
 
 	      <div class="namespaceItemContentDoc"><span class="italic">No documentation available</span></div><ul class="namespaceItemContentSubItems"><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.MoreInfo.html#property_moreinfo">moreinfo</a></li></ul></div>
-    </div><div id="namespace_basemodel_news" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Interface bg-Interface/15" title="Interface">I</div></div>
+    </div><div id="namespace_basemodel_news" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Interface bg-Interface/15 dark:text-InterfaceDark dark:bg-InterfaceDark/15" title="Interface">I</div></div>
 <div class="namespaceItemContent">
 		    <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.News.html" title="baseModel.News">baseModel.News</a>
 
 	      <div class="namespaceItemContentDoc"><span class="italic">No documentation available</span></div><ul class="namespaceItemContentSubItems"><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.News.html#property_author_url">author_url</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.News.html#property_author_username">author_username</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.News.html#property_comments">comments</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.News.html#property_date">date</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.News.html#property_excerpt">excerpt</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.News.html#property_form_url">form_url</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.News.html#property_images">images</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.News.html#property_title">title</a></li></ul></div>
-    </div><div id="namespace_basemodel_pagination" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Interface bg-Interface/15" title="Interface">I</div></div>
+    </div><div id="namespace_basemodel_pagination" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Interface bg-Interface/15 dark:text-InterfaceDark dark:bg-InterfaceDark/15" title="Interface">I</div></div>
 <div class="namespaceItemContent">
 		    <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.Pagination.html" title="baseModel.Pagination">baseModel.Pagination</a>
 
 	      <div class="namespaceItemContentDoc"><span class="italic">No documentation available</span></div><ul class="namespaceItemContentSubItems"><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.Pagination.html#property_has_next_page">has_next_page</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.Pagination.html#property_last_visible_page">last_visible_page</a></li></ul></div>
-    </div><div id="namespace_basemodel_person" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Interface bg-Interface/15" title="Interface">I</div></div>
+    </div><div id="namespace_basemodel_person" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Interface bg-Interface/15 dark:text-InterfaceDark dark:bg-InterfaceDark/15" title="Interface">I</div></div>
 <div class="namespaceItemContent">
 		    <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.Person.html" title="baseModel.Person">baseModel.Person</a>
 
 	      <div class="namespaceItemContentDoc"><span class="italic">No documentation available</span></div><ul class="namespaceItemContentSubItems"><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.Person.html#property_images">images</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.Person.html#property_mal_id">mal_id</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.Person.html#property_name">name</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.Person.html#property_url">url</a></li></ul></div>
-    </div><div id="namespace_basemodel_recommendations" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Interface bg-Interface/15" title="Interface">I</div></div>
+    </div><div id="namespace_basemodel_recommendations" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Interface bg-Interface/15 dark:text-InterfaceDark dark:bg-InterfaceDark/15" title="Interface">I</div></div>
 <div class="namespaceItemContent">
 		    <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.Recommendations.html" title="baseModel.Recommendations">baseModel.Recommendations</a>
 
 	      <div class="namespaceItemContentDoc"><span class="italic">No documentation available</span></div><ul class="namespaceItemContentSubItems"><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.Recommendations.html#property_confusing">confusing</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.Recommendations.html#property_creative">creative</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.Recommendations.html#property_funny">funny</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.Recommendations.html#property_informative">informative</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.Recommendations.html#property_love_it">love_it</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.Recommendations.html#property_nice">nice</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.Recommendations.html#property_overall">overall</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.Recommendations.html#property_well_written">well_written</a></li></ul></div>
-    </div><div id="namespace_basemodel_relation" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Interface bg-Interface/15" title="Interface">I</div></div>
+    </div><div id="namespace_basemodel_relation" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Interface bg-Interface/15 dark:text-InterfaceDark dark:bg-InterfaceDark/15" title="Interface">I</div></div>
 <div class="namespaceItemContent">
 		    <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.Relation.html" title="baseModel.Relation">baseModel.Relation</a>
 
 	      <div class="namespaceItemContentDoc"><span class="italic">No documentation available</span></div><ul class="namespaceItemContentSubItems"><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.Relation.html#property_entry">entry</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.Relation.html#property_relation">relation</a></li></ul></div>
-    </div><div id="namespace_basemodel_ressource" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Interface bg-Interface/15" title="Interface">I</div></div>
+    </div><div id="namespace_basemodel_ressource" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Interface bg-Interface/15 dark:text-InterfaceDark dark:bg-InterfaceDark/15" title="Interface">I</div></div>
 <div class="namespaceItemContent">
 		    <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.Ressource.html" title="baseModel.Ressource">baseModel.Ressource</a>
 
 	      <div class="namespaceItemContentDoc"><span class="italic">No documentation available</span></div><ul class="namespaceItemContentSubItems"><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.Ressource.html#property_images">images</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.Ressource.html#property_mal_id">mal_id</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.Ressource.html#property_title">title</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.Ressource.html#property_url">url</a></li></ul></div>
-    </div><div id="namespace_basemodel_score" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Interface bg-Interface/15" title="Interface">I</div></div>
+    </div><div id="namespace_basemodel_score" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Interface bg-Interface/15 dark:text-InterfaceDark dark:bg-InterfaceDark/15" title="Interface">I</div></div>
 <div class="namespaceItemContent">
 		    <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.Score.html" title="baseModel.Score">baseModel.Score</a>
 
 	      <div class="namespaceItemContentDoc"><span class="italic">No documentation available</span></div><ul class="namespaceItemContentSubItems"><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.Score.html#property_percentage">percentage</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.Score.html#property_score">score</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.Score.html#property_votes">votes</a></li></ul></div>
-    </div><div id="namespace_basemodel_staff" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Interface bg-Interface/15" title="Interface">I</div></div>
+    </div><div id="namespace_basemodel_staff" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Interface bg-Interface/15 dark:text-InterfaceDark dark:bg-InterfaceDark/15" title="Interface">I</div></div>
 <div class="namespaceItemContent">
 		    <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.Staff.html" title="baseModel.Staff">baseModel.Staff</a>
 
 	      <div class="namespaceItemContentDoc"><span class="italic">No documentation available</span></div><ul class="namespaceItemContentSubItems"><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.Staff.html#property_person">person</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.Staff.html#property_positions">positions</a></li></ul></div>
-    </div><div id="namespace_basemodel_titles" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Interface bg-Interface/15" title="Interface">I</div></div>
+    </div><div id="namespace_basemodel_titles" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Interface bg-Interface/15 dark:text-InterfaceDark dark:bg-InterfaceDark/15" title="Interface">I</div></div>
 <div class="namespaceItemContent">
 		    <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.Titles.html" title="baseModel.Titles">baseModel.Titles</a>
 
 	      <div class="namespaceItemContentDoc"><span class="italic">No documentation available</span></div><ul class="namespaceItemContentSubItems"><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.Titles.html#property_title">title</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.Titles.html#property_type">type</a></li></ul></div>
-    </div><div id="namespace_basemodel_voiceactors" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Interface bg-Interface/15" title="Interface">I</div></div>
+    </div><div id="namespace_basemodel_voiceactors" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Interface bg-Interface/15 dark:text-InterfaceDark dark:bg-InterfaceDark/15" title="Interface">I</div></div>
 <div class="namespaceItemContent">
 		    <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseModel.VoiceActors.html" title="baseModel.VoiceActors">baseModel.VoiceActors</a>
 
@@ -194,13 +215,13 @@ Interfaces</h2></div><div class="namespaceSection"><div id="namespace_basemodel_
 <div class="toc">
     <div><div class="usageContent">
     <h3>Usage</h3><div class="markdown"><pre class="highlight"><code class="language-typescript">import { baseModel } from &quot;.&quot;;
-</code><button class="context_button" data-copy="import { baseModel } from &quot;.&quot;;
+</code><button class="copyButton" data-copy="import { baseModel } from &quot;.&quot;;
 "><svg class="copy" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect x="2" y="2" width="7" height="7" fill="none"/>
 <rect x="6" y="6" width="7" height="7" fill="none"/>
-<path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="#232323"/>
+<path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"/>
 </svg>
-<svg class="check" width="15" height="15" viewBox="0 0 24 24" stroke-width="2" stroke="#232323" fill="none" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+<svg class="check" width="15" height="15" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
 <path d="M5 12l5 5l10 -10" />
 </svg>

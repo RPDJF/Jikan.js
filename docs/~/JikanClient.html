@@ -7,15 +7,15 @@
   <meta name="doc-current-file" content=".">
   <link rel="stylesheet" href="..&#x2F;styles.css">
   <link rel="stylesheet" href="..&#x2F;page.css">
-  <link id="ddocResetStylesheet" rel="stylesheet" href="..&#x2F;reset.css"><link href="../comrak.css" rel="stylesheet" /><link href="../prism.css" rel="stylesheet" /><script src="../prism.js"></script><script src="..&#x2F;search_index.js" defer></script>
-    <script src="..&#x2F;script.js" defer></script>
+  <link id="ddocResetStylesheet" rel="stylesheet" href="..&#x2F;reset.css"><link href="../comrak.css" rel="stylesheet" /><link href="../prism.css" rel="stylesheet" /><script src="../prism.js"></script><script src="..&#x2F;script.js" defer></script>
+  <script src="..&#x2F;darkmode_toggle.js"></script><script src="..&#x2F;search_index.js" defer></script>
     <script src="..&#x2F;fuse.js" defer></script>
     <script src="..&#x2F;search.js" defer></script></head>
 <body>
 <div class="ddoc">
-<div><nav class="top-0 sticky bg-white z-50 py-3 h-14" id="topnav">
+<div><nav id="topnav">
   <div class="h-full">
-    <div><ul class="breadcrumbs"><li><a href="..&#x2F;" class="contextLink">Jikan.JS</a></li><span class="text-[#0F172A]"><svg
+    <div class="flex items-center"><ul class="breadcrumbs"><li><a href="..&#x2F;" class="contextLink">Jikan.JS</a></li><span class="text-black dark:text-white"><svg
 	width="16"
 	height="16"
 	viewBox="0 0 16 16"
@@ -26,20 +26,41 @@
 </span><ul><li>JikanClient</li></ul></ul>
 </div>
 
-      <input
-        type="text"
-        id="searchbar"
-        style="display: none;"
-        class="py-2 px-2.5 rounded text-sm border border-gray-300 bg-transparent" />
+    <div class="flex items-center gap-2">
+      <button id="theme-toggle" type="button" aria-label="Toggle dark mode" style="display: none;"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M12 1.992a10 10 0 1 0 9.236 13.838c.341 -.82 -.476 -1.644 -1.298 -1.31a6.5 6.5 0 0 1 -6.864 -10.787l.077 -.08c.551 -.63 .113 -1.653 -.758 -1.653h-.266l-.068 -.006l-.06 -.002z" />
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class=hidden>
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M12 19a1 1 0 0 1 .993 .883l.007 .117v1a1 1 0 0 1 -1.993 .117l-.007 -.117v-1a1 1 0 0 1 1 -1z" />
+  <path d="M18.313 16.91l.094 .083l.7 .7a1 1 0 0 1 -1.32 1.497l-.094 -.083l-.7 -.7a1 1 0 0 1 1.218 -1.567l.102 .07z" />
+  <path d="M7.007 16.993a1 1 0 0 1 .083 1.32l-.083 .094l-.7 .7a1 1 0 0 1 -1.497 -1.32l.083 -.094l.7 -.7a1 1 0 0 1 1.414 0z" />
+  <path d="M4 11a1 1 0 0 1 .117 1.993l-.117 .007h-1a1 1 0 0 1 -.117 -1.993l.117 -.007h1z" />
+  <path d="M21 11a1 1 0 0 1 .117 1.993l-.117 .007h-1a1 1 0 0 1 -.117 -1.993l.117 -.007h1z" />
+  <path d="M6.213 4.81l.094 .083l.7 .7a1 1 0 0 1 -1.32 1.497l-.094 -.083l-.7 -.7a1 1 0 0 1 1.217 -1.567l.102 .07z" />
+  <path d="M19.107 4.893a1 1 0 0 1 .083 1.32l-.083 .094l-.7 .7a1 1 0 0 1 -1.497 -1.32l.083 -.094l.7 -.7a1 1 0 0 1 1.414 0z" />
+  <path d="M12 2a1 1 0 0 1 .993 .883l.007 .117v1a1 1 0 0 1 -1.993 .117l-.007 -.117v-1a1 1 0 0 1 1 -1z" />
+  <path d="M12 7a5 5 0 1 1 -4.995 5.217l-.005 -.217l.005 -.217a5 5 0 0 1 4.995 -4.783z" />
+</svg>
+</button>
+
+        <input
+          type="text"
+          id="searchbar"
+          style="display: none;"
+          class="py-2 px-2.5 mx-1 rounded text-sm border border-gray-300 bg-transparent dark:bg-gray-800 dark:border-gray-700"
+          />
+    </div>
   </div>
 </nav>
 <div id="searchResults"></div><div id="content"><main class="symbolGroup" id="symbol_JikanClient"><article>
-      <div>
+      <div class="symbolTitle">
         <div>
           <div class="text-2xl leading-none break-all">
             <span class="text-Class">class</span>&nbsp;<span class="font-bold">JikanClient</span>
           </div><div class="symbolSubtitle"></div></div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -117,7 +138,7 @@ Examples</h2></div><div class="space-y-8"><div class="anchorable"><a href="#exam
 client.getCharacter(1).then((character) =&gt; {
   console.log(character.name);
 });
-</code><button class="context_button" data-copy="const client = new JikanClient();
+</code><button class="copyButton" data-copy="const client = new JikanClient();
 
 client.getCharacter(1).then((character) =&gt; {
   console.log(character.name);
@@ -125,16 +146,16 @@ client.getCharacter(1).then((character) =&gt; {
 "><svg class="copy" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect x="2" y="2" width="7" height="7" fill="none"/>
 <rect x="6" y="6" width="7" height="7" fill="none"/>
-<path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="#232323"/>
+<path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"/>
 </svg>
-<svg class="check" width="15" height="15" viewBox="0 0 24 24" stroke-width="2" stroke="#232323" fill="none" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+<svg class="check" width="15" height="15" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
 <path d="M5 12l5 5l10 -10" />
 </svg>
 </button><code></code></pre>
 </div></div>
 </div>
-<div class="border-b border-gray-300"></div><div class="anchorable"><a href="#example_1" class="anchor" aria-label="Anchor" tabIndex="-1"><svg
+<div class="border-b border-gray-300 dark:border-gray-700"></div><div class="anchorable"><a href="#example_1" class="anchor" aria-label="Anchor" tabIndex="-1"><svg
   width="16"
   height="16"
   viewBox="0 0 14 14"
@@ -162,16 +183,16 @@ client.getCharacter(1).then((character) =&gt; {
  host: &quot;https://api.jikan.moe&quot;,
  baseUri: &quot;/v4&quot;,
 });
-</code><button class="context_button" data-copy="const client = new JikanClient({
+</code><button class="copyButton" data-copy="const client = new JikanClient({
  host: &quot;https://api.jikan.moe&quot;,
  baseUri: &quot;/v4&quot;,
 });
 "><svg class="copy" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect x="2" y="2" width="7" height="7" fill="none"/>
 <rect x="6" y="6" width="7" height="7" fill="none"/>
-<path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="#232323"/>
+<path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"/>
 </svg>
-<svg class="check" width="15" height="15" viewBox="0 0 24 24" stroke-width="2" stroke="#232323" fill="none" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+<svg class="check" width="15" height="15" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
 <path d="M5 12l5 5l10 -10" />
 </svg>
@@ -228,10 +249,10 @@ Constructors</h2></div><div class="space-y-8"><div class="anchorable docEntry" i
   </defs>
 </svg>
 </a>
-<span class="font-bold font-lg">JikanClient</span><span class="font-medium text-stone-500">(<span><span>options?<span>: <span>Partial</span>&lt;<a href="../././~/ClientOptions.html" class="link">ClientOptions</a>&gt;</span></span></span>)</span>
+<span class="font-bold font-lg">JikanClient</span><span class="font-medium text-stone-500 dark:text-stone-200">(<span><span>options?<span>: <span>Partial</span>&lt;<a href="../././~/ClientOptions.html" class="link">ClientOptions</a>&gt;</span></span></span>)</span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -306,10 +327,10 @@ Properties</h2></div><div class="space-y-8"><div class="anchorable docEntry" id=
   </defs>
 </svg>
 </a>
-<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.animeManager.html">animeManager</a><span class="font-medium text-stone-500"><span>: <a href="../././~/animeManager.AnimeManager.html" class="link">animeManager.AnimeManager</a></span></span>
+<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.animeManager.html">animeManager</a><span class="font-medium text-stone-500 dark:text-stone-200"><span>: <a href="../././~/animeManager.AnimeManager.html" class="link">animeManager.AnimeManager</a></span></span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -360,10 +381,10 @@ Properties</h2></div><div class="space-y-8"><div class="anchorable docEntry" id=
   </defs>
 </svg>
 </a>
-<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.cacheManager.html">cacheManager</a><span class="font-medium text-stone-500"><span>: <a href="../././~/cacheManager.CacheManager.html" class="link">cacheManager.CacheManager</a></span></span>
+<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.cacheManager.html">cacheManager</a><span class="font-medium text-stone-500 dark:text-stone-200"><span>: <a href="../././~/cacheManager.CacheManager.html" class="link">cacheManager.CacheManager</a></span></span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -414,10 +435,10 @@ Properties</h2></div><div class="space-y-8"><div class="anchorable docEntry" id=
   </defs>
 </svg>
 </a>
-<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.characterManager.html">characterManager</a><span class="font-medium text-stone-500"><span>: <a href="../././~/characterManager.CharacterManager.html" class="link">characterManager.CharacterManager</a></span></span>
+<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.characterManager.html">characterManager</a><span class="font-medium text-stone-500 dark:text-stone-200"><span>: <a href="../././~/characterManager.CharacterManager.html" class="link">characterManager.CharacterManager</a></span></span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -468,10 +489,10 @@ Properties</h2></div><div class="space-y-8"><div class="anchorable docEntry" id=
   </defs>
 </svg>
 </a>
-<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.mangaManager.html">mangaManager</a><span class="font-medium text-stone-500"><span>: <a href="../././~/mangaManager.MangaManager.html" class="link">mangaManager.MangaManager</a></span></span>
+<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.mangaManager.html">mangaManager</a><span class="font-medium text-stone-500 dark:text-stone-200"><span>: <a href="../././~/mangaManager.MangaManager.html" class="link">mangaManager.MangaManager</a></span></span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -522,10 +543,10 @@ Properties</h2></div><div class="space-y-8"><div class="anchorable docEntry" id=
   </defs>
 </svg>
 </a>
-<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.options.html">options</a><span class="font-medium text-stone-500"><span>: <a href="../././~/ClientOptions.html" class="link">ClientOptions</a></span></span>
+<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.options.html">options</a><span class="font-medium text-stone-500 dark:text-stone-200"><span>: <a href="../././~/ClientOptions.html" class="link">ClientOptions</a></span></span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -576,10 +597,10 @@ Properties</h2></div><div class="space-y-8"><div class="anchorable docEntry" id=
   </defs>
 </svg>
 </a>
-<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.randomManager.html">randomManager</a><span class="font-medium text-stone-500"><span>: <a href="../././~/randomManager.RandomManager.html" class="link">randomManager.RandomManager</a></span></span>
+<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.randomManager.html">randomManager</a><span class="font-medium text-stone-500 dark:text-stone-200"><span>: <a href="../././~/randomManager.RandomManager.html" class="link">randomManager.RandomManager</a></span></span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -630,10 +651,10 @@ Properties</h2></div><div class="space-y-8"><div class="anchorable docEntry" id=
   </defs>
 </svg>
 </a>
-<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.requestManager.html">requestManager</a><span class="font-medium text-stone-500"><span>: <a href="../././~/requestManager.RequestManager.html" class="link">requestManager.RequestManager</a></span></span>
+<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.requestManager.html">requestManager</a><span class="font-medium text-stone-500 dark:text-stone-200"><span>: <a href="../././~/requestManager.RequestManager.html" class="link">requestManager.RequestManager</a></span></span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -707,10 +728,10 @@ Methods</h2></div><div class="space-y-8"><div class="anchorable docEntry" id="me
   </defs>
 </svg>
 </a>
-<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getAnime.html">getAnime</a><span class="font-medium text-stone-500">(<span><span>animeId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/animeModel.Anime.html" class="link">animeModel.Anime</a>&gt;</span></span>
+<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getAnime.html">getAnime</a><span class="font-medium text-stone-500 dark:text-stone-200">(<span><span>animeId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/animeModel.Anime.html" class="link">animeModel.Anime</a>&gt;</span></span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -761,10 +782,10 @@ Methods</h2></div><div class="space-y-8"><div class="anchorable docEntry" id="me
   </defs>
 </svg>
 </a>
-<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getAnimeCharacters.html">getAnimeCharacters</a><span class="font-medium text-stone-500">(<span><span>animeId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/animeModel.AnimeCharacterRole.html" class="link">animeModel.AnimeCharacterRole</a>[]&gt;</span></span>
+<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getAnimeCharacters.html">getAnimeCharacters</a><span class="font-medium text-stone-500 dark:text-stone-200">(<span><span>animeId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/animeModel.AnimeCharacterRole.html" class="link">animeModel.AnimeCharacterRole</a>[]&gt;</span></span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -815,10 +836,10 @@ Methods</h2></div><div class="space-y-8"><div class="anchorable docEntry" id="me
   </defs>
 </svg>
 </a>
-<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getAnimeEpisode.html">getAnimeEpisode</a><span class="font-medium text-stone-500">(<div class="ml-4"><div><span>animeId<span>: <span>number</span></span></span>,</div><div><span>episodeNumber<span>: <span>number</span></span></span>,</div></div>)<span>: <span>Promise</span>&lt;<a href="../././~/animeModel.AnimeEpisodeFull.html" class="link">animeModel.AnimeEpisodeFull</a>&gt;</span></span>
+<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getAnimeEpisode.html">getAnimeEpisode</a><span class="font-medium text-stone-500 dark:text-stone-200">(<div class="ml-4"><div><span>animeId<span>: <span>number</span></span></span>,</div><div><span>episodeNumber<span>: <span>number</span></span></span>,</div></div>)<span>: <span>Promise</span>&lt;<a href="../././~/animeModel.AnimeEpisodeFull.html" class="link">animeModel.AnimeEpisodeFull</a>&gt;</span></span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -869,10 +890,10 @@ Methods</h2></div><div class="space-y-8"><div class="anchorable docEntry" id="me
   </defs>
 </svg>
 </a>
-<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getAnimeEpisodes.html">getAnimeEpisodes</a><span class="font-medium text-stone-500">(<div class="ml-4"><div><span>animeId<span>: <span>number</span></span></span>,</div><div><span>params?<span>: <a href="../././~/baseManager.PageSearchParameter.html" class="link">baseManager.PageSearchParameter</a></span></span>,</div></div>)<span>: <span>Promise</span>&lt;<a href="../././~/animeModel.AnimeEpisode.html" class="link">animeModel.AnimeEpisode</a>[]&gt;</span></span>
+<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getAnimeEpisodes.html">getAnimeEpisodes</a><span class="font-medium text-stone-500 dark:text-stone-200">(<div class="ml-4"><div><span>animeId<span>: <span>number</span></span></span>,</div><div><span>params?<span>: <a href="../././~/baseManager.PageSearchParameter.html" class="link">baseManager.PageSearchParameter</a></span></span>,</div></div>)<span>: <span>Promise</span>&lt;<a href="../././~/animeModel.AnimeEpisode.html" class="link">animeModel.AnimeEpisode</a>[]&gt;</span></span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -923,10 +944,10 @@ Methods</h2></div><div class="space-y-8"><div class="anchorable docEntry" id="me
   </defs>
 </svg>
 </a>
-<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getAnimeExternal.html">getAnimeExternal</a><span class="font-medium text-stone-500">(<span><span>animeId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/baseModel.External.html" class="link">baseModel.External</a>[]&gt;</span></span>
+<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getAnimeExternal.html">getAnimeExternal</a><span class="font-medium text-stone-500 dark:text-stone-200">(<span><span>animeId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/baseModel.External.html" class="link">baseModel.External</a>[]&gt;</span></span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -977,10 +998,10 @@ Methods</h2></div><div class="space-y-8"><div class="anchorable docEntry" id="me
   </defs>
 </svg>
 </a>
-<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getAnimeForum.html">getAnimeForum</a><span class="font-medium text-stone-500">(<span><span>animeId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/baseModel.Forum.html" class="link">baseModel.Forum</a>[]&gt;</span></span>
+<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getAnimeForum.html">getAnimeForum</a><span class="font-medium text-stone-500 dark:text-stone-200">(<span><span>animeId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/baseModel.Forum.html" class="link">baseModel.Forum</a>[]&gt;</span></span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -1031,10 +1052,10 @@ Methods</h2></div><div class="space-y-8"><div class="anchorable docEntry" id="me
   </defs>
 </svg>
 </a>
-<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getAnimeFull.html">getAnimeFull</a><span class="font-medium text-stone-500">(<span><span>animeId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/animeModel.AnimeFull.html" class="link">animeModel.AnimeFull</a>&gt;</span></span>
+<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getAnimeFull.html">getAnimeFull</a><span class="font-medium text-stone-500 dark:text-stone-200">(<span><span>animeId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/animeModel.AnimeFull.html" class="link">animeModel.AnimeFull</a>&gt;</span></span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -1085,10 +1106,10 @@ Methods</h2></div><div class="space-y-8"><div class="anchorable docEntry" id="me
   </defs>
 </svg>
 </a>
-<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getAnimeMoreInfo.html">getAnimeMoreInfo</a><span class="font-medium text-stone-500">(<span><span>animeId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/baseModel.MoreInfo.html" class="link">baseModel.MoreInfo</a>&gt;</span></span>
+<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getAnimeMoreInfo.html">getAnimeMoreInfo</a><span class="font-medium text-stone-500 dark:text-stone-200">(<span><span>animeId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/baseModel.MoreInfo.html" class="link">baseModel.MoreInfo</a>&gt;</span></span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -1139,10 +1160,10 @@ Methods</h2></div><div class="space-y-8"><div class="anchorable docEntry" id="me
   </defs>
 </svg>
 </a>
-<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getAnimeNews.html">getAnimeNews</a><span class="font-medium text-stone-500">(<div class="ml-4"><div><span>animeId<span>: <span>number</span></span></span>,</div><div><span>params?<span>: <a href="../././~/baseManager.PageSearchParameter.html" class="link">baseManager.PageSearchParameter</a></span></span>,</div></div>)<span>: <span>Promise</span>&lt;<a href="../././~/baseModel.News.html" class="link">baseModel.News</a>[]&gt;</span></span>
+<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getAnimeNews.html">getAnimeNews</a><span class="font-medium text-stone-500 dark:text-stone-200">(<div class="ml-4"><div><span>animeId<span>: <span>number</span></span></span>,</div><div><span>params?<span>: <a href="../././~/baseManager.PageSearchParameter.html" class="link">baseManager.PageSearchParameter</a></span></span>,</div></div>)<span>: <span>Promise</span>&lt;<a href="../././~/baseModel.News.html" class="link">baseModel.News</a>[]&gt;</span></span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -1193,10 +1214,10 @@ Methods</h2></div><div class="space-y-8"><div class="anchorable docEntry" id="me
   </defs>
 </svg>
 </a>
-<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getAnimePictures.html">getAnimePictures</a><span class="font-medium text-stone-500">(<span><span>animeId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/baseModel.CommonImage.html" class="link">baseModel.CommonImage</a>[]&gt;</span></span>
+<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getAnimePictures.html">getAnimePictures</a><span class="font-medium text-stone-500 dark:text-stone-200">(<span><span>animeId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/baseModel.CommonImage.html" class="link">baseModel.CommonImage</a>[]&gt;</span></span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -1247,10 +1268,10 @@ Methods</h2></div><div class="space-y-8"><div class="anchorable docEntry" id="me
   </defs>
 </svg>
 </a>
-<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getAnimeRandom.html">getAnimeRandom</a><span class="font-medium text-stone-500">()<span>: <span>Promise</span>&lt;<a href="../././~/animeModel.Anime.html" class="link">animeModel.Anime</a>&gt;</span></span>
+<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getAnimeRandom.html">getAnimeRandom</a><span class="font-medium text-stone-500 dark:text-stone-200">()<span>: <span>Promise</span>&lt;<a href="../././~/animeModel.Anime.html" class="link">animeModel.Anime</a>&gt;</span></span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -1301,10 +1322,10 @@ Methods</h2></div><div class="space-y-8"><div class="anchorable docEntry" id="me
   </defs>
 </svg>
 </a>
-<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getAnimeRecommendations.html">getAnimeRecommendations</a><span class="font-medium text-stone-500">(<span><span>animeId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/animeModel.AnimeMeta.html" class="link">animeModel.AnimeMeta</a>[]&gt;</span></span>
+<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getAnimeRecommendations.html">getAnimeRecommendations</a><span class="font-medium text-stone-500 dark:text-stone-200">(<span><span>animeId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/animeModel.AnimeMeta.html" class="link">animeModel.AnimeMeta</a>[]&gt;</span></span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -1355,10 +1376,10 @@ Methods</h2></div><div class="space-y-8"><div class="anchorable docEntry" id="me
   </defs>
 </svg>
 </a>
-<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getAnimeRelations.html">getAnimeRelations</a><span class="font-medium text-stone-500">(<span><span>animeId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/baseModel.Relation.html" class="link">baseModel.Relation</a>[]&gt;</span></span>
+<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getAnimeRelations.html">getAnimeRelations</a><span class="font-medium text-stone-500 dark:text-stone-200">(<span><span>animeId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/baseModel.Relation.html" class="link">baseModel.Relation</a>[]&gt;</span></span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -1409,10 +1430,10 @@ Methods</h2></div><div class="space-y-8"><div class="anchorable docEntry" id="me
   </defs>
 </svg>
 </a>
-<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getAnimeReviews.html">getAnimeReviews</a><span class="font-medium text-stone-500">(<div class="ml-4"><div><span>animeId<span>: <span>number</span></span></span>,</div><div><span>params?<span>: <a href="../././~/baseManager.ReviewsParameters.html" class="link">baseManager.ReviewsParameters</a></span></span>,</div></div>)<span>: <span>Promise</span>&lt;<a href="../././~/animeModel.AnimeReview.html" class="link">animeModel.AnimeReview</a>[]&gt;</span></span>
+<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getAnimeReviews.html">getAnimeReviews</a><span class="font-medium text-stone-500 dark:text-stone-200">(<div class="ml-4"><div><span>animeId<span>: <span>number</span></span></span>,</div><div><span>params?<span>: <a href="../././~/baseManager.ReviewsParameters.html" class="link">baseManager.ReviewsParameters</a></span></span>,</div></div>)<span>: <span>Promise</span>&lt;<a href="../././~/animeModel.AnimeReview.html" class="link">animeModel.AnimeReview</a>[]&gt;</span></span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -1463,10 +1484,10 @@ Methods</h2></div><div class="space-y-8"><div class="anchorable docEntry" id="me
   </defs>
 </svg>
 </a>
-<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getAnimeStaff.html">getAnimeStaff</a><span class="font-medium text-stone-500">(<span><span>animeId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/baseModel.Staff.html" class="link">baseModel.Staff</a>[]&gt;</span></span>
+<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getAnimeStaff.html">getAnimeStaff</a><span class="font-medium text-stone-500 dark:text-stone-200">(<span><span>animeId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/baseModel.Staff.html" class="link">baseModel.Staff</a>[]&gt;</span></span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -1517,10 +1538,10 @@ Methods</h2></div><div class="space-y-8"><div class="anchorable docEntry" id="me
   </defs>
 </svg>
 </a>
-<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getAnimeStatistics.html">getAnimeStatistics</a><span class="font-medium text-stone-500">(<span><span>animeId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/animeModel.AnimeStatistics.html" class="link">animeModel.AnimeStatistics</a>&gt;</span></span>
+<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getAnimeStatistics.html">getAnimeStatistics</a><span class="font-medium text-stone-500 dark:text-stone-200">(<span><span>animeId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/animeModel.AnimeStatistics.html" class="link">animeModel.AnimeStatistics</a>&gt;</span></span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -1571,10 +1592,10 @@ Methods</h2></div><div class="space-y-8"><div class="anchorable docEntry" id="me
   </defs>
 </svg>
 </a>
-<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getAnimeStreaming.html">getAnimeStreaming</a><span class="font-medium text-stone-500">(<span><span>animeId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/baseModel.External.html" class="link">baseModel.External</a>[]&gt;</span></span>
+<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getAnimeStreaming.html">getAnimeStreaming</a><span class="font-medium text-stone-500 dark:text-stone-200">(<span><span>animeId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/baseModel.External.html" class="link">baseModel.External</a>[]&gt;</span></span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -1625,10 +1646,10 @@ Methods</h2></div><div class="space-y-8"><div class="anchorable docEntry" id="me
   </defs>
 </svg>
 </a>
-<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getAnimeThemes.html">getAnimeThemes</a><span class="font-medium text-stone-500">(<span><span>animeId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/animeModel.Theme.html" class="link">animeModel.Theme</a>&gt;</span></span>
+<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getAnimeThemes.html">getAnimeThemes</a><span class="font-medium text-stone-500 dark:text-stone-200">(<span><span>animeId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/animeModel.Theme.html" class="link">animeModel.Theme</a>&gt;</span></span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -1679,10 +1700,10 @@ Methods</h2></div><div class="space-y-8"><div class="anchorable docEntry" id="me
   </defs>
 </svg>
 </a>
-<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getAnimeUserUpdates.html">getAnimeUserUpdates</a><span class="font-medium text-stone-500">(<span><span>animeId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/animeModel.AnimeUserUpdate.html" class="link">animeModel.AnimeUserUpdate</a>[]&gt;</span></span>
+<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getAnimeUserUpdates.html">getAnimeUserUpdates</a><span class="font-medium text-stone-500 dark:text-stone-200">(<span><span>animeId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/animeModel.AnimeUserUpdate.html" class="link">animeModel.AnimeUserUpdate</a>[]&gt;</span></span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -1733,10 +1754,10 @@ Methods</h2></div><div class="space-y-8"><div class="anchorable docEntry" id="me
   </defs>
 </svg>
 </a>
-<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getAnimeVideos.html">getAnimeVideos</a><span class="font-medium text-stone-500">(<span><span>animeId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/animeModel.AnimeVideo.html" class="link">animeModel.AnimeVideo</a>&gt;</span></span>
+<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getAnimeVideos.html">getAnimeVideos</a><span class="font-medium text-stone-500 dark:text-stone-200">(<span><span>animeId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/animeModel.AnimeVideo.html" class="link">animeModel.AnimeVideo</a>&gt;</span></span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -1787,10 +1808,10 @@ Methods</h2></div><div class="space-y-8"><div class="anchorable docEntry" id="me
   </defs>
 </svg>
 </a>
-<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getAnimeVideosEpisodes.html">getAnimeVideosEpisodes</a><span class="font-medium text-stone-500">(<div class="ml-4"><div><span>animeId<span>: <span>number</span></span></span>,</div><div><span>params?<span>: <a href="../././~/baseManager.PageSearchParameter.html" class="link">baseManager.PageSearchParameter</a></span></span>,</div></div>)<span>: <span>Promise</span>&lt;<a href="../././~/animeModel.VideoEpisode.html" class="link">animeModel.VideoEpisode</a>[]&gt;</span></span>
+<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getAnimeVideosEpisodes.html">getAnimeVideosEpisodes</a><span class="font-medium text-stone-500 dark:text-stone-200">(<div class="ml-4"><div><span>animeId<span>: <span>number</span></span></span>,</div><div><span>params?<span>: <a href="../././~/baseManager.PageSearchParameter.html" class="link">baseManager.PageSearchParameter</a></span></span>,</div></div>)<span>: <span>Promise</span>&lt;<a href="../././~/animeModel.VideoEpisode.html" class="link">animeModel.VideoEpisode</a>[]&gt;</span></span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -1841,10 +1862,10 @@ Methods</h2></div><div class="space-y-8"><div class="anchorable docEntry" id="me
   </defs>
 </svg>
 </a>
-<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getAnimes.html">getAnimes</a><span class="font-medium text-stone-500">(<span><span>params?<span>: <a href="../././~/animeManager.AnimeSearchParameters.html" class="link">animeManager.AnimeSearchParameters</a></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/animeModel.Anime.html" class="link">animeModel.Anime</a>[]&gt;</span></span>
+<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getAnimes.html">getAnimes</a><span class="font-medium text-stone-500 dark:text-stone-200">(<span><span>params?<span>: <a href="../././~/animeManager.AnimeSearchParameters.html" class="link">animeManager.AnimeSearchParameters</a></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/animeModel.Anime.html" class="link">animeModel.Anime</a>[]&gt;</span></span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -1895,10 +1916,10 @@ Methods</h2></div><div class="space-y-8"><div class="anchorable docEntry" id="me
   </defs>
 </svg>
 </a>
-<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getCharacter.html">getCharacter</a><span class="font-medium text-stone-500">(<span><span>characterId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/characterModel.Character.html" class="link">characterModel.Character</a>&gt;</span></span>
+<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getCharacter.html">getCharacter</a><span class="font-medium text-stone-500 dark:text-stone-200">(<span><span>characterId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/characterModel.Character.html" class="link">characterModel.Character</a>&gt;</span></span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -1949,10 +1970,10 @@ Methods</h2></div><div class="space-y-8"><div class="anchorable docEntry" id="me
   </defs>
 </svg>
 </a>
-<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getCharacterAnime.html">getCharacterAnime</a><span class="font-medium text-stone-500">(<span><span>characterId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/characterModel.AnimeRole.html" class="link">characterModel.AnimeRole</a>[]&gt;</span></span>
+<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getCharacterAnime.html">getCharacterAnime</a><span class="font-medium text-stone-500 dark:text-stone-200">(<span><span>characterId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/characterModel.AnimeRole.html" class="link">characterModel.AnimeRole</a>[]&gt;</span></span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -2003,10 +2024,10 @@ Methods</h2></div><div class="space-y-8"><div class="anchorable docEntry" id="me
   </defs>
 </svg>
 </a>
-<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getCharacterFull.html">getCharacterFull</a><span class="font-medium text-stone-500">(<span><span>characterId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/characterModel.CharacterFull.html" class="link">characterModel.CharacterFull</a>&gt;</span></span>
+<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getCharacterFull.html">getCharacterFull</a><span class="font-medium text-stone-500 dark:text-stone-200">(<span><span>characterId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/characterModel.CharacterFull.html" class="link">characterModel.CharacterFull</a>&gt;</span></span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -2057,10 +2078,10 @@ Methods</h2></div><div class="space-y-8"><div class="anchorable docEntry" id="me
   </defs>
 </svg>
 </a>
-<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getCharacterManga.html">getCharacterManga</a><span class="font-medium text-stone-500">(<span><span>characterId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/characterModel.MangaRole.html" class="link">characterModel.MangaRole</a>[]&gt;</span></span>
+<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getCharacterManga.html">getCharacterManga</a><span class="font-medium text-stone-500 dark:text-stone-200">(<span><span>characterId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/characterModel.MangaRole.html" class="link">characterModel.MangaRole</a>[]&gt;</span></span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -2111,10 +2132,10 @@ Methods</h2></div><div class="space-y-8"><div class="anchorable docEntry" id="me
   </defs>
 </svg>
 </a>
-<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getCharacterPictures.html">getCharacterPictures</a><span class="font-medium text-stone-500">(<span><span>characterId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/baseModel.CommonImage.html" class="link">baseModel.CommonImage</a>[]&gt;</span></span>
+<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getCharacterPictures.html">getCharacterPictures</a><span class="font-medium text-stone-500 dark:text-stone-200">(<span><span>characterId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/baseModel.CommonImage.html" class="link">baseModel.CommonImage</a>[]&gt;</span></span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -2165,10 +2186,10 @@ Methods</h2></div><div class="space-y-8"><div class="anchorable docEntry" id="me
   </defs>
 </svg>
 </a>
-<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getCharacterRandom.html">getCharacterRandom</a><span class="font-medium text-stone-500">()<span>: <span>Promise</span>&lt;<a href="../././~/characterModel.Character.html" class="link">characterModel.Character</a>&gt;</span></span>
+<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getCharacterRandom.html">getCharacterRandom</a><span class="font-medium text-stone-500 dark:text-stone-200">()<span>: <span>Promise</span>&lt;<a href="../././~/characterModel.Character.html" class="link">characterModel.Character</a>&gt;</span></span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -2219,10 +2240,10 @@ Methods</h2></div><div class="space-y-8"><div class="anchorable docEntry" id="me
   </defs>
 </svg>
 </a>
-<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getCharacterVoiceActors.html">getCharacterVoiceActors</a><span class="font-medium text-stone-500">(<span><span>characterId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/baseModel.VoiceActors.html" class="link">baseModel.VoiceActors</a>[]&gt;</span></span>
+<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getCharacterVoiceActors.html">getCharacterVoiceActors</a><span class="font-medium text-stone-500 dark:text-stone-200">(<span><span>characterId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/baseModel.VoiceActors.html" class="link">baseModel.VoiceActors</a>[]&gt;</span></span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -2273,10 +2294,10 @@ Methods</h2></div><div class="space-y-8"><div class="anchorable docEntry" id="me
   </defs>
 </svg>
 </a>
-<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getCharacters.html">getCharacters</a><span class="font-medium text-stone-500">(<span><span>params?<span>: <a href="../././~/characterManager.CharacterSearchParameters.html" class="link">characterManager.CharacterSearchParameters</a></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/characterModel.Character.html" class="link">characterModel.Character</a>[]&gt;</span></span>
+<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getCharacters.html">getCharacters</a><span class="font-medium text-stone-500 dark:text-stone-200">(<span><span>params?<span>: <a href="../././~/characterManager.CharacterSearchParameters.html" class="link">characterManager.CharacterSearchParameters</a></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/characterModel.Character.html" class="link">characterModel.Character</a>[]&gt;</span></span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -2327,10 +2348,10 @@ Methods</h2></div><div class="space-y-8"><div class="anchorable docEntry" id="me
   </defs>
 </svg>
 </a>
-<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getManga.html">getManga</a><span class="font-medium text-stone-500">(<span><span>mangaId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/mangaModel.Manga.html" class="link">mangaModel.Manga</a>&gt;</span></span>
+<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getManga.html">getManga</a><span class="font-medium text-stone-500 dark:text-stone-200">(<span><span>mangaId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/mangaModel.Manga.html" class="link">mangaModel.Manga</a>&gt;</span></span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -2381,10 +2402,10 @@ Methods</h2></div><div class="space-y-8"><div class="anchorable docEntry" id="me
   </defs>
 </svg>
 </a>
-<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getMangaCharacters.html">getMangaCharacters</a><span class="font-medium text-stone-500">(<span><span>mangaId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/mangaModel.MangaCharacterRole.html" class="link">mangaModel.MangaCharacterRole</a>[]&gt;</span></span>
+<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getMangaCharacters.html">getMangaCharacters</a><span class="font-medium text-stone-500 dark:text-stone-200">(<span><span>mangaId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/mangaModel.MangaCharacterRole.html" class="link">mangaModel.MangaCharacterRole</a>[]&gt;</span></span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -2435,10 +2456,10 @@ Methods</h2></div><div class="space-y-8"><div class="anchorable docEntry" id="me
   </defs>
 </svg>
 </a>
-<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getMangaExternal.html">getMangaExternal</a><span class="font-medium text-stone-500">(<span><span>mangaId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/baseModel.External.html" class="link">baseModel.External</a>[]&gt;</span></span>
+<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getMangaExternal.html">getMangaExternal</a><span class="font-medium text-stone-500 dark:text-stone-200">(<span><span>mangaId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/baseModel.External.html" class="link">baseModel.External</a>[]&gt;</span></span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -2489,10 +2510,10 @@ Methods</h2></div><div class="space-y-8"><div class="anchorable docEntry" id="me
   </defs>
 </svg>
 </a>
-<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getMangaFull.html">getMangaFull</a><span class="font-medium text-stone-500">(<span><span>mangaId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/mangaModel.MangaFull.html" class="link">mangaModel.MangaFull</a>&gt;</span></span>
+<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getMangaFull.html">getMangaFull</a><span class="font-medium text-stone-500 dark:text-stone-200">(<span><span>mangaId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/mangaModel.MangaFull.html" class="link">mangaModel.MangaFull</a>&gt;</span></span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -2543,10 +2564,10 @@ Methods</h2></div><div class="space-y-8"><div class="anchorable docEntry" id="me
   </defs>
 </svg>
 </a>
-<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getMangaMoreInfo.html">getMangaMoreInfo</a><span class="font-medium text-stone-500">(<span><span>mangaId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/baseModel.MoreInfo.html" class="link">baseModel.MoreInfo</a>&gt;</span></span>
+<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getMangaMoreInfo.html">getMangaMoreInfo</a><span class="font-medium text-stone-500 dark:text-stone-200">(<span><span>mangaId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/baseModel.MoreInfo.html" class="link">baseModel.MoreInfo</a>&gt;</span></span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -2597,10 +2618,10 @@ Methods</h2></div><div class="space-y-8"><div class="anchorable docEntry" id="me
   </defs>
 </svg>
 </a>
-<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getMangaNews.html">getMangaNews</a><span class="font-medium text-stone-500">(<div class="ml-4"><div><span>mangaId<span>: <span>number</span></span></span>,</div><div><span>params?<span>: <a href="../././~/baseManager.PageSearchParameter.html" class="link">baseManager.PageSearchParameter</a></span></span>,</div></div>)<span>: <span>Promise</span>&lt;<a href="../././~/baseModel.News.html" class="link">baseModel.News</a>[]&gt;</span></span>
+<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getMangaNews.html">getMangaNews</a><span class="font-medium text-stone-500 dark:text-stone-200">(<div class="ml-4"><div><span>mangaId<span>: <span>number</span></span></span>,</div><div><span>params?<span>: <a href="../././~/baseManager.PageSearchParameter.html" class="link">baseManager.PageSearchParameter</a></span></span>,</div></div>)<span>: <span>Promise</span>&lt;<a href="../././~/baseModel.News.html" class="link">baseModel.News</a>[]&gt;</span></span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -2651,10 +2672,10 @@ Methods</h2></div><div class="space-y-8"><div class="anchorable docEntry" id="me
   </defs>
 </svg>
 </a>
-<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getMangaPictures.html">getMangaPictures</a><span class="font-medium text-stone-500">(<span><span>mangaId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/mangaModel.MangaImages.html" class="link">mangaModel.MangaImages</a>[]&gt;</span></span>
+<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getMangaPictures.html">getMangaPictures</a><span class="font-medium text-stone-500 dark:text-stone-200">(<span><span>mangaId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/mangaModel.MangaImages.html" class="link">mangaModel.MangaImages</a>[]&gt;</span></span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -2705,10 +2726,10 @@ Methods</h2></div><div class="space-y-8"><div class="anchorable docEntry" id="me
   </defs>
 </svg>
 </a>
-<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getMangaRandom.html">getMangaRandom</a><span class="font-medium text-stone-500">()<span>: <span>Promise</span>&lt;<a href="../././~/mangaModel.Manga.html" class="link">mangaModel.Manga</a>&gt;</span></span>
+<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getMangaRandom.html">getMangaRandom</a><span class="font-medium text-stone-500 dark:text-stone-200">()<span>: <span>Promise</span>&lt;<a href="../././~/mangaModel.Manga.html" class="link">mangaModel.Manga</a>&gt;</span></span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -2759,10 +2780,10 @@ Methods</h2></div><div class="space-y-8"><div class="anchorable docEntry" id="me
   </defs>
 </svg>
 </a>
-<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getMangaRecommendations.html">getMangaRecommendations</a><span class="font-medium text-stone-500">(<span><span>mangaId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/baseModel.MalEntries.html" class="link">baseModel.MalEntries</a>[]&gt;</span></span>
+<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getMangaRecommendations.html">getMangaRecommendations</a><span class="font-medium text-stone-500 dark:text-stone-200">(<span><span>mangaId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/baseModel.MalEntries.html" class="link">baseModel.MalEntries</a>[]&gt;</span></span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -2813,10 +2834,10 @@ Methods</h2></div><div class="space-y-8"><div class="anchorable docEntry" id="me
   </defs>
 </svg>
 </a>
-<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getMangaRelations.html">getMangaRelations</a><span class="font-medium text-stone-500">(<span><span>mangaId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/baseModel.Relation.html" class="link">baseModel.Relation</a>[]&gt;</span></span>
+<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getMangaRelations.html">getMangaRelations</a><span class="font-medium text-stone-500 dark:text-stone-200">(<span><span>mangaId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/baseModel.Relation.html" class="link">baseModel.Relation</a>[]&gt;</span></span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -2867,10 +2888,10 @@ Methods</h2></div><div class="space-y-8"><div class="anchorable docEntry" id="me
   </defs>
 </svg>
 </a>
-<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getMangaReviews.html">getMangaReviews</a><span class="font-medium text-stone-500">(<div class="ml-4"><div><span>mangaId<span>: <span>number</span></span></span>,</div><div><span>params?<span>: <a href="../././~/baseManager.ReviewsParameters.html" class="link">baseManager.ReviewsParameters</a></span></span>,</div></div>)<span>: <span>Promise</span>&lt;<a href="../././~/mangaModel.MangaReview.html" class="link">mangaModel.MangaReview</a>[]&gt;</span></span>
+<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getMangaReviews.html">getMangaReviews</a><span class="font-medium text-stone-500 dark:text-stone-200">(<div class="ml-4"><div><span>mangaId<span>: <span>number</span></span></span>,</div><div><span>params?<span>: <a href="../././~/baseManager.ReviewsParameters.html" class="link">baseManager.ReviewsParameters</a></span></span>,</div></div>)<span>: <span>Promise</span>&lt;<a href="../././~/mangaModel.MangaReview.html" class="link">mangaModel.MangaReview</a>[]&gt;</span></span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -2921,10 +2942,10 @@ Methods</h2></div><div class="space-y-8"><div class="anchorable docEntry" id="me
   </defs>
 </svg>
 </a>
-<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getMangaStatistics.html">getMangaStatistics</a><span class="font-medium text-stone-500">(<span><span>mangaId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/mangaModel.MangaStatistics.html" class="link">mangaModel.MangaStatistics</a>&gt;</span></span>
+<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getMangaStatistics.html">getMangaStatistics</a><span class="font-medium text-stone-500 dark:text-stone-200">(<span><span>mangaId<span>: <span>number</span></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/mangaModel.MangaStatistics.html" class="link">mangaModel.MangaStatistics</a>&gt;</span></span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -2975,10 +2996,10 @@ Methods</h2></div><div class="space-y-8"><div class="anchorable docEntry" id="me
   </defs>
 </svg>
 </a>
-<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getMangaTopics.html">getMangaTopics</a><span class="font-medium text-stone-500">(<div class="ml-4"><div><span>mangaId<span>: <span>number</span></span></span>,</div><div><span>params?<span>: <a href="../././~/mangaManager.MangaTopicsSearchParameters.html" class="link">mangaManager.MangaTopicsSearchParameters</a></span></span>,</div></div>)<span>: <span>Promise</span>&lt;<a href="../././~/baseModel.Forum.html" class="link">baseModel.Forum</a>[]&gt;</span></span>
+<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getMangaTopics.html">getMangaTopics</a><span class="font-medium text-stone-500 dark:text-stone-200">(<div class="ml-4"><div><span>mangaId<span>: <span>number</span></span></span>,</div><div><span>params?<span>: <a href="../././~/mangaManager.MangaTopicsSearchParameters.html" class="link">mangaManager.MangaTopicsSearchParameters</a></span></span>,</div></div>)<span>: <span>Promise</span>&lt;<a href="../././~/baseModel.Forum.html" class="link">baseModel.Forum</a>[]&gt;</span></span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -3029,10 +3050,10 @@ Methods</h2></div><div class="space-y-8"><div class="anchorable docEntry" id="me
   </defs>
 </svg>
 </a>
-<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getMangaUserUpdates.html">getMangaUserUpdates</a><span class="font-medium text-stone-500">(<div class="ml-4"><div><span>mangaId<span>: <span>number</span></span></span>,</div><div><span>params?<span>: <a href="../././~/baseManager.PageSearchParameter.html" class="link">baseManager.PageSearchParameter</a></span></span>,</div></div>)<span>: <span>Promise</span>&lt;<a href="../././~/mangaModel.MangaUserUpdate.html" class="link">mangaModel.MangaUserUpdate</a>[]&gt;</span></span>
+<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getMangaUserUpdates.html">getMangaUserUpdates</a><span class="font-medium text-stone-500 dark:text-stone-200">(<div class="ml-4"><div><span>mangaId<span>: <span>number</span></span></span>,</div><div><span>params?<span>: <a href="../././~/baseManager.PageSearchParameter.html" class="link">baseManager.PageSearchParameter</a></span></span>,</div></div>)<span>: <span>Promise</span>&lt;<a href="../././~/mangaModel.MangaUserUpdate.html" class="link">mangaModel.MangaUserUpdate</a>[]&gt;</span></span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -3083,10 +3104,10 @@ Methods</h2></div><div class="space-y-8"><div class="anchorable docEntry" id="me
   </defs>
 </svg>
 </a>
-<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getMangas.html">getMangas</a><span class="font-medium text-stone-500">(<span><span>params?<span>: <a href="../././~/mangaManager.MangaSearchParameters.html" class="link">mangaManager.MangaSearchParameters</a></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/mangaModel.Manga.html" class="link">mangaModel.Manga</a>[]&gt;</span></span>
+<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.prototype.getMangas.html">getMangas</a><span class="font-medium text-stone-500 dark:text-stone-200">(<span><span>params?<span>: <a href="../././~/mangaManager.MangaSearchParameters.html" class="link">mangaManager.MangaSearchParameters</a></span></span></span>)<span>: <span>Promise</span>&lt;<a href="../././~/mangaModel.Manga.html" class="link">mangaModel.Manga</a>[]&gt;</span></span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -3162,10 +3183,10 @@ Static Methods</h2></div><div class="space-y-8"><div class="anchorable docEntry"
   </defs>
 </svg>
 </a>
-<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.setDefaultOptions.html">setDefaultOptions</a><span class="font-medium text-stone-500">(<span><span>options?<span>: <span>Partial</span>&lt;<a href="../././~/ClientOptions.html" class="link">ClientOptions</a>&gt;</span></span></span>)<span>: <a href="../././~/ClientOptions.html" class="link">ClientOptions</a></span></span>
+<a class="font-bold font-lg link" href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.setDefaultOptions.html">setDefaultOptions</a><span class="font-medium text-stone-500 dark:text-stone-200">(<span><span>options?<span>: <span>Partial</span>&lt;<a href="../././~/ClientOptions.html" class="link">ClientOptions</a>&gt;</span></span></span>)<span>: <a href="../././~/ClientOptions.html" class="link">ClientOptions</a></span></span>
       </code>
     </div><a
-  class="context_button relative mr-2"
+  class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;Jikan.js&#x2F;Jikan.js&#x2F;src&#x2F;v4&#x2F;core&#x2F;JikanClient.ts"><svg
   width="14"
   height="14"
@@ -3197,13 +3218,13 @@ Static Methods</h2></div><div class="space-y-8"><div class="anchorable docEntry"
 <div class="toc">
     <div><div class="usageContent">
     <h3>Usage</h3><div class="markdown"><pre class="highlight"><code class="language-typescript">import { JikanClient } from &quot;.&quot;;
-</code><button class="context_button" data-copy="import { JikanClient } from &quot;.&quot;;
+</code><button class="copyButton" data-copy="import { JikanClient } from &quot;.&quot;;
 "><svg class="copy" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect x="2" y="2" width="7" height="7" fill="none"/>
 <rect x="6" y="6" width="7" height="7" fill="none"/>
-<path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="#232323"/>
+<path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"/>
 </svg>
-<svg class="check" width="15" height="15" viewBox="0 0 24 24" stroke-width="2" stroke="#232323" fill="none" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+<svg class="check" width="15" height="15" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
 <path d="M5 12l5 5l10 -10" />
 </svg>
