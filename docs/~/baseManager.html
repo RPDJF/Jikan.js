@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>baseManager - Jikan.JS documentation</title>
+  <title>baseManager - default - Jikan.JS documentation</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="doc-current-file" content=".">
@@ -15,7 +15,10 @@
 <div class="ddoc">
 <div><nav id="topnav">
   <div class="h-full">
-    <div class="flex items-center"><ul class="breadcrumbs"><li><a href="..&#x2F;" class="contextLink">Jikan.JS</a></li><span class="text-black dark:text-white"><svg
+    <div class="flex items-center"><ul class="breadcrumbs">
+  <li>
+    <a href="..&#x2F;" class="contextLink">Jikan.JS</a>
+  </li><span class="text-black dark:text-white"><svg
   width="16"
   height="16"
   viewBox="0 0 16 16"
@@ -29,7 +32,23 @@
     fill="currentColor"
   />
 </svg>
-</span><ul><li>baseManager</li></ul></ul>
+</span><a href="..&#x2F;" class="contextLink">default</a><span class="text-black dark:text-white"><svg
+  width="16"
+  height="16"
+  viewBox="0 0 16 16"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    fill-rule="evenodd"
+    clip-rule="evenodd"
+    d="M5.76748 11.8159C5.5378 11.577 5.54525 11.1972 5.78411 10.9675L8.93431 8L5.78411 5.0325C5.54525 4.80282 5.5378 4.423 5.76748 4.18413C5.99715 3.94527 6.37698 3.93782 6.61584 4.1675L10.2158 7.5675C10.3335 7.68062 10.4 7.83679 10.4 8C10.4 8.16321 10.3335 8.31938 10.2158 8.4325L6.61584 11.8325C6.37698 12.0622 5.99715 12.0547 5.76748 11.8159Z"
+    fill="currentColor"
+  />
+</svg>
+</span>
+
+    <ul><li>baseManager</li></ul></ul>
 </div>
 
     <div class="flex items-center gap-2">
@@ -123,8 +142,8 @@
   />
 </svg>
 </a>
-</div><div><div class="space-y-7" id=""><section class="section"  id="Classes"><div>
-      <h2 class="anchorable mb-1"><a href="#Classes" class="anchor" aria-label="Anchor" tabIndex="-1"><svg
+</div><div><div class="space-y-7" id=""><section class="section"  id="classes"><div>
+      <h2 class="anchorable mb-1"><a href="#classes" class="anchor" aria-label="Anchor" tabIndex="-1"><svg
   width="16"
   height="16"
   viewBox="0 0 14 14"
@@ -148,15 +167,24 @@
 </a>
 Classes</h2></div><div class="namespaceSection"><div id="namespace_basemanager_basemanager" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Class bg-Class/15 dark:text-ClassDark dark:bg-ClassDark/15" title="Class">c</div></div>
 <div class="namespaceItemContent">
-		    <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseManager.BaseManager.html" title="baseManager.BaseManager">baseManager.BaseManager</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>BaseManager: Base class for all managers
+		    <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseManager.BaseManager.html" title="baseManager.BaseManager">
+			    <span>baseManager.BaseManager</span><span>(<span><span>client<span>: <span class="td-ref">JikanClient</span></span></span></span>)</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>BaseManager: Base class for all managers
 This component is an abstract class used to create managers for the Jikan API</p>
-</div></div><ul class="namespaceItemContentSubItems"><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseManager.BaseManager.html#method__buildapirequestquery_0">_buildAPIRequestQuery</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseManager.BaseManager.html#property__cache">_cache</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseManager.BaseManager.html#method__fetchdata_0">_fetchData</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseManager.BaseManager.html#property_client">client</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseManager.BaseManager.html#property_endpoint">endpoint</a></li></ul></div>
+</div></div><ul class="namespaceItemContentSubItems"><li>
+                <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseManager.BaseManager.html#method__buildapirequestquery_0">
+                  <span>_buildAPIRequestQuery</span><span>(<div class="ml-4"><div><span>subPath<span class="td-op">?</span><span>: <span class="td-kw">string</span></span></span>,</div><div><span>searchParams<span class="td-op">?</span><span>: <span><span class="td-ref">BaseSearchParameters</span><span class="td-op"> | </span><span class="td-kw">object</span></span></span></span>,</div><div><span>suffix<span class="td-op">?</span><span>: <span class="td-kw">string</span></span></span></div></div>)<span>: <span class="td-ref">apiModel.APIRequestQuery</span></span></span></a></li><li>
+                <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseManager.BaseManager.html#property__cache">
+                  <span>_cache</span><span>: <span class="td-ref">cacheManager.CacheManager</span></span></a></li><li>
+                <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseManager.BaseManager.html#method__fetchdata_0">
+                  <span>_fetchData</span><span><span>&lt;<span><span class="td-tp">T</span></span>&gt;</span>(<span><span>query<span>: <span class="td-ref">apiModel.APIRequestQuery</span></span></span></span>)<span>: <span class="td-ref">Promise</span>&lt;<span class="td-ref">T</span>&gt;</span></span></a></li><li>
+                <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseManager.BaseManager.html#property_client">
+                  <span>client</span><span>: <span class="td-ref">JikanClient</span></span></a></li><li>
+                <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseManager.BaseManager.html#property_endpoint">
+                  <span>endpoint</span><span>: <span class="td-kw">string</span></span></a></li></ul></div>
     </div></div>
 </section>
-<section class="section"  id="Enums"><div>
-      <h2 class="anchorable mb-1"><a href="#Enums" class="anchor" aria-label="Anchor" tabIndex="-1"><svg
+<section class="section"  id="enums"><div>
+      <h2 class="anchorable mb-1"><a href="#enums" class="anchor" aria-label="Anchor" tabIndex="-1"><svg
   width="16"
   height="16"
   viewBox="0 0 14 14"
@@ -180,14 +208,13 @@ This component is an abstract class used to create managers for the Jikan API</p
 </a>
 Enums</h2></div><div class="namespaceSection"><div id="namespace_basemanager_basesort" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Enum bg-Enum/15 dark:text-EnumDark dark:bg-EnumDark/15" title="Enum">E</div></div>
 <div class="namespaceItemContent">
-		    <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseManager.BaseSort.html" title="baseManager.BaseSort">baseManager.BaseSort</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>BaseSort: Enum for base sorting</p>
+		    <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseManager.BaseSort.html" title="baseManager.BaseSort">
+			    <span>baseManager.BaseSort</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>BaseSort: Enum for base sorting</p>
 </div></div></div>
     </div></div>
 </section>
-<section class="section"  id="Interfaces"><div>
-      <h2 class="anchorable mb-1"><a href="#Interfaces" class="anchor" aria-label="Anchor" tabIndex="-1"><svg
+<section class="section"  id="interfaces"><div>
+      <h2 class="anchorable mb-1"><a href="#interfaces" class="anchor" aria-label="Anchor" tabIndex="-1"><svg
   width="16"
   height="16"
   viewBox="0 0 14 14"
@@ -211,22 +238,35 @@ Enums</h2></div><div class="namespaceSection"><div id="namespace_basemanager_bas
 </a>
 Interfaces</h2></div><div class="namespaceSection"><div id="namespace_basemanager_basesearchparameters" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Interface bg-Interface/15 dark:text-InterfaceDark dark:bg-InterfaceDark/15" title="Interface">I</div></div>
 <div class="namespaceItemContent">
-		    <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseManager.BaseSearchParameters.html" title="baseManager.BaseSearchParameters">baseManager.BaseSearchParameters</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>BaseSearchParameters: Interface for base search parameters</p>
-</div></div><ul class="namespaceItemContentSubItems"><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseManager.BaseSearchParameters.html#property_letter">letter</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseManager.BaseSearchParameters.html#property_limit">limit</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseManager.BaseSearchParameters.html#property_q">q</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseManager.BaseSearchParameters.html#property_sort">sort</a></li></ul></div>
+		    <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseManager.BaseSearchParameters.html" title="baseManager.BaseSearchParameters">
+			    <span>baseManager.BaseSearchParameters</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>BaseSearchParameters: Interface for base search parameters</p>
+</div></div><ul class="namespaceItemContentSubItems"><li>
+                <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseManager.BaseSearchParameters.html#property_letter">
+                  <span>letter</span><span>: <span class="td-kw">string</span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Return entries starting with the specified letter</p>
+</div></div></li><li>
+                <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseManager.BaseSearchParameters.html#property_limit">
+                  <span>limit</span><span>: <span class="td-kw">number</span></span></a></li><li>
+                <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseManager.BaseSearchParameters.html#property_q">
+                  <span>q</span><span>: <span class="td-kw">string</span></span></a></li><li>
+                <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseManager.BaseSearchParameters.html#property_sort">
+                  <span>sort</span><span>: <span><span class="td-str">"asc"</span><span class="td-op"> | </span><span class="td-str">"desc"</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Search query sort direction</p>
+</div></div></li></ul></div>
     </div><div id="namespace_basemanager_pagesearchparameter" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Interface bg-Interface/15 dark:text-InterfaceDark dark:bg-InterfaceDark/15" title="Interface">I</div></div>
 <div class="namespaceItemContent">
-		    <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseManager.PageSearchParameter.html" title="baseManager.PageSearchParameter">baseManager.PageSearchParameter</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>PageSearchParameter: Interface for page search parameter</p>
-</div></div><ul class="namespaceItemContentSubItems"><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseManager.PageSearchParameter.html#property_page">page</a></li></ul></div>
+		    <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseManager.PageSearchParameter.html" title="baseManager.PageSearchParameter">
+			    <span>baseManager.PageSearchParameter</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>PageSearchParameter: Interface for page search parameter</p>
+</div></div><ul class="namespaceItemContentSubItems"><li>
+                <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseManager.PageSearchParameter.html#property_page">
+                  <span>page</span><span>: <span class="td-kw">number</span></span></a></li></ul></div>
     </div><div id="namespace_basemanager_reviewsparameters" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Interface bg-Interface/15 dark:text-InterfaceDark dark:bg-InterfaceDark/15" title="Interface">I</div></div>
 <div class="namespaceItemContent">
-		    <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseManager.ReviewsParameters.html" title="baseManager.ReviewsParameters">baseManager.ReviewsParameters</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>ReviewsParameters: Interface for Reviews search parameters</p>
-</div></div><ul class="namespaceItemContentSubItems"><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseManager.ReviewsParameters.html#property_preliminary">preliminary</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseManager.ReviewsParameters.html#property_spoiler">spoiler</a></li></ul></div>
+		    <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseManager.ReviewsParameters.html" title="baseManager.ReviewsParameters">
+			    <span>baseManager.ReviewsParameters</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>ReviewsParameters: Interface for Reviews search parameters</p>
+</div></div><ul class="namespaceItemContentSubItems"><li>
+                <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseManager.ReviewsParameters.html#property_preliminary">
+                  <span>preliminary</span><span>: <span class="td-kw">boolean</span></span></a></li><li>
+                <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;baseManager.ReviewsParameters.html#property_spoiler">
+                  <span>spoiler</span><span>: <span class="td-kw">boolean</span></span></a></li></ul></div>
     </div></div>
 </section>
 </div>
@@ -268,7 +308,7 @@ Interfaces</h2></div><div class="namespaceSection"><div id="namespace_basemanage
 </svg>
 </button><code></code></pre>
 </div></div><nav class="documentNavigation">
-          <h3>Document Navigation</h3><ul><li><a href="#classes" title="Classes">Classes</a></li><li><ul><li><a href="#namespace_basemanager_basemanager" title="baseManager.BaseManager">baseManager.BaseManager</a></li></ul></li><li><a href="#enums" title="Enums">Enums</a></li><li><ul><li><a href="#namespace_basemanager_basesort" title="baseManager.BaseSort">baseManager.BaseSort</a></li></ul></li><li><a href="#interfaces" title="Interfaces">Interfaces</a></li><li><ul><li><a href="#namespace_basemanager_basesearchparameters" title="baseManager.BaseSearchParameters">baseManager.BaseSearchParameters</a></li><li><a href="#namespace_basemanager_pagesearchparameter" title="baseManager.PageSearchParameter">baseManager.PageSearchParameter</a></li><li><a href="#namespace_basemanager_reviewsparameters" title="baseManager.ReviewsParameters">baseManager.ReviewsParameters</a></li></ul></li></ul></nav></div>
+          <h3>Document Navigation</h3><ul><li><a href="#classes-1" title="Classes">Classes</a></li><li><ul><li><a href="#namespace_basemanager_basemanager" title="baseManager.BaseManager">baseManager.BaseManager</a></li></ul></li><li><a href="#enums-1" title="Enums">Enums</a></li><li><ul><li><a href="#namespace_basemanager_basesort" title="baseManager.BaseSort">baseManager.BaseSort</a></li></ul></li><li><a href="#interfaces-1" title="Interfaces">Interfaces</a></li><li><ul><li><a href="#namespace_basemanager_basesearchparameters" title="baseManager.BaseSearchParameters">baseManager.BaseSearchParameters</a></li><li><a href="#namespace_basemanager_pagesearchparameter" title="baseManager.PageSearchParameter">baseManager.PageSearchParameter</a></li><li><a href="#namespace_basemanager_reviewsparameters" title="baseManager.ReviewsParameters">baseManager.ReviewsParameters</a></li></ul></li></ul></nav></div>
   </div></div>
 </div>
 </div>

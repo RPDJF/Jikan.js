@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>characterManager - Jikan.JS documentation</title>
+  <title>characterManager - default - Jikan.JS documentation</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="doc-current-file" content=".">
@@ -15,7 +15,10 @@
 <div class="ddoc">
 <div><nav id="topnav">
   <div class="h-full">
-    <div class="flex items-center"><ul class="breadcrumbs"><li><a href="..&#x2F;" class="contextLink">Jikan.JS</a></li><span class="text-black dark:text-white"><svg
+    <div class="flex items-center"><ul class="breadcrumbs">
+  <li>
+    <a href="..&#x2F;" class="contextLink">Jikan.JS</a>
+  </li><span class="text-black dark:text-white"><svg
   width="16"
   height="16"
   viewBox="0 0 16 16"
@@ -29,7 +32,23 @@
     fill="currentColor"
   />
 </svg>
-</span><ul><li>characterManager</li></ul></ul>
+</span><a href="..&#x2F;" class="contextLink">default</a><span class="text-black dark:text-white"><svg
+  width="16"
+  height="16"
+  viewBox="0 0 16 16"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    fill-rule="evenodd"
+    clip-rule="evenodd"
+    d="M5.76748 11.8159C5.5378 11.577 5.54525 11.1972 5.78411 10.9675L8.93431 8L5.78411 5.0325C5.54525 4.80282 5.5378 4.423 5.76748 4.18413C5.99715 3.94527 6.37698 3.93782 6.61584 4.1675L10.2158 7.5675C10.3335 7.68062 10.4 7.83679 10.4 8C10.4 8.16321 10.3335 8.31938 10.2158 8.4325L6.61584 11.8325C6.37698 12.0622 5.99715 12.0547 5.76748 11.8159Z"
+    fill="currentColor"
+  />
+</svg>
+</span>
+
+    <ul><li>characterManager</li></ul></ul>
 </div>
 
     <div class="flex items-center gap-2">
@@ -123,8 +142,8 @@
   />
 </svg>
 </a>
-</div><div><div class="space-y-7" id=""><section class="section"  id="Classes"><div>
-      <h2 class="anchorable mb-1"><a href="#Classes" class="anchor" aria-label="Anchor" tabIndex="-1"><svg
+</div><div><div class="space-y-7" id=""><section class="section"  id="classes"><div>
+      <h2 class="anchorable mb-1"><a href="#classes" class="anchor" aria-label="Anchor" tabIndex="-1"><svg
   width="16"
   height="16"
   viewBox="0 0 14 14"
@@ -148,15 +167,37 @@
 </a>
 Classes</h2></div><div class="namespaceSection"><div id="namespace_charactermanager_charactermanager" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Class bg-Class/15 dark:text-ClassDark dark:bg-ClassDark/15" title="Class">c</div></div>
 <div class="namespaceItemContent">
-		    <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;characterManager.CharacterManager.html" title="characterManager.CharacterManager">characterManager.CharacterManager</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>CharacterManager: Manager class for the Character endpoint
+		    <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;characterManager.CharacterManager.html" title="characterManager.CharacterManager">
+			    <span>characterManager.CharacterManager</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>CharacterManager: Manager class for the Character endpoint
 This component is used to make requests to the Jikan API's Character endpoint</p>
-</div></div><ul class="namespaceItemContentSubItems"><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;characterManager.CharacterManager.html#property_endpoint">endpoint</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;characterManager.CharacterManager.html#method_getcharacter_0">getCharacter</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;characterManager.CharacterManager.html#method_getcharacteranime_0">getCharacterAnime</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;characterManager.CharacterManager.html#method_getcharacterfull_0">getCharacterFull</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;characterManager.CharacterManager.html#method_getcharactermanga_0">getCharacterManga</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;characterManager.CharacterManager.html#method_getcharacterpictures_0">getCharacterPictures</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;characterManager.CharacterManager.html#method_getcharactervoiceactors_0">getCharacterVoiceActors</a></li><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;characterManager.CharacterManager.html#method_getcharacters_0">getCharacters</a></li></ul></div>
+</div></div><ul class="namespaceItemContentSubItems"><li>
+                <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;characterManager.CharacterManager.html#property_endpoint">
+                  <span>endpoint</span><span>: <span class="td-kw">string</span></span></a></li><li>
+                <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;characterManager.CharacterManager.html#method_getcharacter_0">
+                  <span>getCharacter</span><span>(<span><span>characterId<span>: <span class="td-kw">number</span></span></span></span>)<span>: <span class="td-ref">Promise</span>&lt;<span class="td-ref">characterModel.Character</span>&gt;</span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>getCharacter: Get a Character from the Jikan API by its ID</p>
+</div></div></li><li>
+                <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;characterManager.CharacterManager.html#method_getcharacteranime_0">
+                  <span>getCharacterAnime</span><span>(<span><span>characterId<span>: <span class="td-kw">number</span></span></span></span>)<span>: <span class="td-ref">Promise</span>&lt;<span class="td-ref">characterModel.AnimeRole</span>[]&gt;</span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>getCharacterAnime: Get a Character's Anime from the Jikan API by its ID</p>
+</div></div></li><li>
+                <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;characterManager.CharacterManager.html#method_getcharacterfull_0">
+                  <span>getCharacterFull</span><span>(<span><span>characterId<span>: <span class="td-kw">number</span></span></span></span>)<span>: <span class="td-ref">Promise</span>&lt;<span class="td-ref">characterModel.CharacterFull</span>&gt;</span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>getCharacter: Get a CharacterFull from the Jikan API by its ID</p>
+</div></div></li><li>
+                <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;characterManager.CharacterManager.html#method_getcharactermanga_0">
+                  <span>getCharacterManga</span><span>(<span><span>characterId<span>: <span class="td-kw">number</span></span></span></span>)<span>: <span class="td-ref">Promise</span>&lt;<span class="td-ref">characterModel.MangaRole</span>[]&gt;</span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>getCharacterManga: Get a Character's Manga from the Jikan API by its ID</p>
+</div></div></li><li>
+                <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;characterManager.CharacterManager.html#method_getcharacterpictures_0">
+                  <span>getCharacterPictures</span><span>(<span><span>characterId<span>: <span class="td-kw">number</span></span></span></span>)<span>: <span class="td-ref">Promise</span>&lt;<span class="td-ref">baseModel.CommonImage</span>[]&gt;</span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>getCharacterPictures: Get a Character's Pictures from the Jikan API by its ID</p>
+</div></div></li><li>
+                <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;characterManager.CharacterManager.html#method_getcharactervoiceactors_0">
+                  <span>getCharacterVoiceActors</span><span>(<span><span>characterId<span>: <span class="td-kw">number</span></span></span></span>)<span>: <span class="td-ref">Promise</span>&lt;<span class="td-ref">baseModel.VoiceActors</span>[]&gt;</span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>getCharacterVoiceActors: Get a Character's Voice Actors from the Jikan API by its ID</p>
+</div></div></li><li>
+                <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;characterManager.CharacterManager.html#method_getcharacters_0">
+                  <span>getCharacters</span><span>(<span><span>params<span class="td-op">?</span><span>: <span class="td-ref">CharacterSearchParameters</span></span></span></span>)<span>: <span class="td-ref">Promise</span>&lt;<span class="td-ref">characterModel.Character</span>[]&gt;</span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>getCharacters: Get a Character array from the Jikan API</p>
+</div></div></li></ul></div>
     </div></div>
 </section>
-<section class="section"  id="Interfaces"><div>
-      <h2 class="anchorable mb-1"><a href="#Interfaces" class="anchor" aria-label="Anchor" tabIndex="-1"><svg
+<section class="section"  id="interfaces"><div>
+      <h2 class="anchorable mb-1"><a href="#interfaces" class="anchor" aria-label="Anchor" tabIndex="-1"><svg
   width="16"
   height="16"
   viewBox="0 0 14 14"
@@ -180,10 +221,12 @@ This component is used to make requests to the Jikan API's Character endpoint</p
 </a>
 Interfaces</h2></div><div class="namespaceSection"><div id="namespace_charactermanager_charactersearchparameters" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Interface bg-Interface/15 dark:text-InterfaceDark dark:bg-InterfaceDark/15" title="Interface">I</div></div>
 <div class="namespaceItemContent">
-		    <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;characterManager.CharacterSearchParameters.html" title="characterManager.CharacterSearchParameters">characterManager.CharacterSearchParameters</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>CharacterSearchParameters: Interface for Character search parameters</p>
-</div></div><ul class="namespaceItemContentSubItems"><li><a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;characterManager.CharacterSearchParameters.html#property_order_by">order_by</a></li></ul></div>
+		    <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;characterManager.CharacterSearchParameters.html" title="characterManager.CharacterSearchParameters">
+			    <span>characterManager.CharacterSearchParameters</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>CharacterSearchParameters: Interface for Character search parameters</p>
+</div></div><ul class="namespaceItemContentSubItems"><li>
+                <a href="..&#x2F;.&#x2F;.&#x2F;~&#x2F;characterManager.CharacterSearchParameters.html#property_order_by">
+                  <span>order_by</span><span>: <span><span class="td-str">"mal_id"</span><span class="td-op"> | </span><span class="td-str">"name"</span><span class="td-op"> | </span><span class="td-str">"favorites"</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Available Character order_by properties</p>
+</div></div></li></ul></div>
     </div></div>
 </section>
 </div>
@@ -225,7 +268,7 @@ Interfaces</h2></div><div class="namespaceSection"><div id="namespace_characterm
 </svg>
 </button><code></code></pre>
 </div></div><nav class="documentNavigation">
-          <h3>Document Navigation</h3><ul><li><a href="#classes" title="Classes">Classes</a></li><li><ul><li><a href="#namespace_charactermanager_charactermanager" title="characterManager.CharacterManager">characterManager.CharacterManager</a></li></ul></li><li><a href="#interfaces" title="Interfaces">Interfaces</a></li><li><ul><li><a href="#namespace_charactermanager_charactersearchparameters" title="characterManager.CharacterSearchParameters">characterManager.CharacterSearchParameters</a></li></ul></li></ul></nav></div>
+          <h3>Document Navigation</h3><ul><li><a href="#classes-1" title="Classes">Classes</a></li><li><ul><li><a href="#namespace_charactermanager_charactermanager" title="characterManager.CharacterManager">characterManager.CharacterManager</a></li></ul></li><li><a href="#interfaces-1" title="Interfaces">Interfaces</a></li><li><ul><li><a href="#namespace_charactermanager_charactersearchparameters" title="characterManager.CharacterSearchParameters">characterManager.CharacterSearchParameters</a></li></ul></li></ul></nav></div>
   </div></div>
 </div>
 </div>
