@@ -205,8 +205,6 @@ This component is an abstract class used to create managers for the Jikan API</p
 </div></div><ul class="namespaceItemContentSubItems"><li>
                 <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;baseManager.BaseManager.html#method__buildapirequestquery_0">
                   <span>_buildAPIRequestQuery</span><span>(<div class="ml-4"><div><span>subPath<span class="td-op">?</span><span>: <span class="td-kw">string</span></span></span>,</div><div><span>searchParams<span class="td-op">?</span><span>: <span><span class="td-ref">BaseSearchParameters</span><span class="td-op"> | </span><span class="td-kw">object</span></span></span></span>,</div><div><span>suffix<span class="td-op">?</span><span>: <span class="td-kw">string</span></span></span></div></div>)<span>: <span class="td-ref">apiModel.APIRequestQuery</span></span></span></a></li><li>
-                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;baseManager.BaseManager.html#property__cache">
-                  <span>_cache</span><span>: <span class="td-ref">cacheManager.CacheManager</span></span></a></li><li>
                 <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;baseManager.BaseManager.html#method__fetchdata_0">
                   <span>_fetchData</span><span><span>&lt;<span><span class="td-tp">T</span></span>&gt;</span>(<span><span>query<span>: <span class="td-ref">apiModel.APIRequestQuery</span></span></span></span>)<span>: <span class="td-ref">Promise</span>&lt;<span class="td-ref">T</span>&gt;</span></span></a></li><li>
                 <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;baseManager.BaseManager.html#property_client">
@@ -220,21 +218,12 @@ This component is an abstract class used to create managers for the Jikan API</p
 This component is used to manage the cache of the Jikan API
 The cache isn't implemented yet, the manager only creates a cache directory and deletes it when the program exits</p>
 </div></div><ul class="namespaceItemContentSubItems"><li>
-                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;cacheManager.CacheManager.html#property__client">
-                  <span>_client</span><span>: <span class="td-ref">JikanClient</span></span></a></li><li>
-                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;cacheManager.CacheManager.html#method__getdefaultcache_0">
-                  <span>_getDefaultCache</span><span>()<span>: <span class="td-kw">string</span></span></span></a></li><li>
                 <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;cacheManager.CacheManager.html#accessor_cachepath">
                   <span>cachePath</span><span>()<span>: <span class="td-kw">string</span></span></span></a></li><li>
                 <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;cacheManager.CacheManager.html#method_get_0">
                   <span>get</span><span>(<span><span>query<span>: <span class="td-ref">APIRequestQuery</span></span></span></span>)<span>: <span><span class="td-ref">APICacheResponse</span><span class="td-op"> | </span><span class="td-kw">null</span></span></span></span></a></li><li>
-                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;cacheManager.CacheManager.html#property_options">
-                  <span>options</span><span>: <span class="td-ref">CacheOptions</span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Cache options containing the cache options</p>
-</div></div></li><li>
                 <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;cacheManager.CacheManager.html#method_set_0">
-                  <span>set</span><span>(<div class="ml-4"><div><span>query<span>: <span class="td-ref">APIRequestQuery</span></span></span>,</div><div><span>data<span>: <span class="td-ref">JSON</span></span></span></div></div>)<span>: <span class="td-kw">void</span></span></span></a></li><li>
-                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;cacheManager.CacheManager.html#method_setdefaultoptions_0">
-                  <span>setDefaultOptions</span><span>(<span><span>options<span class="td-op">?</span><span>: <span class="td-ref">Partial</span>&lt;<span class="td-ref">CacheOptions</span>&gt;</span></span></span>)<span>: <span class="td-ref">CacheOptions</span></span></span></a></li></ul></div>
+                  <span>set</span><span>(<div class="ml-4"><div><span>query<span>: <span class="td-ref">APIRequestQuery</span></span></span>,</div><div><span>data<span>: <span class="td-ref">JSON</span></span></span></div></div>)<span>: <span class="td-kw">void</span></span></span></a></li></ul></div>
     </div><div id="namespace_charactermanager_charactermanager" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Class bg-Class/15 dark:text-ClassDark dark:bg-ClassDark/15" title="Class">c</div></div>
 <div class="namespaceItemContent">
 		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;characterManager.CharacterManager.html" title="characterManager.CharacterManager">
@@ -418,9 +407,7 @@ This component is used to interact with the Jikan API using internal managers</p
                 <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.html#property_randommanager">
                   <span>randomManager</span><span>: <span class="td-ref">randomManager.RandomManager</span></span></a></li><li>
                 <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.html#property_requestmanager">
-                  <span>requestManager</span><span>: <span class="td-ref">requestManager.RequestManager</span></span></a></li><li>
-                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;JikanClient.html#method_setdefaultoptions_0">
-                  <span>setDefaultOptions</span><span>(<span><span>options<span class="td-op">?</span><span>: <span class="td-ref">Partial</span>&lt;<span class="td-ref">ClientOptions</span>&gt;</span></span></span>)<span>: <span class="td-ref">ClientOptions</span></span></span></a></li></ul></div>
+                  <span>requestManager</span><span>: <span class="td-ref">requestManager.RequestManager</span></span></a></li></ul></div>
     </div><div id="namespace_mangamanager_mangamanager" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Class bg-Class/15 dark:text-ClassDark dark:bg-ClassDark/15" title="Class">c</div></div>
 <div class="namespaceItemContent">
 		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;mangaManager.MangaManager.html" title="mangaManager.MangaManager">
@@ -492,10 +479,6 @@ This component is used to get random data from the Jikan API</p>
 <div class="namespaceItemContent">
 		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;requestManager.RequestManager.html" title="requestManager.RequestManager">
 			    <span>requestManager.RequestManager</span><span>(<span><span>client<span>: <span class="td-ref">JikanClient</span></span></span></span>)</span></a><ul class="namespaceItemContentSubItems"><li>
-                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;requestManager.RequestManager.html#method__createerrorresponse_0">
-                  <span>_createErrorResponse</span><span>(<div class="ml-4"><div><span>message<span>: <span class="td-kw">string</span></span></span>,</div><div><span>errorCode<span>: <span class="td-kw">string</span></span></span>,</div><div><span>status<span>: <span class="td-kw">number</span></span></span>,</div><div><span>statusText<span>: <span class="td-kw">string</span></span></span>,</div><div><span>retryAfter<span class="td-op">?</span><span>: <span class="td-kw">number</span></span></span></div></div>)<span>: <span class="td-ref">Response</span></span></span></a></li><li>
-                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;requestManager.RequestManager.html#property__isprocessing">
-                  <span>_isProcessing</span><span>: <span class="td-kw">boolean</span></span></a></li><li>
                 <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;requestManager.RequestManager.html#method_buildurl_0">
                   <span>buildURL</span><span>(<span><span>requestQuery<span>: <span class="td-ref">apiModel.APIRequestQuery</span></span></span></span>)<span>: <span class="td-ref">URL</span></span></span></a></li><li>
                 <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;requestManager.RequestManager.html#property_client">
@@ -509,12 +492,6 @@ This component is used to get random data from the Jikan API</p>
 <div class="namespaceItemContent">
 		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;requestManager.RequestQueue.html" title="requestManager.RequestQueue">
 			    <span>requestManager.RequestQueue</span><span>(<span><span>maxSize<span>: <span class="td-kw">number</span></span></span></span>)</span></a><ul class="namespaceItemContentSubItems"><li>
-                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;requestManager.RequestQueue.html#property__maxsize">
-                  <span>_maxSize</span><span>: <span class="td-kw">number</span></span></a></li><li>
-                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;requestManager.RequestQueue.html#property__queue">
-                  <span>_queue</span><span>: (<span class="td-ref">apiModel.APIRequestPromise</span>)[]</span></a></li><li>
-                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;requestManager.RequestQueue.html#property__size">
-                  <span>_size</span><span>: <span class="td-kw">number</span></span></a></li><li>
                 <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;requestManager.RequestQueue.html#method_dequeue_0">
                   <span>dequeue</span><span>()<span>: <span><span class="td-ref">apiModel.APIRequestPromise</span><span class="td-op"> | </span><span class="td-kw">undefined</span></span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>dequeue: Remove an item from the queue</p>
 </div></div></li><li>
